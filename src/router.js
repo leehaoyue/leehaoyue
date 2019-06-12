@@ -6,6 +6,15 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    // {
+    //   path: '',
+    //   redirect: 'container'
+    // },
+    // {
+    //   path: '*',
+    //   name: 'container',
+    //   component: container
+    // },
     {
       path: '/',
       name: 'home',
