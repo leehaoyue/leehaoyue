@@ -1,8 +1,8 @@
 <template>
   <el-container class="container">
-    <el-header>Header</el-header>
+    <el-header><navbar></navbar></el-header>
     <el-main>Main</el-main>
-    <el-footer>Footer</el-footer>
+    <el-footer><basebar></basebar></el-footer>
   </el-container>
 </template>
 <style lang="less" src="./index.less"></style>

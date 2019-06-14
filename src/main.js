@@ -24,10 +24,19 @@ import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 // font-awesome-矢量图标
 import 'font-awesome/css/font-awesome.css'
+// 全局变量
+import '@/global/globalData'
+// 全局方法
+import '@/global/globalMethod'
+// 全局组件
+import components from '@/global/globalComponents'
 
 Vue.use(Element)
 Vue.use(formCreate)
+Vue.use(components)
+
 promise.polyfill()
+
 Vue.prototype.$CryptoJS = CryptoJS
 Vue.prototype.$lodash = lodash
 
