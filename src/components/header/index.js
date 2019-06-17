@@ -11,15 +11,23 @@ export default {
         label: '下里巴人',
         name: 'project'
       }, {
-        label: '嘲风弄月',
-        name: 'blog'
-      }, {
         label: '移花接木',
         name: 'notes'
+      }, {
+        label: '嘲风弄月',
+        name: 'blog'
       }]
-    }
+    };
+  },
+  created() {
+    this.activeIndex = this.$store.state.routerInfo.params;
+    this.$router.push({ path: `/${this.$store.state.routerInfo.name}/${this.$store.state.routerInfo.params}` });
   },
   methods: {
-    handleSelect() {}
+    handleSelect(info) {
+      if (!this.$globalmethod.isEmpty(info)) {
+        this.$router.push({ path: `/${this.$globaldata.routerDefault.name}/${info}` });
+      }
+    }
   }
-}
+};
