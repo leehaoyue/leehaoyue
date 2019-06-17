@@ -1,13 +1,15 @@
 module.exports = {
   publicPath: './',
   outputDir: 'dist',
-  assetsDir: 'public',
-  indexPath: 'index.html',
   filenameHashing: true,
   lintOnSave: true,
   runtimeCompiler: false,
   productionSourceMap: false,
   devServer: {
+    overlay: {
+      warnings: true,
+      errors: true
+    },
     proxy: {
       '/crossDomain': {
         target: '<url>',
@@ -18,5 +20,9 @@ module.exports = {
         }
       }
     }
+  },
+  chainWebpack: config => {
+    config.plugins.delete('preload') 
+    config.plugins.delete('prefetch') 
   }
 }

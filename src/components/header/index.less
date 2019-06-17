@@ -1,3 +1,22 @@
 @import '../../global/globalStyle.less';
 
-.navbar {}
+.navbar {
+  height: 100%;
+  padding: 0 10%;
+  /* logo */
+  .el-image {
+    height: 100%;
+    display: flex;
+    outline: none;
+    cursor: pointer;
+    align-items: center;
+    img {
+      height: 80%;
+    }
+  }
+  /* nav选项 */
+  .el-menu-item.is-active {
+    .green-linear;
+    border: none;
+  }
+}

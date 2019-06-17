@@ -28,7 +28,7 @@ module.exports = {
     node: true,
     browser: true
   },
-  'extends': [
+  extends: [
     'plugin:vue/essential',
     'eslint:recommended'
   ],
@@ -57,7 +57,6 @@ module.exports = {
     "no-else-return": 2,//如果if语句里面有return,后面不能跟else语句
     "no-empty": 2,//块语句中的内容不能为空
     "no-empty-character-class": 2,//正则表达式中的[]内容不能为空
-    "no-empty-label": 2,//禁止使用空label
     "no-eq-null": 2,//禁止对null使用==或!=运算符
     "no-eval": 1,//禁止使用eval
     "no-ex-assign": 2,//禁止给catch语句中的异常参数赋值
@@ -165,8 +164,9 @@ module.exports = {
     "guard-for-in": 0,//for in循环要用if语句过滤
     "handle-callback-err": 0,//nodejs 处理错误
     "id-length": 0,//变量名长度
-    "indent": [2, 4],//缩进风格
+    "indent": [2, 2],//缩进风格
     "init-declarations": 0,//声明时必须赋初值
+    "keyword-spacing": 2,//return throw case后面要不要加空格
     "key-spacing": [0, { "beforeColon": false, "afterColon": true }],//对象字面量中冒号的前后空格
     "lines-around-comment": 0,//行前/行后备注
     "max-depth": [0, 4],//嵌套块深度
@@ -187,7 +187,7 @@ module.exports = {
     "prefer-spread": 0,//首选展开运算
     "prefer-reflect": 0,//首选Reflect的方法
     "quotes": [1, "single"],//引号类型 `` "" ''
-    "quote-props":[2, "always"],//对象字面量中的属性名是否强制双引号
+    "quote-props": 0,//对象字面量中的属性名是否强制双引号
     "radix": 2,//parseInt必须指定第二个参数
     "id-match": 0,//命名检测
     "require-yield": 0,//生成器函数必须有yield
@@ -199,7 +199,6 @@ module.exports = {
     "space-before-function-paren": [0, "always"],//函数定义时括号前面要不要有空格
     "space-in-parens": [0, "never"],//小括号里面要不要有空格
     "space-infix-ops": 0,//中缀操作符周围要不要有空格
-    "space-return-throw-case": 2,//return throw case后面要不要加空格
     "space-unary-ops": [0, { "words": true, "nonwords": false }],//一元运算符的前/后要不要加空格
     "spaced-comment": 0,//注释风格要不要有空格什么的
     "strict": 2,//使用严格模式

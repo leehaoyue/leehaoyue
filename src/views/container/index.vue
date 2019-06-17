@@ -1,7 +1,7 @@
 <template>
   <el-container class="container">
     <el-header><navbar></navbar></el-header>
-    <el-main>Main</el-main>
+    <el-main><router-view/></el-main>
     <el-footer><basebar></basebar></el-footer>
   </el-container>
 </template>

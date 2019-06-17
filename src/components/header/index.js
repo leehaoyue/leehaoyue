@@ -2,6 +2,7 @@ export default {
   name: 'navbar',
   data() {
     return {
+      logosrc: require('../../../public/img/logo.png'),
       activeIndex: 'foreword',
       list: [{
         label: '朝花夕拾',
