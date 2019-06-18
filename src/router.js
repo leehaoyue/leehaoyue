@@ -1,58 +1,50 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import $store from './store';
-import $globaldata from '@/global/globalData';
-import $globalmethod from '@/global/globalMethod';
-// import container from '@/views/container/index.vue';
+import container from '@/views/container/index.vue';
+import foreword from '@/components/main/foreword/index.vue';
+import project from '@/components/main/project/index.vue';
+import blog from '@/components/main/blog/index.vue';
+import notes from '@/components/main/notes/index.vue';
 Vue.use(Router);
 
-const container = () => import(
-  /*webpackPrefetch: true*/
-  /* webpackChunkName: 'container' */
-  '@/views/container/index.vue'),
-  router = new Router({
-    routes: [{
-      path: '/',
-      redirect: `/${$globaldata.routerDefault.name}`
+// const container = () => import(/* webpackPrefetch: true */ /* webpackChunkName: 'container' */ '@/views/container/index.vue'),
+const router = new Router({
+  routes: [{
+    path: '*',
+    redirect: '/container/foreword'
+  }, {
+    path: '/container',
+    name: 'container',
+    component: container,
+    children: [{
+      path: 'foreword',
+      name: 'foreword',
+      component: foreword
+      // component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: 'main' */ '@/components/main/foreword/index.vue')
     }, {
-      path: '*',
-      name: $globaldata.routerDefault.name,
-      component: container
+      path: 'project',
+      name: 'project',
+      component: project
+      // component: () => import(/* webpackChunkName: 'main' */ '@/components/main/project/index.vue')
     }, {
-      path: '/container/:main',
-      component: container,
-      children: [{
-        path: 'foreword',
-        component: () => import(
-          /* webpackPrefetch: true */
-          /* webpackChunkName: 'foreword' */
-          '@/components/main/foreword/index.vue')
-      }, {
-        path: 'project',
-        component: () => import(
-          /* webpackChunkName: 'project' */
-          '@/components/main/project/index.vue')
-      }, {
-        path: 'blog',
-        component: () => import(
-          /* webpackChunkName: 'blog' */
-          '@/components/main/blog/index.vue')
-      }, {
-        path: 'notes',
-        component: () => import(
-          /* webpackChunkName: 'notes' */
-          '@/components/main/notes/index.vue')
-      }]
+      path: 'blog',
+      name: 'blog',
+      component: blog
+      // component: () => import(/* webpackChunkName: 'main' */ '@/components/main/blog/index.vue')
+    }, {
+      path: 'notes',
+      name: 'notes',
+      component: notes
+      // component: () => import(/* webpackChunkName: 'main' */ '@/components/main/notes/index.vue')
     }]
-  });
+  }]
+});
 
 router.beforeEach((to, from, next) => {
-  if ($globalmethod.isEmpty(from.name) && to.name === $globaldata.routerDefault.name) {
-    return next({ path: `/${$globaldata.routerDefault.name}/${$globaldata.routerDefault.params}` });
-  }
   $store.commit('routerInfo', {
-    name: to.fullPath.split('/')[1],
-    params: to.fullPath.split('/')[2]
+    name: to.name,
+    path: to.path
   });
   next();
 });

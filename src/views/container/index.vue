@@ -1,9 +1,12 @@
+<!-- 容器 -->
 <template>
   <el-container class="container">
     <el-header><navbar></navbar></el-header>
     <el-main>
       <transition name="fade">
-        <layout></layout>
+        <keep-alive>
+          <layout></layout>
+        </keep-alive>
       </transition>
     </el-main>
     <el-footer><basebar></basebar></el-footer>

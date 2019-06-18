@@ -1,10 +1,6 @@
 import Vue from 'vue'
 
 const $globaldata = {
-  routerDefault: {
-    name: 'container',
-    params: 'foreword'
-  },
   imgUpload: { // 图片上传、删除
     serviceUpload: '/api/upload', // 上传图片地址
     serviceDelete: '/api/delete', // 删除图片地址

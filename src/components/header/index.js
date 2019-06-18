@@ -20,13 +20,13 @@ export default {
     };
   },
   created() {
-    this.activeIndex = this.$store.state.routerInfo.params;
-    this.$router.push({ path: `/${this.$store.state.routerInfo.name}/${this.$store.state.routerInfo.params}` });
+    this.activeIndex = this.$store.state.routerInfo.name;
+    this.$router.push(this.$store.state.routerInfo.path);
   },
   methods: {
     handleSelect(info) {
       if (!this.$globalmethod.isEmpty(info)) {
-        this.$router.push({ path: `/${this.$globaldata.routerDefault.name}/${info}` });
+        this.$router.push({name: info});
       }
     }
   }
