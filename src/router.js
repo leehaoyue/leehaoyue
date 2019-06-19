@@ -21,22 +21,22 @@ const container = () => import(/* webpackPrefetch: true */ /* webpackChunkName: 
         path: 'foreword',
         name: 'foreword',
         component: foreword
-        // component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: 'main' */ '@/components/main/foreword/index.vue')
+        // component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: 'foreword' */ '@/components/main/foreword/index.vue')
       }, {
         path: 'project',
         name: 'project',
         component: project
-        // component: () => import(/* webpackChunkName: 'main' */ '@/components/main/project/index.vue')
+        // component: () => import(/* webpackChunkName: 'project' */ '@/components/main/project/index.vue')
       }, {
         path: 'blog',
         name: 'blog',
         component: blog
-        // component: () => import(/* webpackChunkName: 'main' */ '@/components/main/blog/index.vue')
+        // component: () => import(/* webpackChunkName: 'blog' */ '@/components/main/blog/index.vue')
       }, {
         path: 'notes',
         name: 'notes',
         component: notes
-        // component: () => import(/* webpackChunkName: 'main' */ '@/components/main/notes/index.vue')
+        // component: () => import(/* webpackChunkName: 'notes' */ '@/components/main/notes/index.vue')
       }]
     }]
   });
