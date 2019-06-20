@@ -1,6 +1,6 @@
 <!-- 布局 -->
 <template>
-  <el-row class="layout" :gutter="20">
+  <el-row class="layout">
     <el-col :span="24">
       <router-view/>
     </el-col>

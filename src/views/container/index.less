@@ -1,7 +1,23 @@
 @import '../../global/globalStyle.less';
 
 .container {
+  height: 100vh;
+  overflow: auto;
+  padding-top: 60px;
   .el-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0;
+    z-index: 10;
+    width: 100vw;
+  }
+  .el-main {
+    padding: 0;
+    min-height: calc(100vh - 0px);
+    background: @grayScale-color_6;
+  }
+  .el-footer {
     padding: 0;
   }
 }

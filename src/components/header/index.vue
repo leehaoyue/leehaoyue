@@ -1,3 +1,4 @@
+<!-- 导航菜单 -->
 <template>
   <el-menu class="el-menu-demo navbar"
     :default-active="activeIndex"

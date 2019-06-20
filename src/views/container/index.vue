@@ -1,7 +1,9 @@
 <!-- 容器 -->
 <template>
   <el-container class="container">
-    <el-header><navbar></navbar></el-header>
+    <el-header :height="$globaldata.container.header.height">
+      <navbar></navbar>
+    </el-header>
     <el-main>
       <transition name="fade">
         <keep-alive>
@@ -9,7 +11,9 @@
         </keep-alive>
       </transition>
     </el-main>
-    <el-footer><basebar></basebar></el-footer>
+    <el-footer :height="$globaldata.container.footer.height">
+      <basebar></basebar>
+    </el-footer>
   </el-container>
 </template>
 <style lang="less" src="./index.less"></style>

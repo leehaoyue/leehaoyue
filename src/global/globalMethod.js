@@ -1,10 +1,9 @@
-import Vue from 'vue';
 import lodash from 'lodash'; // 实用工具库
 import pinyinMatch from 'pinyin-match'; // 汉字转拼音
-import lrz from 'lrz/dist/lrz.bundle.js'; // 图片压缩
+import lrz from 'lrz'; // 图片压缩
 import CryptoJS from 'crypto-js'; // HMAC加密
 
-const globalmethod = {
+export default {
   // 判断android、ios
   iSAndroid() {
     let u = navigator.userAgent;
@@ -142,18 +141,6 @@ const globalmethod = {
       time = `${Y}-${M}-${D} ${H}${MM}`;
     }
     return time
-  },
-  // 图片预处理
-  imgPretreatment(url) {
-    let newImg = new Image();
-
-    newImg.src = url;
-    newImg.onerror = () => {
-      return false;
-    }
-    newImg.onload = () => {
-      return true
-    }
   },
   // 数组去重并排序
   reDuplication(arrobj, key, method) {
@@ -310,7 +297,3 @@ const globalmethod = {
     }
   }
 }
-
-Vue.prototype.$globalmethod = globalmethod
-
-export default globalmethod

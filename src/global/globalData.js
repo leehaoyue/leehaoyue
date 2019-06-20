@@ -1,6 +1,14 @@
 import Vue from 'vue'
 
 const $globaldata = {
+  container: { // 容器样式
+    header: {
+      height: '60px'
+    },
+    footer: {
+      height: '60px'
+    }
+  },
   imgUpload: { // 图片上传、删除
     serviceUpload: '/api/upload', // 上传图片地址
     serviceDelete: '/api/delete', // 删除图片地址

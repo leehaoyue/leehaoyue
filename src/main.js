@@ -22,6 +22,7 @@ import formCreate from 'form-create/element';
 // Element-桌面端组件库
 import Element from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import 'element-ui/lib/theme-chalk/display.css';
 // swiper-轮播
 import VueAwesomeSwiper from 'vue-awesome-swiper';
 import 'swiper/dist/css/swiper.css';
@@ -30,7 +31,7 @@ import 'font-awesome/css/font-awesome.css';
 // 全局变量
 import '@/global/globalData';
 // 全局方法
-import '@/global/globalMethod';
+import globalmethod from '@/global/globalMethod';
 // 全局组件
 import components from '@/global/globalComponents';
 
@@ -41,6 +42,7 @@ Vue.use(components);
 
 promise.polyfill();
 
+Vue.prototype.$globalmethod = globalmethod;
 Vue.prototype.$CryptoJS = CryptoJS;
 Vue.prototype.$lodash = lodash;
 
