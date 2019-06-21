@@ -17,7 +17,12 @@
           加载中<span class="dot">...</span>
         </div>
       </el-image>
-      <swiper ref="forewordSwiper">
+      <swiper class="huge hidden-sm-and-down" :options="swiperOption">
+        <swiper-slide class="swiper-slide"
+          :key="index"
+          v-for="(item, index) in sentence">{{item}}</swiper-slide>
+      </swiper>
+      <swiper class="little hidden-md-and-up" :options="swiperOption">
         <swiper-slide class="swiper-slide"
           :key="index"
           v-for="(item, index) in sentence">{{item}}</swiper-slide>

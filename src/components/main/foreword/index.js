@@ -5,12 +5,17 @@ export default {
   data() {
     return {
       sentence: data.sentence,
-      article: data.article
+      article: data.article,
+      swiperOption: {
+        loop: true,
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
+        autoplay: {
+          delay: 3000
+        }
+      }
     };
-  },
-  computed: {
-    swiper() {
-      return this.$refs.forewordSwiper.swiper;
-    }
   }
 };
