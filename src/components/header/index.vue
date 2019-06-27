@@ -16,9 +16,23 @@
         </div>
       </el-image>
     </el-menu-item>
-    <el-menu-item :index="item.name"
+    <el-menu-item class="hidden-sm-and-down"
       v-for="(item,index) in list"
+      :index="item.name"
       :key="index">{{item.label}}</el-menu-item>
+    <el-menu-item class="littel hidden-md-and-up">
+      <el-dropdown trigger="click"
+        @command="handleSelect">
+        <span class="el-dropdown-link">
+          <i class="fa fa-align-justify"></i>
+        </span>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item v-for="(item,index) in list"
+            :command="item.name"
+            :key="index">{{item.label}}</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+    </el-menu-item>
   </el-menu>
 </template>
 <style lang="less" src="./index.less"></style>

@@ -23,6 +23,8 @@ import formCreate from 'form-create/element';
 import Element from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import 'element-ui/lib/theme-chalk/display.css';
+// ECharts-数据可视化
+import echarts from 'echarts';
 // swiper-轮播
 import VueAwesomeSwiper from 'vue-awesome-swiper';
 import 'swiper/dist/css/swiper.css';
@@ -45,6 +47,7 @@ promise.polyfill();
 Vue.prototype.$globalmethod = globalmethod;
 Vue.prototype.$CryptoJS = CryptoJS;
 Vue.prototype.$lodash = lodash;
+Vue.prototype.$echarts = echarts;
 
 // 取消vue所有的日志与警告
 Vue.config.silent = true;

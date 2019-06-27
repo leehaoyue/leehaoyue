@@ -1,7 +1,9 @@
 <!-- 朝花夕拾（前言） -->
 <template>
-  <el-row class="foreword">
-    <!-- 顶部图片 -->
+  <el-row class="foreword"
+    type="flex"
+    justify="space-around">
+    <!-- 轮播 -->
     <el-col class="topImg" :span="24">
       <el-image class="huge hidden-sm-and-down"
         fit="cover"
@@ -27,6 +29,26 @@
           :key="index"
           v-for="(item, index) in sentence">{{item}}</swiper-slide>
       </swiper>
+    </el-col>
+    <!-- 标签页 -->
+    <el-col class="tabPage"
+      :xs="24" :sm="24" :md="22" :lg="20" :xl="20">
+      <el-tabs v-model="activeName" type="card">
+        <el-tab-pane v-for="(item, index) in tabPage"
+          :name="item.name"
+          :key="index">
+          <span slot="label">
+            {{item.label}}<i :class="item.labelicon"></i>
+          </span>
+          <h2>{{item.content.title}}</h2>
+          <el-divider>
+            <i :class="item.dividericon"></i>
+          </el-divider>
+          <article>
+            {{item.content.content}}
+          </article>
+        </el-tab-pane>
+      </el-tabs>
     </el-col>
   </el-row>
 </template>
