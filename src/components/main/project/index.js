@@ -28,6 +28,13 @@ export default {
       }
     };
   },
+  computed: {
+    cardList() {
+      return data.card.map(item => {
+        return Object.assign({}, item, this.$mock('/project/wordClouds'));
+      });
+    }
+  },
   mounted() {
     this.drawInitAnimals();
     this.drawInitWordClouds();

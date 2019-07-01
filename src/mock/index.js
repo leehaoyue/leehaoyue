@@ -19,6 +19,14 @@ Vue.prototype.$mock = (info) => {
       value: () => {
         return Mock.Random.integer(1, 5);
       }
+    }],
+    '/project/card|1': [{
+      title: () => {
+        return Mock.Random.ctitle();
+      },
+      content: () => {
+        return Mock.Random.cparagraph(3);
+      }
     }]
   })[info];
 };

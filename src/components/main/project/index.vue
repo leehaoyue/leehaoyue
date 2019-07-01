@@ -10,6 +10,11 @@
         :chartStyle="wordClouds.style"
         :options="wordClouds.options"></basicEcharts>
     </el-col>
+    <el-col :xs="12" :sm="8" :md="6" :lg="4" :xl="4"
+      v-for="(item, index) in cardList"
+      :key="index">
+      <i :class="item.icon"></i>
+    </el-col>
   </el-row>
 </template>
 <style lang="less" src="./index.less"></style>
