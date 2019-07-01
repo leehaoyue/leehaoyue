@@ -11,6 +11,14 @@ Vue.prototype.$mock = (info) => {
       content: () => {
         return Mock.Random.cparagraph(50);
       }
+    }],
+    '/project/wordClouds|10-20': [{
+      name: () => {
+        return Mock.Random.cword(3, 5);
+      },
+      value: () => {
+        return Mock.Random.integer(1, 5);
+      }
     }]
   })[info];
 };

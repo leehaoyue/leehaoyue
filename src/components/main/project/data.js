@@ -548,31 +548,57 @@ const animals = [
 ];
 
 export default {
-  animals: animals,
-  option: {
-    series: [
-      {
-        name: 'animals',
-        type: 'graph',
-        data: animals[0].nodes,
-        links: animals[0].links,
-        lineStyle: {
-          normal: {
-            width: 2,
-            curveness: 0,
-            color: '#409EFF'
+  animals: {
+    animals: animals,
+    option: {
+      series: [
+        {
+          name: 'animals',
+          type: 'graph',
+          data: animals[0].nodes,
+          links: animals[0].links,
+          lineStyle: {
+            normal: {
+              width: 2,
+              curveness: 0,
+              color: '#409EFF'
+            }
+          },
+          itemStyle: {
+            normal: {
+              color: '#409EFF'
+            }
+          },
+          silent: true,
+          symbolSize: 1
+        }
+      ],
+      animationDuration: 1500,
+      animationDurationUpdate: 1500
+    }
+  },
+  wordClouds: {
+    tooltip: {
+      show: false
+    },
+    series: [{
+      type: 'wordCloud',
+      gridSize: 20,
+      sizeRange: [12, 50],
+      rotationRange: [0, 0],
+      shape: 'circle',
+      textStyle: {
+        normal: {
+          color: () => {
+            return 'rgb(' + [
+              Math.round(Math.random() * 160),
+              Math.round(Math.random() * 160),
+              Math.round(Math.random() * 160)
+            ].join(',') + ')';
           }
-        },
-        itemStyle: {
-          normal: {
-            color: '#409EFF'
-          }
-        },
-        silent: true,
-        symbolSize: 1
-      }
-    ],
-    animationDuration: 1500,
-    animationDurationUpdate: 1500
+        }
+      },
+      data: []
+    }]
   }
 };

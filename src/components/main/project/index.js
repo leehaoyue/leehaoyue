@@ -5,57 +5,71 @@ export default {
   data() {
     return {
       index: 0,
-      animals: data.animals,
-      options: data.option,
-      chartStyle: {
-        width: '100vw',
-        height: '40vh',
-        background: '#fff'
+      animals: {
+        name: 'projectAnimals',
+        animals: data.animals.animals,
+        options: data.animals.option,
+        style: {
+          width: '100vw',
+          height: '40vh',
+          background: '#fff'
+        },
+        loop: setTimeout(() => {})
       },
-      myChart: '',
-      loop: () => {}
+      wordClouds: {
+        name: 'projectWordClouds',
+        options: data.wordClouds,
+        style: {
+          width: '100vw',
+          height: '40vh',
+          background: 'transparent'
+        },
+        loop: setTimeout(() => {})
+      }
     };
   },
   mounted() {
-    clearInterval(this.loop);
-    this.drawLine();
-    window.addEventListener('resize', () => {
-      this.myChart.resize();
-    });
+    this.drawInitAnimals();
+    this.drawInitWordClouds();
   },
   methods: {
-    drawLine() {
+    // 动物
+    drawInitAnimals() {
+      this.animals.options.series[0].symbolSize = 2;
+      this.drawLineAnimals();
+    },
+    drawLineAnimals() {
       let that = this;
 
-      that.myChart = that.$echarts.init(that.$refs.myChart);
-      that.myChart.setOption(that.options);
-      that.options.series[0].symbolSize = 6;
-      this.loop = setInterval(() => {
-        if (that.index === that.animals.length - 1) {
+      clearTimeout(that.animals.loop);
+      that.animals.loop = setTimeout(() => {
+        if (that.index === that.animals.animals.length - 1) {
           that.index = 0;
-        } else if (that.index === 0) {
-          that.index = that.animals.length - 1;
         } else {
           that.index++;
         }
-        that.options.series[0].data = that.animals[that.index].nodes;
-        //两种过渡效果
-        if (Math.random() > 0.5) {
-          that.options.series[0].links = that.animals[that.index].links;
-          that.myChart.setOption(that.options);
-          that.options.series[0].symbolSize = 2;
-          that.myChart.setOption(that.options);
-        } else {
-          that.options.series[0].links = [];
-          that.myChart.setOption(that.options);
-          that.options.series[0].links = that.animals[that.index].links;
-          that.options.series[0].symbolSize = 2;
-          that.myChart.setOption(that.options);
-        }
+        that.animals.options.series[0].data = that.animals.animals[that.index].nodes;
+        that.animals.options.series[0].links = that.animals.animals[that.index].links;
+        that.drawLineAnimals();
       }, 3000);
+    },
+    // 词云
+    drawInitWordClouds() {
+      this.wordClouds.options.series[0].data = this.$mock('/project/wordClouds');
+      this.drawLineWordClouds();
+    },
+    drawLineWordClouds() {
+      let that = this;
+
+      clearTimeout(that.wordClouds.loop);
+      that.wordClouds.loop = setTimeout(() => {
+        that.wordClouds.options.series[0].data = that.$mock('/project/wordClouds');
+        that.drawLineWordClouds();
+      }, 6000);
     }
   },
   beforeDestroy() {
-    clearInterval(this.loop);
+    clearInterval(this.animals.loop);
+    clearInterval(this.wordClouds.loop);
   }
 };
