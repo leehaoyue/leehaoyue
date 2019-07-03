@@ -1,6 +1,10 @@
 <!-- 移花接木（笔记） -->
 <template>
-  <div class="notes">笔记</div>
+  <el-row class="notes">
+    <el-col :span="12">
+      <navMenu :navList="navList"></navMenu>
+    </el-col>
+  </el-row>
 </template>
 <style lang="less" src="./index.less"></style>
 <script src="./index.js"></script>

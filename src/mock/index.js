@@ -25,7 +25,7 @@ Vue.prototype.$mock = (info) => {
         return Mock.Random.ctitle();
       },
       content: () => {
-        return Mock.Random.cparagraph(3);
+        return Mock.Random.csentence();
       }
     }]
   })[info];

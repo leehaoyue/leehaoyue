@@ -10,10 +10,28 @@
         :chartStyle="wordClouds.style"
         :options="wordClouds.options"></basicEcharts>
     </el-col>
-    <el-col :xs="12" :sm="8" :md="6" :lg="4" :xl="4"
-      v-for="(item, index) in cardList"
-      :key="index">
-      <i :class="item.icon"></i>
+    <el-col class="cardList"
+      shadow="hover"
+      :key="index"
+      :xs="12" :sm="8" :md="8" :lg="6" :xl="4"
+      v-for="(item, index) in cardList">
+      <el-card class="box-card">
+        <i :class="item.icon"></i>
+        <el-tooltip effect="dark"
+          placement="top-start"
+          :content="item.title"
+          :hide-after="1500">
+          <h2>{{item.title}}</h2>
+        </el-tooltip>
+        <el-tooltip effect="light"
+          placement="bottom-start"
+          :content="item.title"
+          :hide-after="1500">
+          <article>
+            {{item.content}}
+          </article>
+        </el-tooltip>
+      </el-card>
     </el-col>
   </el-row>
 </template>

@@ -31,7 +31,7 @@ export default {
   computed: {
     cardList() {
       return data.card.map(item => {
-        return Object.assign({}, item, this.$mock('/project/wordClouds'));
+        return Object.assign({}, item, this.$mock('/project/card'));
       });
     }
   },

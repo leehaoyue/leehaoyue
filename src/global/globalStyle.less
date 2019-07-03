@@ -2,6 +2,10 @@
 @min_width: 100vw;
 @min_height: 100vh;
 
+/* 页头、页脚高度（同globaldata） */
+@header: 60px;
+@footer: 60px;
+
 /* 字体 */
 @font-size: 14px;
 
@@ -50,8 +54,16 @@
 /* 超出显示省略号 */
 .beyond-scope {
   overflow: hidden;
-  text-overflow:ellipsis;
+  text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* 超出显示省略号（默认超出2行） */
+.beyond-scope-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 /* 滚动条样式 */
