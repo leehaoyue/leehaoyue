@@ -1,8 +1,13 @@
 <!-- 移花接木（笔记） -->
 <template>
-  <el-row class="notes">
-    <el-col :span="12">
-      <navMenu :navList="navList"></navMenu>
+  <el-row class="notes" type="flex">
+    <el-col class="navList">
+      <navMenu :navList="navList"
+        :defaultIndex="defaultIndex"
+        @selectMenu="selectMenu"></navMenu>
+    </el-col>
+    <el-col class="markdownPreview">
+      <article v-html="src"></article>
     </el-col>
   </el-row>
 </template>

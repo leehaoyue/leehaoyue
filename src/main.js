@@ -10,6 +10,7 @@ import './registerServiceWorker';
 // promise兼容性处理（ie、火狐）
 import promise from 'es6-promise';
 // axios-HTTP库
+import axios from 'axios';
 import '@/axios/index';
 // CryptoJS-加密生成数字签名
 import CryptoJS from 'crypto-js';
@@ -44,6 +45,7 @@ Vue.use(components);
 
 promise.polyfill();
 
+Vue.prototype.$axios = axios;
 Vue.prototype.$globalmethod = globalmethod;
 Vue.prototype.$CryptoJS = CryptoJS;
 Vue.prototype.$lodash = lodash;

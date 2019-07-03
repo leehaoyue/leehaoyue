@@ -1,24 +1,19 @@
 <!-- 侧边栏 -->
 <template>
-  <el-menu
-    default-active="1"
-    class="navManu el-menu-vertical-demo">
-    <el-submenu :index="index"
-      :key="index"
-      v-for="(item, index) in navList">
-      <template slot="title">
-        <i :class="item.icon" v-if="item.icon"></i>
-        <span>{{item.label}}</span>
-      </template>
-      <div v-if="!$globalmethod.isEmpty(item.children)">
-        <el-submenu :index="data.index"
-            :key="num"
-            v-for="(data, num) in item.children">
-          <sub :subList="data"></sub>
-        </el-submenu>
-      </div>
-    </el-submenu>
-  </el-menu>
+  <div class="navManu">
+    <el-menu :collapse="isCollapse"
+      active-text-color="#67C23A"
+      :default-active="defaultIndex || navList[0].index"
+      class="el-menu-vertical-demo"
+      @select="selectMenu">
+      <subItem :key="index"
+        v-for="(item, index) in navList"
+        :subList="item"></subItem>
+    </el-menu>
+    <el-button @click="isCollapse = !isCollapse">
+      <i :class="collapseIcon"></i>
+    </el-button>
+  </div>
 </template>
 <style src="./index.less" lang="less"></style>
 <script src="./index.js"></script>

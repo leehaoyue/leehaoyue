@@ -1,8 +1,19 @@
 @import '../../../global/globalStyle.less';
 
 .notes {
-  .navManu {
-    overflow: auto;
+  .navList {
+    width: auto;
+  }
+  .navManu, .markdownPreview {
     height: calc(100vh - @header - @footer);
+  }
+  .markdownPreview {
+    padding: 10px;
+    overflow: auto;
+    article {
+      padding: 10px;
+      background: #fff;
+      min-height: calc(100% - 20px);
+    }
   }
 }

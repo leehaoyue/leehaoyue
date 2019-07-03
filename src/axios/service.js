@@ -3,7 +3,7 @@ import { MessageBox, Loading } from 'element-ui';
 
 export default {
   // 获取数据
-  getData (url, method, params, baseURL) {
+  getData (url, method, params, baseURL, responseType) {
     let methods = 'post';
 
     if (method) {
@@ -18,21 +18,23 @@ export default {
     return new Promise((resolve, reject) => {
       Vue.axios({...obj,
         baseURL: baseURL || process.env.API,
+        responseType: responseType || 'json',
         method: methods,
         url: url
       }).then((res) => {
-        if (res.data && (res.data.code===200 || res.data.code==='success')) {
+        if (res) {
           resolve(res);
         } else {
           Loading.service({customClass: 'pageLoading', background: 'transparent'}).close();
           MessageBox({
             title: '提示',
-            message: res.data.msg,
+            // message: res.data.msg,
+            message: '请求错误，请重试！',
             showCancelButton: true,
             type: 'warning'
           }).then(action => {
             if (action === 'confirm') {
-              this.getData(url, methods, params, baseURL)
+              this.getData(url, methods, params, baseURL, responseType)
             }
           })
         }

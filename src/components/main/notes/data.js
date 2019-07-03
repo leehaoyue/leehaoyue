@@ -1,6 +1,6 @@
 export default {
   navList: [{
-    icon: '',
+    icon: 'fa fa-bandcamp',
     label: '简介',
     index: '1',
     children: [{
@@ -13,7 +13,7 @@ export default {
       index: '1-2'
     }]
   }, {
-    icon: '',
+    icon: 'fa fa-quora',
     label: '变量',
     index: '2',
     children: [{
@@ -22,15 +22,15 @@ export default {
       index: '2-1'
     }]
   }, {
-    icon: '',
+    icon: 'fa fa-h-square',
     label: '函数',
     index: '3'
   }, {
-    icon: '',
+    icon: 'fa fa-window-restore',
     label: '作用域',
     index: '4'
   }, {
-    icon: '',
+    icon: 'fa fa-circle-o',
     label: '面向对象',
     index: '5',
     children: [{
@@ -44,10 +44,10 @@ export default {
     }, {
       icon: '',
       label: 'this',
-      index: '5-2'
+      index: '5-3'
     }]
   }, {
-    icon: '',
+    icon: 'fa fa-compass',
     label: 'ES6',
     index: '6'
   }]

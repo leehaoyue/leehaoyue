@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import axios from 'axios'
+import VueAxios from 'vue-axios'
 import Qs from 'qs'
 import service from './service.js'
 
@@ -39,4 +40,4 @@ axiosInstance.interceptors.response.use(res => {
   // 响应失败
 })
 
-Vue.use(axiosInstance)
+Vue.use(VueAxios, axiosInstance)
