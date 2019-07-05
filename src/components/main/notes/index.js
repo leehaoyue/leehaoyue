@@ -1,6 +1,5 @@
 import data from './data.js';
 import marked from 'marked';
-// import mark from './markdown/README';
 
 export default {
   name: 'notes',
@@ -12,18 +11,13 @@ export default {
   },
   computed: {
     defaultIndex() {
-      // this.src = this.getDefault(this.navList, 'children', 'index');
+      this.getContent(this.getDefault(this.navList, 'children', 'index'));
       return this.getDefault(this.navList, 'children', 'index');
     }
   },
-  created() {
-    this.src = marked('', {
-      baseUrl: './markdown/README'
-    });
-  },
   methods: {
     selectMenu(info) {
-      this.src = info;
+      this.src = this.getContent(info);
     },
     getDefault(arrobj, key, dkey) {
       for (let item in arrobj) {
@@ -38,6 +32,13 @@ export default {
         }
         return this.getDefault(item[key], key, dkey);
       }
+    },
+    getContent(filename) {
+      import('./markdown/' + filename).then(module =>{
+        this.src = marked(module.default);
+      }).catch(err => {
+        this.src = marked(err.message);
+      });
     }
   }
 };

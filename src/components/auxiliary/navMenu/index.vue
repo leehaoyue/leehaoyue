@@ -1,10 +1,10 @@
 <!-- 侧边栏 -->
 <template>
   <div class="navManu">
-    <el-menu :collapse="isCollapse"
+    <el-menu class="el-menu-vertical-demo"
       active-text-color="#67C23A"
+      :collapse="isCollapse"
       :default-active="defaultIndex || navList[0].index"
-      class="el-menu-vertical-demo"
       @select="selectMenu">
       <subItem :key="index"
         v-for="(item, index) in navList"
