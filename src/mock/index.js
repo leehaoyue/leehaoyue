@@ -27,6 +27,9 @@ Vue.prototype.$mock = (info) => {
       content: () => {
         return Mock.Random.csentence();
       }
-    }]
+    }],
+    '/blog/liquidfill': () => {
+      return Mock.Random.cword(3, 5);
+    }
   })[info];
 };

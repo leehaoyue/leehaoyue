@@ -2,13 +2,13 @@
 <template>
   <el-menu-item :index="subList.index"
     v-if="$globalmethod.isEmpty(subList.children)">
-    <i :class="subList.icon" v-if="subList.icon"></i>
+    <i :class="subList.icon" v-if="subList.icon"></i>&nbsp;&nbsp;
     <span>{{subList.label}}</span>
   </el-menu-item>
   <el-submenu v-else
     :index="subList.index">
     <template slot="title">
-      <i :class="subList.icon" v-if="subList.icon"></i>
+      <i :class="subList.icon" v-if="subList.icon"></i>&nbsp;&nbsp;
       <span>{{subList.label}}</span>
     </template>
     <subList :subList="item"

@@ -1,4 +1,5 @@
 require('echarts-wordcloud');
+require('echarts-liquidfill');
 
 export default {
   name: 'echarts',

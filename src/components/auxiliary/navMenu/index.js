@@ -8,7 +8,8 @@ export default {
   },
   data() {
     return {
-      isCollapse: false
+      isCollapse: false,
+      defaultActive: this.defaultIndex
     };
   },
   computed: {
@@ -17,8 +18,16 @@ export default {
     }
   },
   methods: {
-    selectMenu(info) {
-      this.$emit('selectMenu', info);
+    selectMenuOpen(info) {
+      this.defaultActive = info;
+      this.$emit('selectMenuOpen', info);
+    },
+    selectMenuClose(info) {
+      this.$emit('selectMenuClose', info);
+    },
+    selectMenuSub(info) {
+      this.defaultActive = info;
+      this.$emit('selectMenuSub', info);
     }
   },
   components: {

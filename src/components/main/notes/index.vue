@@ -4,7 +4,8 @@
     <el-col class="navList">
       <navMenu :navList="navList"
         :defaultIndex="defaultIndex"
-        @selectMenu="selectMenu"></navMenu>
+        @selectMenuOpen="selectMenuOpen"
+        @selectMenuSub="selectMenuSub"></navMenu>
     </el-col>
     <el-col class="markdownPreview">
       <article v-html="src"></article>

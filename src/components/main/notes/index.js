@@ -16,7 +16,10 @@ export default {
     }
   },
   methods: {
-    selectMenu(info) {
+    selectMenuOpen(info) {
+      this.src = this.getContent(info);
+    },
+    selectMenuSub(info) {
       this.src = this.getContent(info);
     },
     getDefault(arrobj, key, dkey) {

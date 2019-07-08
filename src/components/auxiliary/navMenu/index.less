@@ -8,9 +8,18 @@
     &.el-menu--collapse {
       min-width: auto;
     }
+    &.el-menu--horizontal {
+      .el-submenu, .el-menu-item {
+        float: none;
+      }
+    }
     .el-menu-item, .el-submenu__title {
-      .fa {
-        margin-right: 0.5rem;
+      border: none;
+      display: flex;
+      align-items: center;
+      .el-submenu__icon-arrow {
+        margin-left: auto;
+        position: static;
       }
     }
   }
