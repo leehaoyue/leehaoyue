@@ -26,7 +26,7 @@ export default {
     ]]);
     console.log('%c', 'background: url(http://imgsrc.baidu.com/forum/pic/item/77421dd5ad6eddc49415075637dbb6fd506633e7.jpg) no-repeat center;padding-left:80px;padding-bottom: 80px;border-radius:50%;');
     console.groupEnd();
-    console.log('%c满纸荒唐言, 一把辛酸泪\n无（一）所（无）不（是）能（处）的：\n攻（代）城（码）狮（狗）———Lee\nhttps://leehaoyue.github.io/leehaoyue/index.html', `
+    console.log('%c满纸荒唐言, 一把辛酸泪\n无（一）所（无）不（是）能（处）的：\n攻（代）城（码）狮（狗）———Lee\nhttps://leehaoyue.github.io/leehaoyue/', `
        color: blue;
        font-size: x-large;
     `);
