@@ -10,6 +10,7 @@
           <layout></layout>
         </keep-alive>
       </transition>
+      <el-backtop target=".container .el-main"></el-backtop>
     </el-main>
     <el-footer :height="$globaldata.container.footer.height">
       <basebar></basebar>

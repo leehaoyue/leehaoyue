@@ -1,3 +1,23 @@
 @import '../../../global/globalStyle.less';
 
-.blog {}
+.blog {
+  // 底部卡片
+  .cardList {
+    padding: 5px;
+    .el-card {
+      max-height: 30vh;
+      .el-image {
+        width: 100%;
+        height: 80px;
+      }
+      h2 {
+        .beyond-scope;
+        margin: 0 0 0.5rem 0;
+      }
+      article {
+        .beyond-scope-clamp;
+        color: @grayScale-color_3;
+      }
+    }
+  }
+}

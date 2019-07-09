@@ -14,11 +14,6 @@ const $globaldata = {
     serviceDelete: '/api/delete', // 删除图片地址
     url: '[imgPath]', // 图片服务器地址
     hash: '[imgHash]' // 随机字符串，用于删除文件
-  },
-  interfaceMapping: (key) => { // 接口映射（错误提示）
-    return {
-      '/admin/org/all': '获取所有用户 - 失败'
-    }[key] || '服务器错误，请重试！'
   }
 };
 

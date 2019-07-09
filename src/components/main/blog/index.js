@@ -22,7 +22,8 @@ export default {
           name: 'blogLarge'
         },
         option: data.option
-      }
+      },
+      cardList: this.$service.getData('/blog/card')
     };
   }
 };

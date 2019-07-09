@@ -24,13 +24,13 @@ export default {
         label: '愚公移山',
         labelicon: 'fa fa-angle-right',
         dividericon: 'fa fa-leaf',
-        content: this.$mock('/foreword/tabPage')
+        content: this.$service.getData('/foreword/tabPage')
       }, {
         name: 'second',
         label: '草木皆兵',
         labelicon: 'fa fa-angle-right',
         dividericon: 'fa fa-envira',
-        content: this.$mock('/foreword/tabPage')
+        content: this.$service.getData('/foreword/tabPage')
       }]
     };
   }

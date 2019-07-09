@@ -1,9 +1,16 @@
 import Vue from 'vue';
+import $mock from '@/mock/index.js';
+import $server from './interfaceList.js';
 import { MessageBox, Loading } from 'element-ui';
 
 export default {
   // 获取数据
   getData (url, method, params, baseURL, responseType) {
+    Loading.service({customClass: 'pageLoading', background: 'transparent'});
+    if ($server[url].isMock) {
+      Loading.service({customClass: 'pageLoading', background: 'transparent'}).close();
+      return $mock(url);
+    }
     let methods = 'post';
 
     if (method) {
@@ -22,14 +29,14 @@ export default {
         method: methods,
         url: url
       }).then((res) => {
-        if (res) {
+        if (res.data && res.data.code===200) {
           resolve(res);
         } else {
           Loading.service({customClass: 'pageLoading', background: 'transparent'}).close();
           MessageBox({
             title: '提示',
             // message: res.data.msg,
-            message: '请求错误，请重试！',
+            message: $server[url].errmsg,
             showCancelButton: true,
             type: 'warning'
           }).then(action => {
@@ -39,12 +46,17 @@ export default {
           })
         }
       }).catch((err) => {
-        reject(err);
+        reject('服务器错误，请重试！');
       })
     });
   },
   // 上传文件
   uploadFile(url, method, params, baseURL) {
+    Loading.service({customClass: 'pageLoading', background: 'transparent'});
+    if ($server[url].isMock) {
+      Loading.service({customClass: 'pageLoading', background: 'transparent'}).close();
+      return $mock(url);
+    }
     let methods = 'post';
 
     if (method) {
@@ -82,13 +94,13 @@ export default {
           'Content-Type': 'multipart/form-data'
         }
       }).then((res) => {
-        if (res.data && (res.data.code===200 || res.data.code==='success')) {
+        if (res.data && res.data.code===200) {
           resolve(res);
         } else {
           Loading.service({customClass: 'pageLoading', background: 'transparent'}).close();
           MessageBox({
             title: '提示',
-            message: res.data.msg,
+            message: $server[url].errmsg,
             showCancelButton: true,
             type: 'warning'
           }).then(action => {
@@ -98,7 +110,7 @@ export default {
           })
         }
       }).catch((err) => {
-        reject(err);
+        reject('服务器错误，请重试！');
       })
     });
   }

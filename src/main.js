@@ -60,5 +60,8 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
+  mounted() {
+    this.$globalmethod.defaultConsole();
+  },
   render: h => h(App)
 }).$mount('#app');

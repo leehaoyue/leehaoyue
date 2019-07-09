@@ -23,9 +23,9 @@
           :hide-after="1500">
           <h2>{{item.title}}</h2>
         </el-tooltip>
-        <el-tooltip effect="light"
+        <el-tooltip effect="dark"
           placement="bottom-start"
-          :content="item.title"
+          :content="item.content"
           :hide-after="1500">
           <article>
             {{item.content}}

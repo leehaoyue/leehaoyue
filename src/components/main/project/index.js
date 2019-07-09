@@ -31,7 +31,7 @@ export default {
   computed: {
     cardList() {
       return data.card.map(item => {
-        return Object.assign({}, item, this.$mock('/project/card'));
+        return Object.assign({}, item, this.$service.getData('/project/card'));
       });
     }
   },
@@ -62,7 +62,7 @@ export default {
     },
     // 词云
     drawInitWordClouds() {
-      this.wordClouds.options.series[0].data = this.$mock('/project/wordClouds');
+      this.wordClouds.options.series[0].data = this.$service.getData('/project/wordClouds');
       this.drawLineWordClouds();
     },
     drawLineWordClouds() {
@@ -70,9 +70,9 @@ export default {
 
       clearTimeout(that.wordClouds.loop);
       that.wordClouds.loop = setTimeout(() => {
-        that.wordClouds.options.series[0].data = that.$mock('/project/wordClouds');
+        that.wordClouds.options.series[0].data = that.$service.getData('/project/wordClouds');
         that.drawLineWordClouds();
-      }, 6000);
+      }, 3000);
     }
   },
   beforeDestroy() {

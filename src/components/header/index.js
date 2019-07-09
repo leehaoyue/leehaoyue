@@ -27,6 +27,7 @@ export default {
     handleSelect(info) {
       if (!this.$globalmethod.isEmpty(info)) {
         this.$router.push({name: info});
+        this.activeIndex = info;
       }
     }
   }

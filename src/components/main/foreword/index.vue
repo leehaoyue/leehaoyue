@@ -11,12 +11,18 @@
         <div slot="placeholder" class="image-slot">
           加载中<span class="dot">...</span>
         </div>
+        <div slot="error" class="image-slot">
+          <i class="el-icon-picture-outline"></i>
+        </div>
       </el-image>
       <el-image class="little hidden-md-and-up"
         fit="cover"
         :src="require('../../../assets/foreword_1.png')">
         <div slot="placeholder" class="image-slot">
           加载中<span class="dot">...</span>
+        </div>
+        <div slot="error" class="image-slot">
+          <i class="el-icon-picture-outline"></i>
         </div>
       </el-image>
       <swiper class="huge hidden-sm-and-down" :options="swiperOption">
