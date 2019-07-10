@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.306ec37cf7ce1f88b397d3060fd8dd53.js"
+  "precache-manifest.e41102f4b7cbfba08e19961aa0cc37cc.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "leehaoyue"});
