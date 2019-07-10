@@ -25,15 +25,14 @@ export default {
           background: 'transparent'
         },
         loop: setTimeout(() => {})
-      }
+      },
+      cardList: []
     };
   },
-  computed: {
-    cardList() {
-      return data.card.map(item => {
-        return Object.assign({}, item, this.$service.getData('/project/card'));
-      });
-    }
+  created() {
+    data.card.forEach(item => {
+      this.getCrad(item);
+    });
   },
   mounted() {
     this.drawInitAnimals();
@@ -62,17 +61,26 @@ export default {
     },
     // 词云
     drawInitWordClouds() {
-      this.wordClouds.options.series[0].data = this.$service.getData('/project/wordClouds');
-      this.drawLineWordClouds();
+      this.$service.getData('/project/wordClouds').then(res => {
+        this.wordClouds.options.series[0].data = res.data;
+        this.drawLineWordClouds();
+      });
     },
     drawLineWordClouds() {
       let that = this;
 
       clearTimeout(that.wordClouds.loop);
       that.wordClouds.loop = setTimeout(() => {
-        that.wordClouds.options.series[0].data = that.$service.getData('/project/wordClouds');
-        that.drawLineWordClouds();
+        that.$service.getData('/project/wordClouds').then(res => {
+          that.wordClouds.options.series[0].data = res.data;
+          that.drawLineWordClouds();
+        });
       }, 3000);
+    },
+    getCrad(obj) {
+      this.$service.getData('/project/card').then(res => {
+        this.cardList.push(Object.assign({}, obj, res.data));
+      });
     }
   },
   beforeDestroy() {

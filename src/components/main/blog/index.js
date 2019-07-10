@@ -23,7 +23,17 @@ export default {
         },
         option: data.option
       },
-      cardList: this.$service.getData('/blog/card')
+      cardList: ''
     };
+  },
+  created() {
+    this.getCardList();
+  },
+  methods: {
+    getCardList() {
+      this.$service.getData('/blog/card').then(res => {
+        this.cardList = res.data;
+      });
+    }
   }
 };

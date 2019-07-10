@@ -6,23 +6,25 @@ import { MessageBox, Loading } from 'element-ui';
 export default {
   // 获取数据
   getData (url, method, params, baseURL, responseType) {
-    Loading.service({customClass: 'pageLoading', background: 'transparent'});
-    if ($server[url].isMock) {
-      Loading.service({customClass: 'pageLoading', background: 'transparent'}).close();
-      return $mock(url);
-    }
-    let methods = 'post';
-
-    if (method) {
-      methods = method
-    }
-    let obj = methods === 'post' ? {
-      data: params
-    } : {
-      params: params
-    };
-
     return new Promise((resolve, reject) => {
+      if ($server[url].isMock) {
+        let res = {
+          data: $mock(url)
+        };
+        resolve(res);
+        return;
+      }
+
+      Loading.service({customClass: 'pageLoading', background: 'transparent'});
+      let methods = 'post';
+      if (method) {
+        methods = method
+      }
+      let obj = methods === 'post' ? {
+        data: params
+      } : {
+        params: params
+      };
       Vue.axios({...obj,
         baseURL: baseURL || process.env.API,
         responseType: responseType || 'json',
@@ -52,17 +54,20 @@ export default {
   },
   // 上传文件
   uploadFile(url, method, params, baseURL) {
-    Loading.service({customClass: 'pageLoading', background: 'transparent'});
-    if ($server[url].isMock) {
-      Loading.service({customClass: 'pageLoading', background: 'transparent'}).close();
-      return $mock(url);
-    }
-    let methods = 'post';
-
-    if (method) {
-      methods = method
-    }
     return new Promise((resolve, reject) => {
+      if ($server[url].isMock) {
+        let res = {
+          data: $mock(url)
+        };
+        resolve(res);
+        return;
+      }
+      Loading.service({customClass: 'pageLoading', background: 'transparent'});
+      let methods = 'post';
+
+      if (method) {
+        methods = method
+      }
       let formData = new FormData();
       let paramsObj = Object.assign({}, params);
 

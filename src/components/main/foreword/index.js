@@ -24,14 +24,26 @@ export default {
         label: '愚公移山',
         labelicon: 'fa fa-angle-right',
         dividericon: 'fa fa-leaf',
-        content: this.$service.getData('/foreword/tabPage')
+        content: ''
       }, {
         name: 'second',
         label: '草木皆兵',
         labelicon: 'fa fa-angle-right',
         dividericon: 'fa fa-envira',
-        content: this.$service.getData('/foreword/tabPage')
+        content: ''
       }]
     };
+  },
+  created() {
+    for (let i in this.tabPage) {
+      this.getTabPage(i);
+    }
+  },
+  methods: {
+    getTabPage(n) {
+      this.$service.getData('/foreword/tabPage').then(res => {
+        this.tabPage[n].content = res.data;
+      });
+    }
   }
 };

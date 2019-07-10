@@ -60,6 +60,18 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
+  watch: {
+    $route: {
+      handler() {
+        const loading = this.$loading({customClass: 'pageLoading', background: 'transparent'});
+
+        this.$nextTick(() => {
+          loading.close();
+        });
+      },
+      deep: true
+    }
+  },
   mounted() {
     this.$globalmethod.defaultConsole();
   },
