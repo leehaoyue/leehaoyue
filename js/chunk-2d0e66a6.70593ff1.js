@@ -1,1 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0e66a6"],{"993c":function(n,c,w){"use strict";w.r(c),c["default"]="\n  # 笔记-原型链\n"}}]);
