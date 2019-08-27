@@ -12,12 +12,16 @@
     overflow: auto;
     article {
       line-height: 2;
+      overflow: auto;
       background: #fff;
       padding: 10px 30px;
-      min-height: calc(100% - 20px);
+      height: calc(100% - 20px);
       a {
         color: @primary-color;
         text-decoration: none;
+      }
+      * {
+        word-wrap: break-word !important;
       }
     }
   }

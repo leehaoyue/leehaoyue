@@ -17,7 +17,9 @@ export default {
   },
   methods: {
     selectMenuOpen(info) {
-      this.src = this.getContent(info);
+      if (info.indexOf('/')!==-1) {
+        this.src = this.getContent(info);
+      }
     },
     selectMenuSub(info) {
       this.src = this.getContent(info);

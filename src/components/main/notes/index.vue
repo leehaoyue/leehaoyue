@@ -9,6 +9,7 @@
     </el-col>
     <el-col class="markdownPreview">
       <article v-html="src"></article>
+      <el-backtop target=".markdownPreview"></el-backtop>
     </el-col>
   </el-row>
 </template>
