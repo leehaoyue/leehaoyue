@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d213726"],{ad5b:function(n,o,e){"use strict";e.r(o),o["default"]="\n**说说你对MVC和MVVM的理解**\n\n- MVC\n  - View 传送指令到 Controller\n\n  - Controller 完成业务逻辑后，要求 Model 改变状态\n\n  - Model 将新的数据发送到 View，用户得到反馈\n  \n所有通信都是单向的\n"}}]);

@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d2106a8"],{b895:function(n,e,t){"use strict";t.r(e),e["default"]="\n**git fetch和git pull的区别**\n\n- git pull：相当于是从远程获取最新版本并merge到本地\n- git fetch：相当于是从远程获取最新版本到本地，不会自动merge\n"}}]);

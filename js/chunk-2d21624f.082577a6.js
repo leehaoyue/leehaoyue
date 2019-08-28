@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d21624f"],{c0e1:function(n,c,w){"use strict";w.r(c),c["default"]="\n**线程与进程的区别**\n\n* 一个程序至少有一个进程，一个进程至少有一个线程\n* 线程的划分尺度小于进程，使得多线程程序的并发性高\n* 进程在执行过程中拥有独立的内存单元，而多个线程共享内存\n* 线程不能够独立执行，必须应用程序提供多个线程执行控制\n"}}]);
