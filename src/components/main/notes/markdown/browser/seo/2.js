@@ -1,3 +1,4 @@
+export default `
 ### 性能优化
 ---
 
@@ -48,7 +49,7 @@
 
 - 移动方面
   - 保证组件小于25k
-  - `Pack Components into a Multipart Document`
+  - \`Pack Components into a Multipart Document\`
 
 **你有用过哪些前端性能优化的方法？**
 
@@ -103,3 +104,4 @@
 * 使用 CDN 加速（访问最近服务器）
 * 启用 HTTP/2（多路复用，并行加载）
 * 前端自动化（gulp/webpack）
+`;

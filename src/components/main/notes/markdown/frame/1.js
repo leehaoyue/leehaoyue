@@ -1,3 +1,4 @@
+export default `
 **如何评价AngularJS和BackboneJS**
 
 - backbone具有依赖性，依赖underscore.js。Backbone + Underscore + jQuery(or Zepto)就比一个AngularJS 多出了2 次HTTP请求.
@@ -64,9 +65,9 @@
 **WEB应用从服务器主动推送Data到客户端有那些方式？**
 * AJAX 轮询
 * html5 服务器推送事件
-`(new EventSource(SERVER_URL)).addEventListener("message", func);`
+\`(new EventSource(SERVER_URL)).addEventListener("message", func);\`
 * html5 Websocket
- - `(new WebSocket(SERVER_URL)).addEventListener("message", func);`
+ - \`(new WebSocket(SERVER_URL)).addEventListener("message", func);\`
  
 **你怎么看待 Web App/hybrid App/Native App？（移动端前端 和 Web 前端区别？）**
 
@@ -114,4 +115,4 @@
 **说说最近最流行的一些东西吧？**
 
 - ES6、Node、React、Webpack
-
+`;

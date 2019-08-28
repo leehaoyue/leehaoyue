@@ -1,3 +1,4 @@
+export default `
 什么是mvvm？
 ---
 
@@ -30,7 +31,7 @@ vue的优点是什么？
 
 **父组件与子组件传值**
 
-```
+\`\`\`
 //父组件通过标签上面定义传值
 <template>
     <Main :obj="data"></Main>
@@ -67,11 +68,11 @@ vue的优点是什么？
     }
 </script>
 
-```
+\`\`\`
 
 **子组件向父组件传递数据**
 
-```
+\`\`\`
 //子组件通过$emit方法传递参数
 <template>
    <div v-on:click="events"></div>
@@ -103,27 +104,27 @@ vue的优点是什么？
     }
 </script>
 
-```
+\`\`\`
 
 路由之间跳转？
 ---
 
 **声明式（标签跳转）**
 
-```
+\`\`\`
 <router-link :to="index">
-```
+\`\`\`
 
 **编程式（ js跳转）**
 
-```
+\`\`\`
 router.push('index')
-```
+\`\`\`
 
 vuex是什么？怎么使用？哪种功能场景使用它？
 ---
 
-> vue框架中状态管理。在main.js引入store，注入。新建了一个目录`store`，….. `export` 。场景有：单页应用中，组件之间的状态。音乐播放、登录状态、加入购物车
+> vue框架中状态管理。在main.js引入store，注入。新建了一个目录\`store\`，….. \`export\` 。场景有：单页应用中，组件之间的状态。音乐播放、登录状态、加入购物车
 
 
 实现 Vue SSR
@@ -136,13 +137,13 @@ vuex是什么？怎么使用？哪种功能场景使用它？
 - app.js 作为客户端与服务端的公用入口，导出 Vue 根实例，供客户端 entry 与服务端 entry 使用。客户端 entry 主要作用挂载到 DOM 上，服务端 entry 除了创建和返回实例，还进行路由匹配与数据预获取。
 - webpack 为客服端打包一个 Client Bundle ，为服务端打包一个 Server Bundle 。
 - 服务器接收请求时，会根据 url，加载相应组件，获取和解析异步数据，创建一个读取 Server Bundle 的 BundleRenderer，然后生成 html 发送给客户端。
-- 客户端混合，客户端收到从服务端传来的 DOM 与自己的生成的 DOM 进行对比，把不相同的 DOM 激活，使其可以能够响应后续变化，这个过程称为客户端激活 。为确保混合成功，客户端与服务器端需要共享同一套数据。在服务端，可以在渲染之前获取数据，填充到 stroe 里，这样，在客户端挂载到 DOM 之前，可以直接从 store 里取数据。首屏的动态数据通过 `window.__INITIAL_STATE__ `发送到客户端
+- 客户端混合，客户端收到从服务端传来的 DOM 与自己的生成的 DOM 进行对比，把不相同的 DOM 激活，使其可以能够响应后续变化，这个过程称为客户端激活 。为确保混合成功，客户端与服务器端需要共享同一套数据。在服务端，可以在渲染之前获取数据，填充到 stroe 里，这样，在客户端挂载到 DOM 之前，可以直接从 store 里取数据。首屏的动态数据通过 \`window.__INITIAL_STATE__ \`发送到客户端
 
 
 > Vue SSR 的实现，主要就是把 Vue 的组件输出成一个完整 HTML, vue-server-renderer 就是干这事的
 
 
-- `Vue SSR `需要做的事多点（输出完整 HTML），除了` complier -> vnode`，还需如数据获取填充至 HTML、客户端混合（hydration）、缓存等等。
+- \`Vue SSR \`需要做的事多点（输出完整 HTML），除了\` complier -> vnode\`，还需如数据获取填充至 HTML、客户端混合（hydration）、缓存等等。
 相比于其他模板引擎（ejs, jade 等），最终要实现的目的是一样的，性能上可能要差点
 
 Vue 组件 data 为什么必须是函数
@@ -159,9 +160,9 @@ Vue computed 实现
 
 > 实现时，主要如下
 
-- 初始化 data， 使用 `Object.defineProperty` 把这些属性全部转为 `getter/setter`。
-- 初始化 `computed`, 遍历 `computed` 里的每个属性，每个 computed 属性都是一个 watch 实例。每个属性提供的函数作为属性的 getter，使用 Object.defineProperty 转化。
-- `Object.defineProperty getter` 依赖收集。用于依赖发生变化时，触发属性重新计算。
+- 初始化 data， 使用 \`Object.defineProperty\` 把这些属性全部转为 \`getter/setter\`。
+- 初始化 \`computed\`, 遍历 \`computed\` 里的每个属性，每个 computed 属性都是一个 watch 实例。每个属性提供的函数作为属性的 getter，使用 Object.defineProperty 转化。
+- \`Object.defineProperty getter\` 依赖收集。用于依赖发生变化时，触发属性重新计算。
 - 若出现当前 computed 计算属性嵌套其他 computed 计算属性时，先进行其他的依赖收集
 
 
@@ -181,4 +182,4 @@ Vue complier 实现
 ---
 
 > 用 timeline 工具。 大意是通过 timeline 来查看每个函数的调用时常，定位出哪个函数的问题，从而能判断哪个组件出了问题
-
+`;

@@ -1,3 +1,4 @@
+export default `
 **什么是单页面应用(SPA)？**
 
 * 单页面应用(SPA)是指用户在浏览器加载单一的HTML页面，后续请求都无需再离开此页
@@ -26,32 +27,32 @@
 
 * CommonJS -- 主要用在服务器端 node.js
 
-```javascript
+\`\`\`javascript
 var math = require('./math');
 math.add(2,3);
-```
+\`\`\`
 
 * AMD(异步模块定义) -- require.js
 
-```javascript
+\`\`\`javascript
 require(['./math'], function (math) {
     math.add(2, 3);
 });
-```
+\`\`\`
 
 * CMD(通用模块定义) -- sea.js 
-```javascript
+\`\`\`javascript
 var math = require('./math');
 math.add(2,3);
-```
+\`\`\`
 
 * ES6 模块
 
  
-```javascript
+\`\`\`javascript
 import {math} from './math';
 math.add(2, 3);
-```
+\`\`\`
 
 **AMD 与 CMD 规范的区别？**
 
@@ -72,23 +73,23 @@ math.add(2, 3);
    - AMD 默认一开始就载入全部依赖模块
    
 
-```javascript
+\`\`\`javascript
   define(['./a', './b'], function(a, b) {
       a.doSomething();
       b.doSomething();
   });
-```
+\`\`\`
 
 - CMD 依赖模块在用到时才就近载入
 
-```javascript
+\`\`\`javascript
   define(function(require, exports, module) {
       var a = require('./a');
       a.doSomething();
       var b = require('./b');
       b.doSomething();
   })
-```
+\`\`\`
 
 **requireJS的核心原理是什么？**
 
@@ -130,7 +131,7 @@ math.add(2, 3);
 * 单元测试框架：
 
  
-```javascript
+\`\`\`javascript
 // mocha 示例
 describe('Test add', function() {
   it('1 + 2 = 3', function() {
@@ -144,7 +145,7 @@ describe('Test add', function () {
         expect(add(1, 2)).toEqual(3);
     });
 });
-```
+\`\`\`
 
 **介绍你知道的前端模板引擎？**
 
@@ -304,3 +305,4 @@ describe('Test add', function () {
 
 - Meteor 是一个全栈开发框架，基础构架是 Node.JS + MongoDB，并把延伸到了浏览器端。
 - Meteor 统一了服务器端和客户端的数据访问，使开发者可以轻松完成全栈式开发工作。
+`;

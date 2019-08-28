@@ -1,3 +1,4 @@
+export default `
 React 中 keys 的作用是什么？
 ---
 
@@ -11,20 +12,20 @@ React 中 keys 的作用是什么？
 
 > 该函数会在setState函数调用完成并且组件开始重渲染的时候被调用，我们可以用该函数来监听渲染是否完成：
 
-```
+\`\`\`
 this.setState(
   { username: 'tylermcginnis33' },
   () => console.log('setState has finished and the component has re-rendered.')
 )
-```
+\`\`\`
 
-```
+\`\`\`
 this.setState((prevState, props) => {
   return {
     streak: prevState.streak + props.count
   }
 })
-```
+\`\`\`
 
 React 中 refs 的作用是什么
 ---
@@ -35,7 +36,7 @@ React 中 refs 的作用是什么
 在生命周期中的哪一步你应该发起 AJAX 请求
 ---
 
-> 我们应当将AJAX 请求放到 `componentDidMount` 函数中执行，主要原因有下
+> 我们应当将AJAX 请求放到 \`componentDidMount\` 函数中执行，主要原因有下
 
 - React 下一代调和算法 Fiber 会通过开始或停止渲染的方式优化应用性能，其会影响到 componentWillMount 的触发次数。对于 componentWillMount 这个生命周期函数的调用次数会变得不确定，React 可能会多次频繁调用 componentWillMount。如果我们将 AJAX 请求放到 componentWillMount 函数中，那么显而易见其会被触发多次，自然也就不是好的选择。
 - 如果我们将 AJAX 请求放置在生命周期的其他函数中，我们并不能保证请求仅在组件挂载完毕后才会要求响应。如果我们的数据请求在组件挂载之前就完成，并且调用了setState函数将数据添加到组件状态中，对于未挂载的组件则会报错。而在 componentDidMount 函数中进行 AJAX 请求则能有效避免这个问题
@@ -65,22 +66,22 @@ redux中间件
 
 > 中间件提供第三方插件的模式，自定义拦截 action -> reducer 的过程。变为 action -> middlewares -> reducer 。这种机制可以让我们改变数据流，实现如异步 action ，action 过滤，日志输出，异常报告等功能
 
-- `redux-logger`：提供日志输出
-- `redux-thunk`：处理异步操作
-- `redux-promise`：处理异步操作，`actionCreator`的返回值是`promise`
+- \`redux-logger\`：提供日志输出
+- \`redux-thunk\`：处理异步操作
+- \`redux-promise\`：处理异步操作，\`actionCreator\`的返回值是\`promise\`
 
 redux有什么缺点
 ---
 
 - 一个组件所需要的数据，必须由父组件传过来，而不能像flux中直接从store取。
-- 当一个组件相关数据更新时，即使父组件不需要用到这个组件，父组件还是会重新render，可能会有效率影响，或者需要写复杂的`shouldComponentUpdate`进行判断。
+- 当一个组件相关数据更新时，即使父组件不需要用到这个组件，父组件还是会重新render，可能会有效率影响，或者需要写复杂的\`shouldComponentUpdate\`进行判断。
 
 react组件的划分业务组件技术组件？
 ---
 
 - 根据组件的职责通常把组件分为UI组件和容器组件。
 - UI 组件负责 UI 的呈现，容器组件负责管理数据和逻辑。
-- 两者通过`React-Redux` 提供`connect`方法联系起来
+- 两者通过\`React-Redux\` 提供\`connect\`方法联系起来
  
 
 react生命周期函数
@@ -88,23 +89,23 @@ react生命周期函数
 
 **初始化阶段**
 
-- `getDefaultProp`s:获取实例的默认属性
-- `getInitialState`:获取每个实例的初始化状态
-- `componentWillMount`：组件即将被装载、渲染到页面上
-- `render`:组件在这里生成虚拟的DOM节点
-- `omponentDidMount`:组件真正在被装载之后
+- \`getDefaultProp\`s:获取实例的默认属性
+- \`getInitialState\`:获取每个实例的初始化状态
+- \`componentWillMount\`：组件即将被装载、渲染到页面上
+- \`render\`:组件在这里生成虚拟的DOM节点
+- \`omponentDidMount\`:组件真正在被装载之后
 
 **运行中状态**
 
-- `componentWillReceiveProps`:组件将要接收到属性的时候调用
-- `shouldComponentUpdate`:组件接受到新属性或者新状态的时候（可以返回false，接收数据后不更新，阻止`render`调用，后面的函数不会被继续执行了）
-- `componentWillUpdate`:组件即将更新不能修改属性和状态
-- `render`:组件重新描绘
-- `componentDidUpdate`:组件已经更新
+- \`componentWillReceiveProps\`:组件将要接收到属性的时候调用
+- \`shouldComponentUpdate\`:组件接受到新属性或者新状态的时候（可以返回false，接收数据后不更新，阻止\`render\`调用，后面的函数不会被继续执行了）
+- \`componentWillUpdate\`:组件即将更新不能修改属性和状态
+- \`render\`:组件重新描绘
+- \`componentDidUpdate\`:组件已经更新
 
 **销毁阶段**
 
-- `componentWillUnmount`:组件即将销毁
+- \`componentWillUnmount\`:组件即将销毁
 
 react性能优化是哪个周期函数
 ---
@@ -134,6 +135,7 @@ diff算法?
 react性能优化方案
 ---
 
-- 重写`shouldComponentUpdate`来避免不必要的dom操作
+- 重写\`shouldComponentUpdate\`来避免不必要的dom操作
 - 使用 production 版本的react.js
 - 使用key来帮助React识别列表中所有子组件的最小变化
+`;

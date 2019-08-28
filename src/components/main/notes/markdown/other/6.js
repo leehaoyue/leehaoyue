@@ -1,25 +1,12 @@
 export default `
-### PS相关
----
+**说说你对MVC和MVVM的理解**
 
-**PNG,GIF,JPG的区别及如何选**
+- MVC
+  - View 传送指令到 Controller
 
-- GIF：
-  - 8位像素，256色
-  - 无损压缩
-  - 支持简单动画
-  - 支持boolean透明
-  - 适合简单动画
+  - Controller 完成业务逻辑后，要求 Model 改变状态
 
-- JPEG：
-  - 颜色限于256
-  - 有损压缩
-  - 可控制压缩质量
-  - 不支持透明
-  - 适合照片
-
-- PNG：
-  - 有PNG8和truecolor PNG
-  - PNG8类似GIF颜色上限为256，文件小，支持alpha透明度，无动画
-  - 适合图标、背景、按钮
+  - Model 将新的数据发送到 View，用户得到反馈
+  
+所有通信都是单向的
 `;

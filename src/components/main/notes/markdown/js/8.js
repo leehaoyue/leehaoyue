@@ -1,5 +1,6 @@
+export default `
 **手写事件侦听器，并要求兼容浏览器**
-```JavaScript
+\`\`\`JavaScript
 var eventUtil = {
   getEvent: function(event) {
       return event || window.event;
@@ -69,11 +70,11 @@ var eventUtil = {
       alert("click body");
   });
 })();
-```
+\`\`\`
 
 **手写事件模型**
 
-```JavaScript
+\`\`\`JavaScript
 var Event = (function () {
     var list = {}, bind, trigger, remove;
     bind = function (key, fn) {
@@ -118,11 +119,11 @@ var Event = (function () {
 // 调用
 Event.bind('Hit', function(){ console.log('bind event'); }); // 绑定事件
 Event.trigger("Hit", function(){ console.log('trigger event'); }); // 触发事件
-```
+\`\`\`
 
 **手写事件代理，并要求兼容浏览器**
 
-```JavaScript
+\`\`\`JavaScript
 function delegateEvent(parentEl, selector, type, fn) {
     var handler = function(e){
           var e = e || window.event;
@@ -160,11 +161,11 @@ var box = document.getElementById("box");
 delegateEvent(box, "a", "click", function(){
     console.log(this.href);
 })
-```
+\`\`\`
 
 **手写事件触发器，并要求兼容浏览器**
 
-```JavaScript
+\`\`\`JavaScript
 var fireEvent = function(element, event){
     if (document.createEventObject){
         var mockEvent = document.createEventObject();
@@ -175,11 +176,11 @@ var fireEvent = function(element, event){
         return element.dispatchEvent(mockEvent);
     }
 }
-```
+\`\`\`
 
 **手写 Function.bind 函数**
 
-```JavaScript
+\`\`\`JavaScript
 if (!Function.prototype.bind) {
   Function.prototype.bind = function (oThis) {
     if (typeof this !== "function") {
@@ -213,11 +214,11 @@ if (!Function.prototype.bind) {
 var add = function(a, b, c){ return a + b + c;};
 var newAdd = add.bind(null, 1, 2);
 var result = newAdd(3);
-```
+\`\`\`
 
 **手写数组快速排序**
 
-```JavaScript
+\`\`\`JavaScript
 var quickSort = function(arr) {
     if (arr.length <= 1) { return arr; }
     var pivotIndex = Math.floor(arr.length / 2);
@@ -236,11 +237,11 @@ var quickSort = function(arr) {
 
 // 调用
 quickSort([9, 4, 2, 8, 1, 5, 3, 7]);
-```
+\`\`\`
 
 **手写数组冒泡排序**
 
-```JavaScript
+\`\`\`JavaScript
 var bubble = function(arr){
     var maxIndex = arr.length - 1, temp, flag;
     for (var i = maxIndex; i > 0; i--) {
@@ -261,12 +262,12 @@ var bubble = function(arr){
 }
 // 调用
 var arr = bubble([13, 69, 28, 93, 55, 75, 34]);
-```
+\`\`\`
 
 **手写数组去重**
 
 
-```JavaScript
+\`\`\`JavaScript
 Array.prototype.unique = function() { return [...new Set(this)];};
 // 调用
 [1, 2, 3, 3, 2, 1].unique();
@@ -310,12 +311,12 @@ function unique3(arr){
 
 // 调用
 unique3([1, 2, 3, 3, 2, 1]);
-```
+\`\`\`
 
 **将url的查询参数解析成字典对象**
 
 
-```JavaScript
+\`\`\`JavaScript
 function parseQuery(url) {
   url = url == null ? window.location.href : url;
   var search = url.substring(url.lastIndexOf("?") + 1);
@@ -329,11 +330,11 @@ function parseQuery(url) {
   });
   return hash;
 }
-```
+\`\`\`
 
 **封装函数节流函数**
 
-```JavaScript
+\`\`\`JavaScript
 var throttle = function(fn, delay, mustRunDelay){
   var timer = null;
   var t_start;
@@ -356,11 +357,11 @@ var throttle = function(fn, delay, mustRunDelay){
 
 // 调用（两次间隔50ms内连续触发不执行，但每累计100ms至少执行一次
 window.onresize = throttle(myFunc, 50, 100);
-````
+\`\`\`\`
 
 **用JS实现千位分隔符**
 
-```JavaScript
+\`\`\`JavaScript
 function test1(num){
   var str = (+ num) + '';
   var len = str.length;
@@ -377,7 +378,8 @@ function test2(num){
   // ?= 正向匹配:匹配位置
   // ?! 正向不匹配:排除位置
   var str = (+num).toString();
-  var reg = /(?=(?!\b)(\d{3})+$)/g;
+  var reg = /(?=(?!\\b)(\\d{3})+$)/g;
   return str.replace(reg, ',');
 }
-```
+\`\`\`
+`;
