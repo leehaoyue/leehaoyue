@@ -8,8 +8,8 @@
         @selectMenuSub="selectMenuSub"></navMenu>
     </el-col>
     <el-col class="markdownPreview">
-      <article v-html="src"></article>
-      <el-backtop target=".markdownPreview"></el-backtop>
+      <article class="previewInner" v-html="src"></article>
+      <el-backtop target=".previewInner"></el-backtop>
     </el-col>
   </el-row>
 </template>

@@ -1,4 +1,3 @@
-export default `
 **XML和JSON的区别？**
 
 - 数据体积方面
@@ -20,16 +19,15 @@ export default `
 
 - JSON字符串转换为JSON对象:
 
-\`\`\`
+```
 var obj =eval('('+ str +')');
 var obj = str.parseJSON();
 var obj = JSON.parse(str);
-\`\`\`
+```
 
 - JSON对象转换为JSON字符串：
 
-\`\`\`
+```
 var last=obj.toJSONString();
 var last=JSON.stringify(obj);
-\`\`\`
-`;
+```

@@ -10,7 +10,7 @@
   .markdownPreview {
     padding: 10px;
     overflow: auto;
-    article {
+    .previewInner {
       line-height: 2;
       overflow: auto;
       background: #fff;
@@ -21,7 +21,16 @@
         text-decoration: none;
       }
       * {
+        vertical-align: middle;
         word-wrap: break-word !important;
+      }
+      code {
+        overflow: auto;
+        padding: 0 10px;
+        max-height: 30vh;
+        display: inline-block;
+        max-width: calc(100% - 20px);
+        background: @grayScale-color_7;
       }
     }
   }
