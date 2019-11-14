@@ -41,7 +41,9 @@ export default {
   },
   methods: {
     getTabPage(n) {
-      this.$service.getData('/foreword/tabPage').then(res => {
+      this.$axios.getData({
+        url: '/foreword/tabPage'
+      }).then(res => {
         this.tabPage[n].content = res.data;
       });
     }

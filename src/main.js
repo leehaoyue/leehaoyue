@@ -10,8 +10,7 @@ import './registerServiceWorker';
 // promise兼容性处理（ie、火狐）
 import promise from 'es6-promise';
 // axios-HTTP库
-import axios from 'axios';
-import '@/axios/index';
+import axios from '@/axios/index';
 // CryptoJS-加密生成数字签名
 import CryptoJS from 'crypto-js';
 // Mock-随机数据

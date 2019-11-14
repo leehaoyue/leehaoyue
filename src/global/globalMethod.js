@@ -6,30 +6,30 @@ import CryptoJS from 'crypto-js'; // HMAC加密
 export default {
   // 默认console
   defaultConsole() {
-    console.log('%c创业外包心有余力不足\n不是996就是007，且行且珍惜', `
-       font-size: 5em;
-       text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);
-    `);
-    console.group('不止眼前的苟且，还有远方的苟且');
-    console.table([[
-      '逼格我要简约的同时复杂一点',
-      'LOGO大一点的同时小一点',
-      '温软雅黑怎么不是黑的'
-    ], [
-      '那个黑色你做成五彩斑斓',
-      '这个正方形太方，你把它改圆一点',
-      '算了，还是用初稿吧'
-    ], [
-      '色彩要丰富，对比要强烈，红配绿最美丽',
-      '不大怎么突出？我要产品名称占80%',
-      '最重要的是字要大，又突出又好看'
-    ]]);
-    console.log('%c', 'background: url(http://imgsrc.baidu.com/forum/pic/item/77421dd5ad6eddc49415075637dbb6fd506633e7.jpg) no-repeat center;padding-left:80px;padding-bottom: 80px;border-radius:50%;');
-    console.groupEnd();
-    console.log('%c满纸荒唐言, 一把辛酸泪\n无（一）所（无）不（是）能（处）的：\n攻（代）城（码）狮（狗）———Lee\nhttps://leehaoyue.github.io/leehaoyue/', `
-       color: blue;
-       font-size: x-large;
-    `);
+    // console.log('%c创业外包心有余力不足\n不是996就是007，且行且珍惜', `
+    //    font-size: 5em;
+    //    text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);
+    // `);
+    // console.group('不止眼前的苟且，还有远方的苟且');
+    // console.table([[
+    //   '逼格我要简约的同时复杂一点',
+    //   'LOGO大一点的同时小一点',
+    //   '温软雅黑怎么不是黑的'
+    // ], [
+    //   '那个黑色你做成五彩斑斓',
+    //   '这个正方形太方，你把它改圆一点',
+    //   '算了，还是用初稿吧'
+    // ], [
+    //   '色彩要丰富，对比要强烈，红配绿最美丽',
+    //   '不大怎么突出？我要产品名称占80%',
+    //   '最重要的是字要大，又突出又好看'
+    // ]]);
+    // console.log('%c', 'background: url(http://imgsrc.baidu.com/forum/pic/item/77421dd5ad6eddc49415075637dbb6fd506633e7.jpg) no-repeat center;padding-left:80px;padding-bottom: 80px;border-radius:50%;');
+    // console.groupEnd();
+    // console.log('%c满纸荒唐言, 一把辛酸泪\n无（一）所（无）不（是）能（处）的：\n攻（代）城（码）狮（狗）———Lee\nhttps://leehaoyue.github.io/leehaoyue/', `
+    //    color: blue;
+    //    font-size: x-large;
+    // `);
   },
   // 判断android、ios
   iSAndroid() {

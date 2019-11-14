@@ -2322,22 +2322,5 @@ export default {
       },
       data: []
     }]
-  },
-  card: [{
-    icon: 'fa fa-bicycle'
-  }, {
-    icon: 'fa fa-car'
-  }, {
-    icon: 'fa fa-map-signs'
-  }, {
-    icon: 'fa fa-modx'
-  }, {
-    icon: 'fa fa-futbol-o'
-  }, {
-    icon: 'fa fa-picture-o'
-  }, {
-    icon: 'fa fa-gamepad'
-  }, {
-    icon: 'fa fa-flag'
-  }]
+  }
 };

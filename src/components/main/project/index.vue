@@ -31,6 +31,9 @@
             {{item.content}}
           </article>
         </el-tooltip>
+        <el-link type="primary" :underline="false" @click="pageDetail(item.link)">
+          <i class="el-icon-view el-icon--right"></i>查看详情
+        </el-link>
       </el-card>
     </el-col>
   </el-row>

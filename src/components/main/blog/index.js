@@ -31,7 +31,9 @@ export default {
   },
   methods: {
     getCardList() {
-      this.$service.getData('/blog/card').then(res => {
+      this.$axios.getData({
+        url: '/blog/card'
+      }).then(res => {
         this.cardList = res.data;
       });
     }
