@@ -17,6 +17,9 @@
     padding: 5px;
     .el-card {
       max-height: 30vh;
+      .el-card__body {
+        position: relative;
+      }
       .fa {
         font-size: 3em;
         color: @success-color;
@@ -24,6 +27,14 @@
       h2 {
         .beyond-scope;
         margin: 1rem 0;
+      }
+      .qrcode {
+        position: absolute;
+        bottom: 85%;
+        left: 85%;
+        width: 40%;
+        opacity: 0.5;
+        transform: rotateZ(45deg);
       }
       .el-link {
         margin: 1rem 0 0 0;

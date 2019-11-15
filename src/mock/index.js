@@ -19,24 +19,18 @@ const Mock = require('mockjs'),
           return Mock.Random.integer(1, 5);
         }
       }],
-      // '/project/card|1': [{
-      //   title: () => {
-      //     return Mock.Random.ctitle();
-      //   },
-      //   content: () => {
-      //     return Mock.Random.csentence();
-      //   }
-      // }],
       '/project/card': [{
         icon: 'fa fa-line-chart',
         title: '数据可视化（CMS管理平台）',
         content: '所用技术：React、Ant Design、Highcharts、Mock.js、axios等',
-        link: 'https://leehaoyue.github.io/leehaoyue/EMP/react-antd/'
+        qrcode: '/img/project/vue+threejs.png',
+        link: 'https://leehaoyue.github.io/leehaoyue/EMP/vue-threejs/'
       }, {
         icon: 'fa fa-slideshare',
         title: '立体图形化（3D模型操作）',
         content: '所用技术：Vue、Element、three.js、Mock.js、axios等',
-        link: 'https://leehaoyue.github.io/leehaoyue/EMP/vue-threejs/'
+        qrcode: '/img/project/react+antd.png',
+        link: 'https://leehaoyue.github.io/leehaoyue/EMP/react-antd/'
       }],
       '/blog/card|8': [{
         img: () => {

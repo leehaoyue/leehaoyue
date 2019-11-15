@@ -17,16 +17,17 @@
       v-for="(item, index) in cardList">
       <el-card class="box-card">
         <i :class="item.icon"></i>
+        <img class="qrcode"
+          :src="link+item.qrcode"
+          @click="qrcodeShow(link+item.qrcode)">
         <el-tooltip effect="dark"
           placement="top-start"
-          :content="item.title"
-          :hide-after="1500">
+          :content="item.title">
           <h2>{{item.title}}</h2>
         </el-tooltip>
         <el-tooltip effect="dark"
           placement="bottom-start"
-          :content="item.content"
-          :hide-after="1500">
+          :content="item.content">
           <article>
             {{item.content}}
           </article>
@@ -35,6 +36,10 @@
           <i class="el-icon-view el-icon--right"></i>查看详情
         </el-link>
       </el-card>
+      <photoPreview :show="qrcodePreview">
+        <img :src="qrcodePreview">
+        <h1>微信识别二维码</h1>
+      </photoPreview>
     </el-col>
   </el-row>
 </template>

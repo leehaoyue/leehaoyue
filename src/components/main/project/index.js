@@ -26,8 +26,14 @@ export default {
         },
         loop: setTimeout(() => {})
       },
-      cardList: []
+      cardList: [],
+      qrcodePreview: null
     };
+  },
+  computed: {
+    link() {
+      return window.location.href.substring(0, window.location.href.indexOf('#')-1);
+    }
   },
   created() {
     this.getCrad();
@@ -85,6 +91,10 @@ export default {
       }).then(res => {
         this.$set(this, 'cardList', res.data);
       });
+    },
+    qrcodeShow(link) {
+      this.qrcodePreview = link;
+      console.log(this.qrcodePreview);
     },
     pageDetail(link) {
       window.open(link);
