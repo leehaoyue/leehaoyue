@@ -24,13 +24,13 @@ const Mock = require('mockjs'),
         title: '数据可视化（CMS管理平台）',
         content: '所用技术：React、Ant Design、Highcharts、Mock.js、axios等',
         qrcode: '/img/project/vue+threejs.png',
-        link: 'https://leehaoyue.github.io/leehaoyue/EMP/vue-threejs/'
+        link: 'https://leehaoyue.github.io/leehaoyue/EMP/react-antd/'
       }, {
         icon: 'fa fa-slideshare',
         title: '立体图形化（3D模型操作）',
         content: '所用技术：Vue、Element、three.js、Mock.js、axios等',
         qrcode: '/img/project/react+antd.png',
-        link: 'https://leehaoyue.github.io/leehaoyue/EMP/react-antd/'
+        link: 'https://leehaoyue.github.io/leehaoyue/EMP/vue-threejs/'
       }],
       '/blog/card|8': [{
         img: () => {

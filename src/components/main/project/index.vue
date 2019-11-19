@@ -36,11 +36,15 @@
           <i class="el-icon-view el-icon--right"></i>查看详情
         </el-link>
       </el-card>
-      <photoPreview :show="qrcodePreview">
-        <img :src="qrcodePreview">
-        <h1>微信识别二维码</h1>
-      </photoPreview>
     </el-col>
+    <photoPreview :show="qrcodePreview">
+      <el-image :src="qrcodePreview+'1'">
+        <div slot="error" class="image-slot">
+          <i class="el-icon-picture-outline"></i>
+        </div>
+      </el-image>
+      <h1>扫描识别二维码</h1>
+    </photoPreview>
   </el-row>
 </template>
 <style lang="less" src="./index.less"></style>

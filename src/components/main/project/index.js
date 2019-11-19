@@ -94,7 +94,6 @@ export default {
     },
     qrcodeShow(link) {
       this.qrcodePreview = link;
-      console.log(this.qrcodePreview);
     },
     pageDetail(link) {
       window.open(link);

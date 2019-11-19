@@ -4,7 +4,33 @@
   position: fixed;
   top: 0;
   left: 0;
+  color: #fff;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  text-align: center;
+  letter-spacing: 0.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  .el-button {
+    float: right;
+    margin: 20px;
+  }
+  .el-image {
+    width: 230px;
+    display: block;
+    margin: 200px auto 30px auto;
+  }
+  img {
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    width: calc(100% - 30px);
+    box-shadow: 10px 10px 0 rgba(255, 255, 255, 0.2), 20px 20px 0 rgba(255, 255, 255, 0.1);
+  }
+  .image-slot {
+    font-size: 3em;
+    line-height: 4;
+    color: @grayScale-color_1;
+    background: @grayScale-color_5;
+  }
 }

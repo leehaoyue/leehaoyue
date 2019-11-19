@@ -1,7 +1,10 @@
 <!-- 图片预览 -->
 <template>
-  <div class="photoPreview" v-if="qrcodePreview">
-    <slot>加载失败</slot>
+  <div class="photoPreview" v-show="isShow">
+    <el-button icon="el-icon-close"
+      @click="closePreview"
+      circle></el-button>
+    <slot />
   </div>
 </template>
 <style lang="less" src="./index.less"></style>
