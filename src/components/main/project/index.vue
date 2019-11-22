@@ -19,7 +19,7 @@
         <i :class="item.icon"></i>
         <img class="qrcode"
           :src="link+item.qrcode"
-          @click="qrcodeShow(link+item.qrcode)">
+          @click="qrcodeShow(`${link}${item.qrcode}#${new Date().getTime()}`)">
         <el-tooltip effect="dark"
           placement="top-start"
           :content="item.title">
