@@ -38,7 +38,7 @@
       </el-card>
     </el-col>
     <photoPreview :show="qrcodePreview">
-      <el-image :src="qrcodePreview+'1'">
+      <el-image :src="qrcodePreview">
         <div slot="error" class="image-slot">
           <i class="el-icon-picture-outline"></i>
         </div>
