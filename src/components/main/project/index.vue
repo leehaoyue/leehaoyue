@@ -22,12 +22,14 @@
           @click="qrcodeShow(`${link}${item.qrcode}#${new Date().getTime()}`)">
         <el-tooltip effect="dark"
           placement="top-start"
-          :content="item.title">
+          :content="item.title"
+          :hide-after="3000">
           <h2>{{item.title}}</h2>
         </el-tooltip>
         <el-tooltip effect="dark"
           placement="bottom-start"
-          :content="item.content">
+          :content="item.content"
+          :hide-after="3000">
           <article>
             {{item.content}}
           </article>
