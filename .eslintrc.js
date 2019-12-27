@@ -1,24 +1,24 @@
 // https://eslint.org/docs/user-guide/configuring
-// 忽略 no-undef 检查 
+// 忽略 no-undef 检查
 /* eslint-disable no-undef */
-// 忽略 no-new 检查 
+// 忽略 no-new 检查
 /* eslint-disable no-new */
-// 设置检查 
-/*eslint eqeqeq: off*/ 
+// 设置检查
+/*eslint eqeqeq: off*/
 /*eslint eqeqeq: 0*/
-// eslint 检查指令 
+// eslint 检查指令
 // 检查且修复
 // eslint * --fix
-// 检查指定文件 
+// 检查指定文件
 // eslint app.js --fix
 
 /*
-  0或'off'： 关闭规则。 
-  1或'warn'： 打开规则，并且作为一个警告（并不会导致检查不通过）。 
+  0或'off'： 关闭规则。
+  1或'warn'： 打开规则，并且作为一个警告（并不会导致检查不通过）。
   2或'error'： 打开规则，并且作为一个错误 (退出码为1，检查不通过)。
 
-  参数说明： 
-  参数1： 错误等级 
+  参数说明：
+  参数1： 错误等级
   参数2： 处理方式
 */
 
