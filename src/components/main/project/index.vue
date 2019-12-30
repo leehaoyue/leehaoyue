@@ -10,34 +10,41 @@
         :chartStyle="wordClouds.style"
         :options="wordClouds.options"></basicEcharts>
     </el-col>
-    <el-col class="cardList"
-      shadow="hover"
-      :key="index"
-      :xs="12" :sm="8" :md="8" :lg="6" :xl="4"
-      v-for="(item, index) in cardList">
-      <el-card class="box-card">
-        <i :class="item.icon"></i>
-        <img class="qrcode"
-          :src="link+item.qrcode"
-          @click="qrcodeShow(`${link}${item.qrcode}#${new Date().getTime()}`)">
-        <el-tooltip effect="dark"
-          placement="top-start"
-          :content="item.title"
-          :hide-after="3000">
-          <h2>{{item.title}}</h2>
-        </el-tooltip>
-        <el-tooltip effect="dark"
-          placement="bottom-start"
-          :content="item.content"
-          :hide-after="3000">
-          <article>
-            {{item.content}}
-          </article>
-        </el-tooltip>
-        <el-link type="primary" :underline="false" @click="pageDetail(item.link)">
-          <i class="el-icon-view el-icon--right"></i>查看详情
-        </el-link>
-      </el-card>
+    <el-col :span="24">
+      <el-row :key="num"
+        class="cardOuter"
+        v-for="(data, num) in cardList">
+        <el-divider content-position="left">
+          <el-tag>{{ data.company }}</el-tag>
+        </el-divider>
+        <el-col class="cardList"
+          shadow="hover"
+          :key="index"
+          :xs="12" :sm="8" :md="8" :lg="6" :xl="4"
+          v-for="(item, index) in data.project">
+          <el-card class="box-card">
+            <i v-if="item.icon" :class="item.icon"></i>
+            <img v-if="item.qrcode" class="qrcode"
+              :src="link+item.qrcode"
+              @click="qrcodeShow(`${link}${item.qrcode}#${new Date().getTime()}`)">
+            <el-popover
+              placement="top-start"
+              :title="item.title"
+              width="200"
+              close-delay="200"
+              trigger="hover">
+              <article v-html="item.content"></article>
+              <div slot="reference">
+                <h2>{{item.title}}</h2>
+                <article v-html="item.content"></article>
+              </div>
+            </el-popover>
+            <el-link v-if="item.link" type="primary" :underline="false" @click="pageDetail(item.link)">
+              <i class="el-icon-view el-icon--right"></i>查看详情
+            </el-link>
+          </el-card>
+        </el-col>
+      </el-row>
     </el-col>
     <photoPreview :show="qrcodePreview">
       <el-image :src="qrcodePreview">

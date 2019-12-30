@@ -85,6 +85,7 @@ export default {
         });
       }, 3000);
     },
+    // 获取项目列表
     getCrad() {
       this.$axios.getData({
         url: '/project/card'
@@ -92,9 +93,11 @@ export default {
         this.$set(this, 'cardList', res.data);
       });
     },
+    // 二维码地址
     qrcodeShow(link) {
       this.qrcodePreview = link;
     },
+    // 打开项目地址
     pageDetail(link) {
       window.open(link);
     }
