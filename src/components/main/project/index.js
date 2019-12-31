@@ -26,13 +26,17 @@ export default {
         },
         loop: setTimeout(() => {})
       },
+      introduce: {},
+      dialogVisible: false,
       cardList: [],
       qrcodePreview: null
     };
   },
   computed: {
     link() {
-      return window.location.href.substring(0, window.location.href.indexOf('#')-1);
+      let link = window.location.origin+window.location.pathname;
+
+      return link.substring(0, link.length-1);
     }
   },
   created() {
@@ -97,9 +101,18 @@ export default {
     qrcodeShow(link) {
       this.qrcodePreview = link;
     },
+    // 进入公司官网
+    toCompany(link) {
+      window.open(link);
+    },
     // 打开项目地址
     pageDetail(link) {
       window.open(link);
+    },
+    // 查看项目详情
+    introduceDetail(info) {
+      this.introduce = info;
+      this.dialogVisible = true;
     }
   },
   beforeDestroy() {

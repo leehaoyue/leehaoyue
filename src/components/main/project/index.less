@@ -16,11 +16,14 @@
   .cardOuter {
     margin: 10px 0;
     background: #fff;
+    .el-tag {
+      cursor: pointer;
+    }
   }
   .cardList {
     padding: 10px 5px;
     .el-card {
-      max-height: 25vh;
+      height: 28vh;
       .el-card__body {
         position: relative;
       }
@@ -31,6 +34,12 @@
       h2 {
         .beyond-scope;
         margin: 1rem 0;
+      }
+      .banner {
+        width: 40px;
+        height: 40px;
+        margin-right: 0.5rem;
+        vertical-align: middle;
       }
       .qrcode {
         position: absolute;
@@ -43,12 +52,26 @@
       }
       .el-link {
         margin: 1rem 0 0 0;
+        i {
+          margin-right: 0.5rem;
+        }
       }
       article {
         .beyond-scope-clamp;
         letter-spacing: 0.1em;
         color: @grayScale-color_3;
+        * {
+          .beyond-scope-clamp;
+        }
       }
+    }
+  }
+  .el-dialog__wrapper {
+    video {
+      width: 100%;
+    }
+    img {
+      width: 100%;
     }
   }
 }
