@@ -36,7 +36,7 @@
               <article v-html="item.content"></article>
               <div slot="reference">
                 <h2>
-                  <img class="banner" v-if="item.banner" :src="item.banner"/>
+                  <img class="banner" v-if="item.banner" :src="link+item.banner"/>
                   {{item.title}}
                 </h2>
                 <article v-html="item.content"></article>
