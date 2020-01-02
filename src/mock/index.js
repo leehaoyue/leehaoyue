@@ -31,10 +31,14 @@ const Mock = require('mockjs'),
             <h5>所用技术：Vue、Element、axios/WebSocket、ECharts、公司BI工具等</h5>
             <h5>备注：企业内部项目，无展示地址</h5>
           `,
-          qrcode: '',
+          qrcode: '/img/project/c3screen.png',
           link: '',
           introduce: {
-            video: ['/img/project/c3screen.mp4']
+            video: ['/img/project/c3screen.mp4'],
+            article: `
+              <p><strong>备注：</strong>本视频已在朋友圈及公司公众号中传开</p>
+              <p><a href="https://mp.weixin.qq.com/s/tKN4OHPSOPlZEiNnqGJ-MQ" target="_blank"><strong>点击查看公众号原文</strong><a></p>
+            `
           }
         }, {
           banner: '/img/project/metro-banner.jpg',
@@ -45,7 +49,15 @@ const Mock = require('mockjs'),
             <h5>备注：企业内部项目，无展示地址</h5>
           `,
           qrcode: '',
-          link: ''
+          link: '',
+          introduce: {
+            article: `
+              <h4>该项目分为移动端、PC端：</h4>
+              <p>主要功能是帮助管理者、执行者工作留痕，任务按劳分配等，为效能分析平台做部分数据支撑。</p>
+              <p><strong>移动端：</strong>运行于手机钉钉APP中，使用Vue-cli+MintUI的方式构建，主要涉及到的钉钉功能有免登、发钉等；</p>
+              <p><strong>PC端（分为两部分）：</strong>一、运行于PC桌面钉钉应用中，使用Vue-cli+Element的方式构建，是移动端的PC适配；<br/>二、运行于PC端浏览器，使用Vue-cli+Element的方式构建，是该项目的管理平台，对数采的展示及修改等，主要涉及到的钉钉功能有扫码登录等；</p>
+            `
+          }
         }, {
           banner: '/img/project/metro-banner.jpg',
           title: '上海地铁人员效能分析平台（一期）',
@@ -55,7 +67,13 @@ const Mock = require('mockjs'),
             <h5>备注：企业内部项目，无展示地址</h5>
           `,
           qrcode: '',
-          link: ''
+          link: '',
+          introduce: {
+            article: `
+              <h4>该项目运行于PC端浏览器（Google Chrome 62.0.3202.62 以上）：</h4>
+              <p>主要功能是帮助企业查看各个层级的管理水平和组织概况, 为各个层级的管理者提供关键信息，辅助他们的决策。为上海地铁申通集团实行“一岗一薪”政策的落地，做数据支撑。</p>
+            `
+          }
         }]
       }, {
         company: '北京华泰科信科技有限公司',

@@ -53,7 +53,7 @@
       </el-row>
     </el-col>
     <!-- 简介 -->
-    <el-dialog title="详情展示"
+    <el-dialog title="项目简介"
       :visible.sync="dialogVisible"
       width="60%">
       <video v-show="introduce.video"
@@ -68,8 +68,9 @@
           <img :src="link+item">
         </el-carousel-item>
       </el-carousel>
+      <article v-show="introduce.article" v-html="introduce.article"></article>
       <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogVisible = false">关 闭</el-button>
+        <el-button @click="dialogVisible = false">关&nbsp;闭</el-button>
       </span>
     </el-dialog>
     <!-- 二维码 -->
