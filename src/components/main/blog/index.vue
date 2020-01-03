@@ -19,7 +19,7 @@
           <el-divider content-position="left">
             <el-tag type="success">{{item.title}}</el-tag>
           </el-divider>
-          <img :src="item.img">
+          <img :src="link+item.img">
         </el-col>
       </el-row>
     </el-col>
