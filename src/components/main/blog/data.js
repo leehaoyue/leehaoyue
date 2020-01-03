@@ -27,7 +27,7 @@ export default {
               '50%'
             ],
             formatter: () => {
-              return 'Lee\'s\nblog';
+              return 'Lee\'s\nself';
             },
             textStyle: {
               fontSize: 20,
@@ -37,5 +37,15 @@ export default {
         }
       }
     ]
-  }
+  },
+  selfInfo: [{
+    img: '/img/blog/github.jpg',
+    title: 'GitHub：leehaoyue'
+  }, {
+    img: '/img/blog/wechat_1.png',
+    title: '公众号：晚来风水长东'
+  }, {
+    img: '/img/blog/wechat_2.png',
+    title: '小程序：喔咖喱唝'
+  }]
 };

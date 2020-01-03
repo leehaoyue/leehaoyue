@@ -1,14 +1,40 @@
 @import '../../../global/globalStyle.less';
 
 .blog {
+  // 个人信息
+  .selfInfo {
+    padding: 10px;
+    background: #fff;
+    margin: 0 0 10px 0;
+    img {
+      width: 100%;
+    }
+  }
   // 底部卡片
+  .el-timeline-item__wrapper {
+    padding-left: 15px;
+  }
+  .cardOuter {
+    padding: 10px;
+    background: #fff;
+    .el-timeline-item__timestamp.is-top {
+      font-size: 1.2em;
+      padding-left: 0.5rem;
+    }
+    .el-timeline-item__node {
+      background-color: @success-color;
+    }
+    .el-timeline-item__tail {
+      border-left: 2px solid @success-color;
+    }
+  }
   .cardList {
     padding: 5px;
+    background: #FFF;
     .el-card {
-      max-height: 30vh;
       .el-image {
         width: 100%;
-        height: 80px;
+        height: 20px;
       }
       h2 {
         .beyond-scope;
@@ -17,7 +43,31 @@
       article {
         .beyond-scope-clamp;
         color: @grayScale-color_3;
+        letter-spacing: 0.1em;
+        * {
+          .beyond-scope-clamp;
+        }
       }
+      .qrcode {
+        width: 30%;
+        margin: 1rem 0 0 0;
+      }
+      .el-link {
+        width: 70%;
+        display: inline-block;
+        text-align: right;
+        i {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+  .el-dialog__wrapper {
+    video {
+      width: 100%;
+    }
+    img {
+      width: 100%;
     }
   }
 }

@@ -28,7 +28,7 @@ const Mock = require('mockjs'),
           title: '上海地铁网络化指挥中心—数据可视化大屏（一期）',
           content: `
             <h5>项目周期：2019年8月-2019年至今</h5>
-            <h5>所用技术：Vue、Element、axios/WebSocket、ECharts、公司BI工具等</h5>
+            <h5>所用技术：Vue/vue-cli3/Vuex、Element、axios/WebSocket、Less、ECharts、公司BI工具等</h5>
             <h5>备注：企业内部项目，无展示地址</h5>
           `,
           qrcode: '/img/project/c3screen.png',
@@ -45,7 +45,7 @@ const Mock = require('mockjs'),
           title: '上海地铁钉钉微应用—任务协作（一期）',
           content: `
             <h5>项目周期：2018年12月-2019年8月</h5>
-            <h5>所用技术：Vue、MintUI/Element、axios、dingtalk-jsapi等</h5>
+            <h5>所用技术：Vue/vue-cli2/Vuex、MintUI/Element、axios、Less、dingtalk-jsapi等</h5>
             <h5>备注：企业内部项目，无展示地址</h5>
           `,
           qrcode: '',
@@ -63,7 +63,7 @@ const Mock = require('mockjs'),
           title: '上海地铁人员效能分析平台（一期）',
           content: `
             <h5>项目周期：2018年9月-2019年5月</h5>
-            <h5>所用技术：Vue、iView、axios、ECharts、Mock.js等</h5>
+            <h5>所用技术：Vue/vue-cli2/Vuex、iView、axios、Less、ECharts、Mock.js等</h5>
             <h5>备注：企业内部项目，无展示地址</h5>
           `,
           qrcode: '',
@@ -84,7 +84,7 @@ const Mock = require('mockjs'),
           title: '中债资信“一站式”分析平台（一期）',
           content: `
             <h5>项目周期：2018年5月-2018年8月</h5>
-            <h5>所用技术：Vue、Element、axios、ECharts、UEditor等</h5>
+            <h5>所用技术：Vue/vue-cli2、Element、axios、Less、ECharts、UEditor等</h5>
           `,
           qrcode: '/img/project/tbs-onestop.png',
           link: 'http://tbs.chinaratings.com.cn/'
@@ -93,7 +93,7 @@ const Mock = require('mockjs'),
           title: '大医济世、我是大医群公众号',
           content: `
             <h5>项目周期：2018年1月-2018年4月</h5>
-            <h5>所用技术：Vue、WeUI/Element、axios、微信JS-SDK等</h5>
+            <h5>所用技术：Vue/vue-cli2、WeUI/Element、axios、微信JS-SDK等</h5>
             <h5>微信搜索：“大医济世”、“我是大医群”公众号</h5>
           `,
           qrcode: '',
@@ -128,33 +128,122 @@ const Mock = require('mockjs'),
           link: 'https://m.pc6.com/s/425718'
         }]
       }],
-      '/blog/list': [{
-        icon: 'fa fa-line-chart',
-        title: '数据可视化（CMS管理平台）',
-        content: '所用技术：React、Ant Design、Highcharts、Mock.js、axios等',
-        qrcode: '/img/blog/vue+threejs.png',
-        link: 'https://leehaoyue.github.io/leehaoyue/EMP/react-antd/'
+      '/blog/card': [{
+        period: '弱冠而立',
+        children: [{
+          img: Mock.Random.dataImage('200x80', ''),
+          'icon|1': fontawesome,
+          iconColor: Mock.Random.color(),
+          title: '落叶归根',
+          content: `
+              <h5>牢记使命，不忘初心</h5>
+            `,
+          qrcode: '',
+          link: ''
+        }]
       }, {
-        icon: 'fa fa-slideshare',
-        title: '立体图形化（3D模型操作）',
-        content: '所用技术：Vue、Element、three.js、Mock.js、axios等',
-        qrcode: '/img/blog/react+antd.png',
-        link: 'https://leehaoyue.github.io/leehaoyue/EMP/vue-threejs/'
-      }],
-      '/blog/card|8': [{
-        img: () => {
-          return Mock.Random.dataImage('200x80', Mock.Random.cword());
-        },
-        'icon|1': fontawesome,
-        iconColor: () => {
-          return Mock.Random.color();
-        },
-        title: () => {
-          return Mock.Random.cword(3, 5);
-        },
-        content: () => {
-          return Mock.Random.cparagraph();
-        }
+        period: '童言稚语',
+        children: [{
+          img: Mock.Random.dataImage('200x80', ''),
+          'icon|1': fontawesome,
+          iconColor: Mock.Random.color(),
+          title: '鸟择良木',
+          content: `
+              <h5>只争朝夕，不负韶华</h5>
+            `,
+          qrcode: '',
+          link: ''
+        }]
+      }, {
+        period: '蹒跚学步',
+        children: [{
+          img: Mock.Random.dataImage('200x80', ''),
+          icon: 'fa fa-line-chart',
+          iconColor: Mock.Random.color(),
+          title: '数据可视化（CMS管理平台）',
+          content: `
+              <h5>所用技术：React/create-react-app/React-Redux、antd、axios、Mockjs、Less、Highcharts等</h5>
+            `,
+          qrcode: '/img/blog/vue+threejs.png',
+          link: 'https://leehaoyue.github.io/leehaoyue/EMP/react-antd/'
+        }, {
+          img: Mock.Random.dataImage('200x80', ''),
+          icon: 'fa fa-slideshare',
+          iconColor: Mock.Random.color(),
+          title: '立体图形化（3D模型操作）',
+          content: `
+              <h5>所用技术：Vue/vue-cli3/Vuex、Element、Threejs、Mockjs、Less等</h5>
+            `,
+          qrcode: '/img/blog/vue+threejs.png',
+          link: 'https://leehaoyue.github.io/leehaoyue/EMP/react-antd/'
+        }]
+      }, {
+        period: '咿呀学语',
+        children: [{
+          img: Mock.Random.dataImage('200x80', ''),
+          icon: 'fa fa-weixin',
+          iconColor: Mock.Random.color(),
+          title: '微信小游戏',
+          content: `
+              <h4>皮艾no</h4>
+              <h5>开发工具：微信小游戏制作工具</h5>
+              <h5><strong>备注：</strong>：个人无资质，因此未发布上线
+            `,
+          qrcode: '/img/blog/piano.png',
+          link: '',
+          introduce: {
+            video: ['/img/blog/piano.mp4']
+          }
+        }, {
+          img: Mock.Random.dataImage('200x80', ''),
+          icon: 'fa fa-weixin',
+          iconColor: Mock.Random.color(),
+          title: '微信小程序',
+          content: `
+              <h4>喔咖喱唝</h4>
+              <h5>所用技术：WXML/WXS（小程序原生语言） 、weui等</h5>
+            `,
+          qrcode: '/img/blog/wogaligong.png',
+          link: 'https://mp.weixin.qq.com/s/cqy2K6lpYqyX3GTi5k33VA'
+        }]
+      }, {
+        period: '呱呱坠地',
+        children: [{
+          img: Mock.Random.dataImage('200x80', ''),
+          icon: 'fa fa-mobile',
+          iconColor: Mock.Random.color(),
+          title: '三个手机APP',
+          content: `
+              <h4>新闻天气资讯、音乐播放器、机器人记事本</h4>
+              <h5>所用技术：jQuery、jQuery Mobile、ajax、图灵api、聚合api等</h5>
+            `,
+          qrcode: '/img/blog/bugapp.png',
+          link: 'https://mp.weixin.qq.com/s/mSO8viw9W5CPRSlRkhOt-w'
+        }, {
+          img: Mock.Random.dataImage('200x80', ''),
+          icon: 'fa fa-mobile',
+          iconColor: Mock.Random.color(),
+          title: 'PC钢琴游戏',
+          content: `
+              <h4>PC钢琴游戏</h4>
+              <h5><strong>要用电脑打开</strong>
+              <h5>所用技术：jQuery、Bootstrap等</h5>
+            `,
+          qrcode: '',
+          link: 'https://draculablood.gitee.io/leehaoyue/myhome/project/game/html/game.html'
+        }, {
+          img: Mock.Random.dataImage('200x80', ''),
+          icon: 'fa fa-mobile',
+          iconColor: Mock.Random.color(),
+          title: '初试总结',
+          content: `
+              <h4>实践学习记录</h4>
+              <h5><strong>年代久远，文件可能缺失</strong></h5>
+              <h5>所用技术：jQuery、Bootstrap、ajax等</h5>
+            `,
+          qrcode: '/img/blog/myhome.png',
+          link: 'https://draculablood.gitee.io/leehaoyue/myhome/Lee/html/Lee.html'
+        }]
       }]
     })[info];
   };

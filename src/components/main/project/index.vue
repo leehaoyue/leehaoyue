@@ -55,6 +55,7 @@
     <!-- 简介 -->
     <el-dialog title="项目简介"
       :visible.sync="dialogVisible"
+      v-if="dialogVisible"
       width="60%">
       <video v-show="introduce.video"
         :key="index"
