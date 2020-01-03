@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "fb4cb8f251ab70daf17c",
+    "revision": "d3495299ac0f3bf6d0da",
     "url": "css/app.56532d29.css"
   },
   {
-    "revision": "fb4cb8f251ab70daf17c",
-    "url": "js/app.89851847.js"
+    "revision": "d3495299ac0f3bf6d0da",
+    "url": "js/app.e411f39a.js"
   },
   {
-    "revision": "8b2a1405b37ae2372a16",
-    "url": "css/blog.c19bb985.css"
+    "revision": "aebf1cc40a7a775c1e24",
+    "url": "css/blog.cefe4e8d.css"
   },
   {
-    "revision": "8b2a1405b37ae2372a16",
-    "url": "js/blog.4d1163fe.js"
+    "revision": "aebf1cc40a7a775c1e24",
+    "url": "js/blog.69402a98.js"
   },
   {
     "revision": "c5801552f43be71e7f96",
@@ -180,12 +180,12 @@ self.__precacheManifest = [
     "url": "js/chunk-2d238691.f89b2f20.js"
   },
   {
-    "revision": "176d9e9f7a506e962cd3",
-    "url": "css/chunk-vendors.2024a13a.css"
+    "revision": "1b6b0aa8a2f429c7b465",
+    "url": "css/chunk-vendors.aad36da6.css"
   },
   {
-    "revision": "176d9e9f7a506e962cd3",
-    "url": "js/chunk-vendors.8a45e10d.js"
+    "revision": "1b6b0aa8a2f429c7b465",
+    "url": "js/chunk-vendors.13fafd57.js"
   },
   {
     "revision": "d6ec9637d310d99942bd",
@@ -212,12 +212,12 @@ self.__precacheManifest = [
     "url": "js/notes.f6b6bfcc.js"
   },
   {
-    "revision": "ef8cbdc63bf595dbce4b",
-    "url": "css/project.17e5cf60.css"
+    "revision": "c9760e14b652da9f988f",
+    "url": "css/project.7950489f.css"
   },
   {
-    "revision": "ef8cbdc63bf595dbce4b",
-    "url": "js/project.fc715906.js"
+    "revision": "c9760e14b652da9f988f",
+    "url": "js/project.54c751a1.js"
   },
   {
     "revision": "535877f50039c0cb49a6196a5b7517cd",
@@ -236,12 +236,12 @@ self.__precacheManifest = [
     "url": "fonts/fontawesome-webfont.674f50d2.eot"
   },
   {
-    "revision": "af7ae505a9eed503f8b8e6982036873e",
-    "url": "fonts/fontawesome-webfont.af7ae505.woff2"
-  },
-  {
     "revision": "fee66e712a8a08eef5805a46892932ad",
     "url": "fonts/fontawesome-webfont.fee66e71.woff"
+  },
+  {
+    "revision": "af7ae505a9eed503f8b8e6982036873e",
+    "url": "fonts/fontawesome-webfont.af7ae505.woff2"
   },
   {
     "revision": "b06871f281fee6b241d60582ae9369b9",
@@ -252,7 +252,7 @@ self.__precacheManifest = [
     "url": "img/fontawesome-webfont.912ec66d.svg"
   },
   {
-    "revision": "25bfdb638e5a95938aa633be0b1d7636",
+    "revision": "776be84a0cb309819be0fac51c9ada11",
     "url": "index.html"
   },
   {
@@ -260,12 +260,40 @@ self.__precacheManifest = [
     "url": "img/logo.png"
   },
   {
-    "revision": "b4fe0344447c0dc287fb9b01ca2439e7",
-    "url": "img/blog/vue+threejs.png"
+    "revision": "09065de3dc65281f9e941ef1e8855994",
+    "url": "img/blog/bugapp.png"
+  },
+  {
+    "revision": "f0b23b6fb3e17e47fec53a1223bdbf62",
+    "url": "img/blog/github.jpg"
+  },
+  {
+    "revision": "06a0da4f1baeac3558b3535489e3c629",
+    "url": "img/blog/myhome.png"
+  },
+  {
+    "revision": "7a9d9f5be513b5bb5781d9a3b4af4a61",
+    "url": "img/blog/piano.png"
   },
   {
     "revision": "9bacc71da78520345712339e8cfada94",
     "url": "img/blog/react+antd.png"
+  },
+  {
+    "revision": "b4fe0344447c0dc287fb9b01ca2439e7",
+    "url": "img/blog/vue+threejs.png"
+  },
+  {
+    "revision": "074c8a7ceffbe50c95d81977ec388c3d",
+    "url": "img/blog/wechat_1.png"
+  },
+  {
+    "revision": "bb1a82992ce3c29d3f7223d5f9dca267",
+    "url": "img/blog/wogaligong.png"
+  },
+  {
+    "revision": "556266763b6644c508671b302f8e9d1f",
+    "url": "img/blog/wechat_2.png"
   },
   {
     "revision": "17c6f7cea09f143271ca7b77133d7b95",
@@ -276,10 +304,6 @@ self.__precacheManifest = [
     "url": "img/project/c3screen.png"
   },
   {
-    "revision": "2e8f7c223c9a37f043b466980d1f605d",
-    "url": "img/project/deer.png"
-  },
-  {
     "revision": "1ec8fc8ff714cc8afc982768bf0e4bd3",
     "url": "img/project/deer-banner.png"
   },
@@ -288,24 +312,28 @@ self.__precacheManifest = [
     "url": "img/project/hnts-banner.png"
   },
   {
-    "revision": "0b8f8a5b3fd80927ab94d7104019c686",
-    "url": "img/project/hnts.png"
+    "revision": "2e8f7c223c9a37f043b466980d1f605d",
+    "url": "img/project/deer.png"
   },
   {
-    "revision": "77bdbadf6e97e971fc766e26f2957f44",
-    "url": "img/project/metro-banner.jpg"
+    "revision": "0b8f8a5b3fd80927ab94d7104019c686",
+    "url": "img/project/hnts.png"
   },
   {
     "revision": "128a815c26107173f98a529d87fea682",
     "url": "img/project/hospital-banner.jpg"
   },
   {
-    "revision": "10810b3305f4d436c0af717de18d7cdd",
-    "url": "img/project/tbs-onestop-banner.jpg"
+    "revision": "77bdbadf6e97e971fc766e26f2957f44",
+    "url": "img/project/metro-banner.jpg"
   },
   {
     "revision": "64ea7f26cb0e9fa9a0fb48fe23b39bac",
     "url": "img/project/tbs-onestop.png"
+  },
+  {
+    "revision": "10810b3305f4d436c0af717de18d7cdd",
+    "url": "img/project/tbs-onestop-banner.jpg"
   },
   {
     "revision": "48a03a2870f906278f4e91985b302d1f",
@@ -318,6 +346,10 @@ self.__precacheManifest = [
   {
     "revision": "735ab4f94fbcd57074377afca324c813",
     "url": "robots.txt"
+  },
+  {
+    "revision": "481c1f6ac0543a2a28e6f933b79394bd",
+    "url": "img/blog/piano.mp4"
   },
   {
     "revision": "4c846add30dac49eb00595c0bd6db7b5",
