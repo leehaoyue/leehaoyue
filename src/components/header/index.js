@@ -5,16 +5,16 @@ export default {
       logosrc: require('../../../public/img/logo.png'),
       activeIndex: 'foreword',
       list: [{
-        label: '朝花夕拾',
+        label: '朝花夕拾-前言赘述',
         name: 'foreword'
       }, {
-        label: '下里巴人',
+        label: '下里巴人-项目经历',
         name: 'project'
       }, {
-        label: '移花接木',
+        label: '移花接木-资料笔记',
         name: 'notes'
       }, {
-        label: '嘲风弄月',
+        label: '嘲风弄月-个人练手',
         name: 'blog'
       }]
     };

@@ -1,6 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import $store from './store';
+import $globalmethod from '@/global/globalMethod';
+import $globaldata from '@/global/globalData';
+import { MessageBox, Message } from 'element-ui';
 Vue.use(Router);
 
 const container = () => import(
@@ -48,6 +51,31 @@ router.beforeEach((to, from, next) => {
     name: to.name,
     path: to.path
   });
+  if ($globalmethod.getBrowser()==='IE' && !$store.state.sureIE) {
+    MessageBox.confirm($globaldata.browser.title, '提示', {
+      confirmButtonText: '顺应天意',
+      cancelButtonText: '誓死不从',
+      type: 'warning'
+    }).then(() => {
+      Message({
+        type: 'success',
+        message: $globaldata.browser.sure,
+        onClose() {
+          window.location.href='';
+        }
+      });
+    }).catch(() => {
+      Message({
+        type: 'error',
+        message: $globaldata.browser.cancel,
+        onClose() {
+          $store.commit('sureIE', true);
+          next();
+        }
+      });
+    });
+    return next(false);
+  }
   next();
 });
 

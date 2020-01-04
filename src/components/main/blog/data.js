@@ -27,7 +27,7 @@ export default {
               '50%'
             ],
             formatter: () => {
-              return 'Lee\'s\nself';
+              return '个人项目\nLee\'s self';
             },
             textStyle: {
               fontSize: 20,

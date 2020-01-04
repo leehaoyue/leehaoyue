@@ -44,7 +44,7 @@ export default {
       this.$axios.getData({
         url: '/foreword/tabPage'
       }).then(res => {
-        this.tabPage[n].content = res.data;
+        this.tabPage[n].content = res.data[n];
       });
     }
   }

@@ -28,12 +28,12 @@
       <swiper class="huge hidden-sm-and-down" :options="swiperOption">
         <swiper-slide class="swiper-slide"
           :key="index"
-          v-for="(item, index) in sentence">{{item}}</swiper-slide>
+          v-for="(item, index) in sentence"><p>{{item}}</p></swiper-slide>
       </swiper>
       <swiper class="little hidden-md-and-up" :options="swiperOption">
         <swiper-slide class="swiper-slide"
           :key="index"
-          v-for="(item, index) in sentence">{{item}}</swiper-slide>
+          v-for="(item, index) in sentence"><p>{{item}}</p></swiper-slide>
       </swiper>
     </el-col>
     <!-- 标签页 -->
@@ -50,9 +50,7 @@
           <el-divider>
             <i :class="item.dividericon"></i>
           </el-divider>
-          <article>
-            {{item.content.content}}
-          </article>
+          <article v-html="item.content.content"></article>
         </el-tab-pane>
       </el-tabs>
     </el-col>

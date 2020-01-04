@@ -5,11 +5,15 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    routerInfo: {}
+    routerInfo: {},
+    sureIE: false
   },
   mutations: {
     routerInfo (state, obj) {
       state.routerInfo = obj;
+    },
+    sureIE (state, key) {
+      state.sureIE = key;
     }
   },
   actions: {
