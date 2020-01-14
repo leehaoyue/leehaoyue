@@ -6,14 +6,22 @@ import $globaldata from '@/global/globalData';
 import { MessageBox, Message } from 'element-ui';
 Vue.use(Router);
 
-const container = () => import(
+const travel = () => import(
   /* webpackPrefetch: true */
-  /* webpackChunkName: 'container' */
-  '@/views/container/index.vue'),
+  /* webpackChunkName: 'travel' */
+  '@/views/travel/index.vue'),
+  container = () => import(
+    /* webpackPrefetch: true */
+    /* webpackChunkName: 'container' */
+    '@/views/container/index.vue'),
   router = new Router({
     routes: [{
       path: '*',
-      redirect: '/container/foreword'
+      redirect: '/travel'
+    }, {
+      path: '/travel',
+      name: 'travel',
+      component: travel
     }, {
       path: '/container',
       name: 'container',

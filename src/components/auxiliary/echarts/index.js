@@ -1,5 +1,6 @@
 require('echarts-wordcloud');
 require('echarts-liquidfill');
+require('echarts/map/js/china');
 
 export default {
   name: 'echarts',
