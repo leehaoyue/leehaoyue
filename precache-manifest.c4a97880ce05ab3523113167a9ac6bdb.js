@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "47bb7e7855d8e76d1f65",
+    "revision": "acb7f6273691a4b6b71b",
     "url": "css/app.56532d29.css"
   },
   {
-    "revision": "47bb7e7855d8e76d1f65",
-    "url": "js/app.4c27181b.js"
+    "revision": "acb7f6273691a4b6b71b",
+    "url": "js/app.40c094c8.js"
   },
   {
     "revision": "24d4d3efe3ee8ea097e1",
@@ -180,12 +180,12 @@ self.__precacheManifest = [
     "url": "js/chunk-2d238691.f89b2f20.js"
   },
   {
-    "revision": "176d9e9f7a506e962cd3",
-    "url": "css/chunk-vendors.2024a13a.css"
+    "revision": "64a89372a3b6f9b109da",
+    "url": "css/chunk-vendors.aad36da6.css"
   },
   {
-    "revision": "176d9e9f7a506e962cd3",
-    "url": "js/chunk-vendors.8a45e10d.js"
+    "revision": "64a89372a3b6f9b109da",
+    "url": "js/chunk-vendors.8731b019.js"
   },
   {
     "revision": "d6ec9637d310d99942bd",
@@ -220,6 +220,14 @@ self.__precacheManifest = [
     "url": "js/project.54c751a1.js"
   },
   {
+    "revision": "0c99a13250eeffcd3f6e",
+    "url": "css/travel.41565741.css"
+  },
+  {
+    "revision": "0c99a13250eeffcd3f6e",
+    "url": "js/travel.cbc0beb9.js"
+  },
+  {
     "revision": "535877f50039c0cb49a6196a5b7517cd",
     "url": "fonts/element-icons.535877f5.woff"
   },
@@ -232,27 +240,27 @@ self.__precacheManifest = [
     "url": "img/foreword_1.311dbf66.png"
   },
   {
-    "revision": "af7ae505a9eed503f8b8e6982036873e",
-    "url": "fonts/fontawesome-webfont.af7ae505.woff2"
-  },
-  {
-    "revision": "fee66e712a8a08eef5805a46892932ad",
-    "url": "fonts/fontawesome-webfont.fee66e71.woff"
-  },
-  {
     "revision": "674f50d287a8c48dc19ba404d20fe713",
     "url": "fonts/fontawesome-webfont.674f50d2.eot"
+  },
+  {
+    "revision": "af7ae505a9eed503f8b8e6982036873e",
+    "url": "fonts/fontawesome-webfont.af7ae505.woff2"
   },
   {
     "revision": "b06871f281fee6b241d60582ae9369b9",
     "url": "fonts/fontawesome-webfont.b06871f2.ttf"
   },
   {
+    "revision": "fee66e712a8a08eef5805a46892932ad",
+    "url": "fonts/fontawesome-webfont.fee66e71.woff"
+  },
+  {
     "revision": "912ec66d7572ff821749319396470bde",
     "url": "img/fontawesome-webfont.912ec66d.svg"
   },
   {
-    "revision": "4a8ea949a5549de946f8e9df39aa217a",
+    "revision": "61f58bcfc3cda72ba49f46bc3cdb84f7",
     "url": "index.html"
   },
   {
@@ -284,6 +292,10 @@ self.__precacheManifest = [
     "url": "img/blog/react+antd.png"
   },
   {
+    "revision": "bb1a82992ce3c29d3f7223d5f9dca267",
+    "url": "img/blog/wogaligong.png"
+  },
+  {
     "revision": "b4fe0344447c0dc287fb9b01ca2439e7",
     "url": "img/blog/vue+threejs.png"
   },
@@ -296,20 +308,16 @@ self.__precacheManifest = [
     "url": "img/blog/wechat_2.png"
   },
   {
-    "revision": "bb1a82992ce3c29d3f7223d5f9dca267",
-    "url": "img/blog/wogaligong.png"
-  },
-  {
     "revision": "17c6f7cea09f143271ca7b77133d7b95",
     "url": "img/logoico.png"
   },
   {
-    "revision": "9163a12e2aa752f407688355b3438ccc",
-    "url": "img/project/c3screen.png"
-  },
-  {
     "revision": "1ec8fc8ff714cc8afc982768bf0e4bd3",
     "url": "img/project/deer-banner.png"
+  },
+  {
+    "revision": "9163a12e2aa752f407688355b3438ccc",
+    "url": "img/project/c3screen.png"
   },
   {
     "revision": "2e8f7c223c9a37f043b466980d1f605d",
@@ -340,16 +348,24 @@ self.__precacheManifest = [
     "url": "img/project/tbs-onestop.png"
   },
   {
-    "revision": "48a03a2870f906278f4e91985b302d1f",
-    "url": "img/project/train-travel.png"
-  },
-  {
     "revision": "fa0e0a5e3ce9ff3142c292153c4bb88d",
     "url": "img/project/traintravel-banner.png"
   },
   {
+    "revision": "1d2f1fd552054112e97e9c3b1da20968",
+    "url": "img/travel/plane.png"
+  },
+  {
+    "revision": "6009a0363e10b83ea42df91e72831c18",
+    "url": "img/travel/train.png"
+  },
+  {
     "revision": "735ab4f94fbcd57074377afca324c813",
     "url": "robots.txt"
+  },
+  {
+    "revision": "48a03a2870f906278f4e91985b302d1f",
+    "url": "img/project/train-travel.png"
   },
   {
     "revision": "481c1f6ac0543a2a28e6f933b79394bd",
