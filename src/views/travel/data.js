@@ -189,31 +189,42 @@ export default {
 
     option = {
       background: 'none',
-      title: {
-        text: '工作+生活=游祖国',
-        subtext: '',
-        left: 'center',
-        textStyle: {
-          color: '#fff'
-        }
-      },
       geo: {
+        show: true,
         map: 'china',
-        label: {
-          emphasis: {
-            show: false,
-            color: '#fff'
-          }
-        },
         roam: true,
         zoom: 1,
+        label: {
+          emphasis: {
+            show: false
+          }
+        },
         itemStyle: {
           normal: {
-            areaColor: '#323c48',
-            borderColor: '#404a59'
+            borderColor: 'rgba(147, 235, 248, 1)',
+            borderWidth: 1,
+            areaColor: {
+              type: 'radial',
+              x: 0.5,
+              y: 0.5,
+              r: 0.8,
+              colorStops: [{
+                offset: 0,
+                color: 'rgba(147, 235, 248, 0)'
+              }, {
+                offset: 1,
+                color: 'rgba(147, 235, 248, 0.2)'
+              }],
+              globalCoord: false
+            },
+            shadowColor: 'rgba(128, 217, 248, 1)',
+            shadowOffsetX: -2,
+            shadowOffsetY: 2,
+            shadowBlur: 10
           },
           emphasis: {
-            areaColor: '#323c48'
+            areaColor: '#389BB7',
+            borderWidth: 0
           }
         }
       },

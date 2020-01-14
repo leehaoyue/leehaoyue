@@ -5,7 +5,7 @@
     mode="horizontal"
     active-text-color="#fff"
     @select="handleSelect">
-    <el-menu-item>
+    <el-menu-item @click="toMain">
       <el-image fit="contain"
         :src="logosrc">
         <div slot="placeholder" class="image-slot">

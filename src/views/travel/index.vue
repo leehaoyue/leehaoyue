@@ -2,6 +2,7 @@
 <template>
   <el-row class="travel">
     <el-col :span="24">
+      <h1>{{ title }}</h1>
       <basicEcharts :chartName="name"
         :chartStyle="style"
         :options="option"></basicEcharts>

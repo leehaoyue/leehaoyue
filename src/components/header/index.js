@@ -24,6 +24,9 @@ export default {
     this.$router.push(this.$store.state.routerInfo.path);
   },
   methods: {
+    toMain() {
+      this.$router.push({name: 'travel'});
+    },
     handleSelect(info) {
       if (!this.$globalmethod.isEmpty(info)) {
         this.$router.push({name: info});
