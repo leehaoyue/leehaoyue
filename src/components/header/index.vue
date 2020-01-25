@@ -6,15 +6,17 @@
     active-text-color="#fff"
     @select="handleSelect">
     <el-menu-item @click="toMain">
-      <el-image fit="contain"
-        :src="logosrc">
-        <div slot="placeholder" class="image-slot">
-          加载中<span class="dot">...</span>
-        </div>
-        <div slot="error" class="image-slot">
-          <i class="el-icon-picture-outline"></i>
-        </div>
-      </el-image>
+      <el-tooltip class="item" effect="light" content="进入差旅历程" placement="bottom-start">
+        <el-image fit="contain"
+          :src="logosrc">
+          <div slot="placeholder" class="image-slot">
+            加载中<span class="dot">...</span>
+          </div>
+          <div slot="error" class="image-slot">
+            <i class="el-icon-picture-outline"></i>
+          </div>
+        </el-image>
+      </el-tooltip>
     </el-menu-item>
     <el-menu-item class="hidden-sm-and-down"
       v-for="(item,index) in list"

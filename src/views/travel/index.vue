@@ -3,6 +3,10 @@
   <el-row class="travel">
     <el-col :span="24">
       <h1>{{ title }}</h1>
+      <h4>{{ content }}
+        <!-- <el-button type="primary" round @click="toMain">（{{ time }}s）跳过</el-button> -->
+        <el-button type="primary" round @click="toMain">进入详情</el-button>
+      </h4>
       <basicEcharts :chartName="name"
         :chartStyle="style"
         :options="option"></basicEcharts>
