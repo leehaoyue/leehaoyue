@@ -18,6 +18,22 @@ module.exports = {
         pathRewrite: {
           '^/crossDomain': ''
         }
+      },
+      '/wyVirusNews': {
+        target: 'https://news.163.com',
+        ws: true,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/wyVirusNews': ''
+        }
+      },
+      '/wyVirusCount': {
+        target: 'https://c.m.163.com',
+        ws: true,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/wyVirusCount': ''
+        }
       }
     }
   },

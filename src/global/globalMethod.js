@@ -272,7 +272,7 @@ export default {
     let tempObj = {};
 
     for (let i in temp) {
-      tempObj[temp[i][id]] = temp[i]
+      tempObj[temp[i][id]] = temp[i];
     }
     return temp.filter(father => {
       let childArr = temp.filter(child => father[id] === child[parentId]);

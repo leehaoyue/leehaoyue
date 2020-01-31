@@ -1,0 +1,110 @@
+@import '../../../global/globalStyle.less';
+
+.boxStyle {
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px @grayScale-color_1;
+}
+
+.virus {
+  height: 100vh;
+  padding: 10px 0;
+  overflow: hidden auto;
+  background: @deep_blue;
+  .refresh {
+    .boxStyle;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    border-radius: 50%;
+  }
+  .map-info {
+    .boxStyle;
+    padding: 10px;
+    background: #fff;
+    margin-bottom: 10px;
+    height: calc(50vh + 50px);
+    h3 {
+      letter-spacing: 0.2rem;
+      i {
+        font-size: 1.2em;
+        margin-right: 0.2rem;
+        color: @primary-color;
+        vertical-align: bottom;
+      }
+    }
+  }
+  .conut-info {
+    .boxStyle;
+    padding: 10px;
+    background: #fff;
+    h3 {
+      letter-spacing: 0.2rem;
+      i {
+        font-size: 1.2em;
+        margin-right: 0.2rem;
+        color: @primary-color;
+        vertical-align: bottom;
+      }
+    }
+    .conut-legend {
+      display: flex;
+      padding: 5px 0;
+      margin-bottom: 10px;
+      justify-content: space-between;
+      .el-button--mini {
+        .boxStyle;
+        flex: 0.33;
+        border-radius: 0;
+      }
+    }
+  }
+  .el-tree {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 0 5px 0;
+    .el-tree-node:nth-child(even) {
+      background: @light_grey;
+    }
+    .is-current.is-focusable {
+      background: none;
+    }
+    .el-tree-node__children {
+      .custom-tree-node:nth-child(odd) {
+        background: @light_grey;
+      }
+    }
+    .custom-tree-node {
+      width: 100%;
+    }
+    .btn-lb {
+      display: inline-block;
+      width: calc(40% - 24px);
+    }
+    .btn-gp {
+      display: inline-block;
+      width: 60%;
+    }
+    .el-button {
+      margin: 0;
+      padding: 0;
+      border: none;
+      width: 33%;
+      background: none;
+      &:hover, &:focus  {
+        border: none;
+        background: none;
+        color: @grayScale-color_1;
+      }
+    }
+  }
+  .el-backtop {
+    .boxStyle;
+    border-radius: 50%;
+  }
+}
+
+.refreshMSG {
+  width: 40vw;
+  min-width: 0;
+}

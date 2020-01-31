@@ -68,22 +68,24 @@ export default {
         method: methods,
         url: url
       }).then((res) => {
-        if (res.data && res.data.code===200) {
-          resolve(res);
-        } else {
-          Loading.service({customClass: 'pageLoading', background: 'transparent'}).close();
-          MessageBox({
-            title: '提示',
-            // message: res.data.msg,
-            message: $server[url] ? $server[url].errmsg : '请求错误',
-            showCancelButton: true,
-            type: 'warning'
-          }).then(action => {
-            if (action === 'confirm') {
-              this.getData({url, methods, params, baseURL, responseType});
-            }
-          });
-        }
+        resolve(res);
+        Loading.service({customClass: 'pageLoading', background: 'transparent'}).close();
+        // if (res.data && res.data.code===200) {
+        //   resolve(res);
+        // } else {
+        //   Loading.service({customClass: 'pageLoading', background: 'transparent'}).close();
+        //   MessageBox({
+        //     title: '提示',
+        //     // message: res.data.msg,
+        //     message: $server[url] ? $server[url].errmsg : '请求错误',
+        //     showCancelButton: true,
+        //     type: 'warning'
+        //   }).then(action => {
+        //     if (action === 'confirm') {
+        //       this.getData({url, methods, params, baseURL, responseType});
+        //     }
+        //   });
+        // }
       }).catch(err => {
         Loading.service({customClass: 'pageLoading', background: 'transparent'}).close();
         reject(err);

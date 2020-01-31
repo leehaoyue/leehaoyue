@@ -22,6 +22,8 @@ export default {
       title: '披星戴月',
       message: '即将开启一段新的旅程',
       type: 'success',
+      position: 'top-right',
+      offset: 150,
       // duration: time*1000
       duration: 3*1000
     });
