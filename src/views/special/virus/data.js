@@ -10,39 +10,44 @@ export default {
     visualMap: {
       min: 0,
       max: 1000,
-      left: 26,
-      bottom: 40,
+      left: 0,
+      bottom: 10,
       showLabel: true,
-      text: ['高', '低'],
       pieces: [{
-        gt: 100,
-        label: '> 100 人',
-        color: '#7f1100'
+        gte: 1000,
+        label: '> 1000 人',
+        color: '#76171C'
+      }, {
+        gt: 500,
+        lte: 1000,
+        label: '500 - 1000 人',
+        color: '#C93130'
+      }, {
+        gte: 100,
+        lte: 499,
+        label: '100 - 499 人',
+        color: '#E16554'
       }, {
         gte: 10,
-        lte: 100,
-        label: '10 - 100 人',
-        color: '#ff5428'
+        lte: 99,
+        label: '10 - 99 人',
+        color: '#F1A88B'
       }, {
         gte: 1,
-        lt: 10,
+        lte: 9,
         label: '1 - 9 人',
-        color: '#ff8c71'
-      }, {
-        gt: 0,
-        lt: 1,
-        label: '疑似',
-        color: '#ffd768'
+        color: '#FCEED3'
       }, {
         value: 0,
-        color: '#ffffff'
+        label: '0 人',
+        color: '#F2F6FC'
       }],
       show: true
     },
     geo: {
       show: true,
       map: 'china',
-      roam: true,
+      roam: false,
       scaleLimit: {
         min: 1,
         max: 2

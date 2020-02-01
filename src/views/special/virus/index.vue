@@ -1,13 +1,23 @@
 <!-- 新型冠状病毒资讯 -->
 <template>
-  <el-row class="virus">
+  <el-row class="virus" ref="virus">
+    <!-- 刷新整体页面 -->
     <el-button class="refresh" icon="el-icon-refresh-left" type="primary" circle @click="refresh"></el-button>
+    <!-- 打开新闻列表 -->
+    <el-button class="newsList" icon="el-icon-message" type="primary" circle @click="openNewsList"></el-button>
+    <!-- 数据更新时间 -->
+    <el-col :span="22" :offset="1" class="update-info">
+      <el-tag>上次刷新时间：{{ updateTime }}</el-tag>
+      <el-tag type="warning">数据来源：网易新闻</el-tag>
+    </el-col>
+    <!-- 疫情热力图 -->
     <el-col :span="22" :offset="1" class="map-info">
       <el-divider content-position="left"><h3><i class="el-icon-map-location"/>各地疫情实时分布热力图</h3></el-divider>
       <basicEcharts :chartName="name"
         :chartStyle="chartStyle"
         :options="mapData"></basicEcharts>
     </el-col>
+    <!-- 疫情数据表 -->
     <el-col :span="22" :offset="1" class="conut-info">
       <el-divider content-position="left"><h3><i class="el-icon-s-order"/>各地疫情实时统计</h3></el-divider>
       <div class="conut-legend">
@@ -31,6 +41,46 @@
       </span>
       </el-tree>
     </el-col>
+    <!-- z作者信息 -->
+    <el-col :span="22" :offset="1" class="author-info">
+      <el-tag type="success">Powered by LeeHaoYue</el-tag>
+      <el-tag type="info">持续更新中。。。</el-tag>
+    </el-col>
+    <!-- 新闻列表 -->
+    <el-drawer class="news-list"
+      :title="`实时新闻【${$globalmethod.timeFilter(new Date().getTime(), 'yyyy-mm-dd/hh:mm')}】`"
+      size="90%"
+      :visible.sync="newsdrawer"
+      direction="rtl">
+      <el-row class="news-list-inner" ref="news">
+        <el-col :span="24">
+          <el-timeline>
+            <el-timeline-item :timestamp="item.time"
+              placement="top"
+              v-for="(item, index) in newsList.list"
+              :key="index">
+              <el-card>
+                <h4>{{ item.title }}</h4>
+                <p>{{ item.detail }}</p>
+                <el-button type="text" @click="newsDetial(item)">详情</el-button>
+              </el-card>
+            </el-timeline-item>
+          </el-timeline>
+        </el-col>
+        <!-- 返回新闻列表顶部 -->
+        <el-backtop target=".news-list-inner"></el-backtop>
+      </el-row>
+    </el-drawer>
+    <!-- 新闻详情 -->
+    <el-dialog  class="newsView"
+      top="0"
+      width="100%"
+      :title="newsTitle"
+      :modal="false"
+      :visible.sync="newsDetialShow">
+      <iframe :src="newsLink" id="newsDetial" />
+    </el-dialog>
+    <!-- 返回整体页面顶部 -->
     <el-backtop target=".virus"></el-backtop>
   </el-row>
 </template>

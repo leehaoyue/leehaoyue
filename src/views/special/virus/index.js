@@ -9,13 +9,19 @@ export default {
         width: '100%',
         height: '50vh'
       },
+      updateTime: '',
       countData: [],
       countTotal: {},
       countProps: {
         children: 'children',
         label: 'name'
       },
-      countPart: ['confirm', 'suspect', 'dead', 'heal']
+      countPart: ['confirm', 'suspect', 'dead', 'heal'],
+      newsList: [],
+      newsdrawer: false,
+      newsDetialShow: false,
+      newsTitle: '',
+      newsLink: ''
     };
   },
   computed: {
@@ -33,23 +39,39 @@ export default {
     }
   },
   mounted() {
-    this.getCountData();
-    // this.getNewsData();
+    this.refresh();
   },
   methods: {
     // 数据刷新
     refresh() {
       this.getCountData();
+      this.getNewsData();
+      if (this.$refs.virus) {
+        this.$refs.virus.$el.scrollTop = 0;
+      }
+      if (this.$refs.news) {
+        this.$refs.news.$el.scrollTop = 0;
+      }
+    },
+    // 打开新闻列表
+    openNewsList() {
+      this.newsdrawer = true;
     },
     // 获取新闻数据
     getNewsData() {
-      this.$axios.getData({
-        baseURL: process.env.VUE_APP_WYVIRUSNEWS,
-        url: '/special/00018IRU/virus_report_data.js?callback=callback',
-        method: 'get'
+      this.$axios.jsonp({
+        url: 'https://news.163.com/special/00018IRU/virus_report_data.js',
+        name: 'callback',
+        callback: 'callback'
       }).then(res => {
-        console.log(res);
+        this.$set(this, 'newsList', res);
       });
+    },
+    // 查看新闻详情
+    newsDetial(info) {
+      this.newsTitle = info.title;
+      this.newsLink = info.link;
+      this.newsDetialShow = true;
     },
     // 获取详细数据
     getCountData() {
@@ -71,6 +93,7 @@ export default {
           count: this.countPart
         });
 
+        this.updateTime = this.$globalmethod.timeFilter(res.data.timestamp, 'yyyy-mm-dd/hh:mm');
         this.$set(this, 'countData', arr.list);
         this.$set(this, 'countTotal', arr.total);
         this.$message.closeAll();

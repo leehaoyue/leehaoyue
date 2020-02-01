@@ -16,8 +16,32 @@
     position: fixed;
     top: 10px;
     left: 10px;
+    z-index: 10000;
+    border-radius: 50%;
+  }
+  .newsList {
+    .boxStyle;
+    position: fixed;
+    top: 10px;
+    right: 10px;
     z-index: 1000;
     border-radius: 50%;
+  }
+  .update-info, .author-info {
+    .boxStyle;
+    padding: 10px;
+    background: #fff;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .el-tag {
+      margin: 0.2rem 0;
+    }
+  }
+  .author-info {
+    margin-top: 0.5rem;
   }
   .map-info {
     .boxStyle;
@@ -99,6 +123,44 @@
       }
     }
   }
+  .news-list {
+    border: none;
+    .el-drawer__close-btn, .el-drawer__header span {
+      outline: none;
+      user-select: none;
+      font-size: 1.2em;
+    }
+    .news-list-inner {
+      width: 95%;
+      margin: auto;
+      overflow: auto;
+      height: calc(100vh - 100px);
+    }
+  }
+  .newsView {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 10001 !important;
+    .el-dialog__title {
+      display: inline-block;
+      width: 90%;
+      .beyond-scope;
+    }
+    .el-dialog__body {
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+      height: calc(100vh - 54px);
+    }
+    #newsDetial {
+      position: absolute;
+      top: -60px;
+      width: 100%;
+      height: calc(100% + 140px);
+      border: none;
+    }
+  }
   .el-backtop {
     .boxStyle;
     border-radius: 50%;
@@ -106,6 +168,6 @@
 }
 
 .refreshMSG {
-  width: 40vw;
+  width: 45vw;
   min-width: 0;
 }

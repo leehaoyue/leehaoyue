@@ -40,6 +40,25 @@ $instance.interceptors.response.use(res => {
   Message.error('响应失败，请重试！');
 });
 
+axios.jsonp = ({url, name, callback}) => {
+  let callbackName = name, callbackFC = callback;
+
+  return new Promise((resolve, reject) => {
+    let JSONP = document.createElement('script');
+
+    JSONP.type = 'text/javascript';
+    JSONP.src = `${url}?${callbackName}=${callbackFC}`;
+    document.getElementsByTagName('head')[0].appendChild(JSONP);
+    window[callbackName] = (res) => {
+      resolve(res);
+    }
+    setTimeout(() => {
+      document.getElementsByTagName('head')[0].removeChild(JSONP);
+    }, 500)
+  })
+}
+
+
 export default {
   getData({url, method, params, baseURL, responseType}) {
     return new Promise((resolve, reject) => {
@@ -91,5 +110,8 @@ export default {
         reject(err);
       });
     });
+  },
+  jsonp(url, index) {
+    return axios.jsonp(url, index);
   }
 };
