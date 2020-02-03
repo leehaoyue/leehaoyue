@@ -1,4 +1,4 @@
-import chartdata from './data.js';
+import virusMap from './map/index.vue';
 
 export default {
   name: 'virus',
@@ -23,20 +23,6 @@ export default {
       newsTitle: '',
       newsLink: ''
     };
-  },
-  computed: {
-    mapData() {
-      let arr = [], obj = this.$lodash.cloneDeep(chartdata);
-
-      this.countData.forEach(item => {
-        arr.push({
-          name: item.name,
-          value: item[this.countPart[0]]
-        });
-      });
-      obj.option.series[0].data = arr;
-      return obj.option;
-    }
   },
   mounted() {
     this.refresh();
@@ -137,5 +123,8 @@ export default {
       });
       return { list, total };
     }
+  },
+  components: {
+    virusMap
   }
 };

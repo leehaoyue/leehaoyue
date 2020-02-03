@@ -11,7 +11,7 @@ export default {
       min: 0,
       max: 1000,
       left: 0,
-      bottom: 10,
+      bottom: 20,
       showLabel: true,
       pieces: [{
         gte: 1000,

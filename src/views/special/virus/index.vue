@@ -13,9 +13,10 @@
     <!-- 疫情热力图 -->
     <el-col :span="22" :offset="1" class="map-info">
       <el-divider content-position="left"><h3><i class="el-icon-map-location"/>各地疫情实时分布热力图</h3></el-divider>
-      <basicEcharts :chartName="name"
+      <virusMap :chartName="name"
         :chartStyle="chartStyle"
-        :options="mapData"></basicEcharts>
+        :countData="countData"
+        :countPart="countPart" />
     </el-col>
     <!-- 疫情数据表 -->
     <el-col :span="22" :offset="1" class="conut-info">
