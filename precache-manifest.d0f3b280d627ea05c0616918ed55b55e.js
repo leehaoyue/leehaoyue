@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "ca66b75485b42b630e77",
+    "revision": "a8e459cf3c5b7647b5df",
     "url": "css/app.56532d29.css"
   },
   {
-    "revision": "ca66b75485b42b630e77",
-    "url": "js/app.cb5940a8.js"
+    "revision": "a8e459cf3c5b7647b5df",
+    "url": "js/app.f98e25b6.js"
   },
   {
     "revision": "144e2a6fa26814a8e76a",
@@ -228,20 +228,20 @@ self.__precacheManifest = [
     "url": "js/travel.69c35dc7.js"
   },
   {
-    "revision": "2ff6619981c0d6791371",
+    "revision": "ee1d03a16523c1518667",
     "url": "css/virus.00eebac2.css"
   },
   {
-    "revision": "2ff6619981c0d6791371",
-    "url": "js/virus.37b6268d.js"
-  },
-  {
-    "revision": "732389ded34cb9c52dd88271f1345af9",
-    "url": "fonts/element-icons.732389de.ttf"
+    "revision": "ee1d03a16523c1518667",
+    "url": "js/virus.6423ec07.js"
   },
   {
     "revision": "535877f50039c0cb49a6196a5b7517cd",
     "url": "fonts/element-icons.535877f5.woff"
+  },
+  {
+    "revision": "732389ded34cb9c52dd88271f1345af9",
+    "url": "fonts/element-icons.732389de.ttf"
   },
   {
     "revision": "311dbf66cc28deded21d42fa7cc0a324",
@@ -252,23 +252,23 @@ self.__precacheManifest = [
     "url": "fonts/fontawesome-webfont.674f50d2.eot"
   },
   {
-    "revision": "b06871f281fee6b241d60582ae9369b9",
-    "url": "fonts/fontawesome-webfont.b06871f2.ttf"
+    "revision": "af7ae505a9eed503f8b8e6982036873e",
+    "url": "fonts/fontawesome-webfont.af7ae505.woff2"
   },
   {
     "revision": "fee66e712a8a08eef5805a46892932ad",
     "url": "fonts/fontawesome-webfont.fee66e71.woff"
   },
   {
-    "revision": "af7ae505a9eed503f8b8e6982036873e",
-    "url": "fonts/fontawesome-webfont.af7ae505.woff2"
+    "revision": "b06871f281fee6b241d60582ae9369b9",
+    "url": "fonts/fontawesome-webfont.b06871f2.ttf"
   },
   {
     "revision": "912ec66d7572ff821749319396470bde",
     "url": "img/fontawesome-webfont.912ec66d.svg"
   },
   {
-    "revision": "fc1f557d3699f8fa7da79d52c5ddbc4b",
+    "revision": "660d65b041e2129cb51ff025800939ae",
     "url": "index.html"
   },
   {
@@ -280,32 +280,28 @@ self.__precacheManifest = [
     "url": "img/blog/bugapp.png"
   },
   {
-    "revision": "06a0da4f1baeac3558b3535489e3c629",
-    "url": "img/blog/myhome.png"
-  },
-  {
     "revision": "f0b23b6fb3e17e47fec53a1223bdbf62",
     "url": "img/blog/github.jpg"
   },
   {
-    "revision": "fbd731f2b308e449faaa7b4fdb699d1c",
-    "url": "img/blog/pianogame.png"
+    "revision": "06a0da4f1baeac3558b3535489e3c629",
+    "url": "img/blog/myhome.png"
   },
   {
     "revision": "7a9d9f5be513b5bb5781d9a3b4af4a61",
     "url": "img/blog/piano.png"
   },
   {
-    "revision": "b4fe0344447c0dc287fb9b01ca2439e7",
-    "url": "img/blog/vue+threejs.png"
+    "revision": "fbd731f2b308e449faaa7b4fdb699d1c",
+    "url": "img/blog/pianogame.png"
   },
   {
     "revision": "9bacc71da78520345712339e8cfada94",
     "url": "img/blog/react+antd.png"
   },
   {
-    "revision": "bb1a82992ce3c29d3f7223d5f9dca267",
-    "url": "img/blog/wogaligong.png"
+    "revision": "b4fe0344447c0dc287fb9b01ca2439e7",
+    "url": "img/blog/vue+threejs.png"
   },
   {
     "revision": "074c8a7ceffbe50c95d81977ec388c3d",
@@ -314,6 +310,10 @@ self.__precacheManifest = [
   {
     "revision": "556266763b6644c508671b302f8e9d1f",
     "url": "img/blog/wechat_2.png"
+  },
+  {
+    "revision": "bb1a82992ce3c29d3f7223d5f9dca267",
+    "url": "img/blog/wogaligong.png"
   },
   {
     "revision": "17c6f7cea09f143271ca7b77133d7b95",
