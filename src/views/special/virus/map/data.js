@@ -46,8 +46,7 @@ export default {
     },
     geo: {
       show: true,
-      map: 'china',
-      roam: false,
+      roam: true,
       scaleLimit: {
         min: 1,
         max: 2

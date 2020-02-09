@@ -2,6 +2,9 @@ require('echarts-wordcloud');
 require('echarts-liquidfill');
 require('echarts/map/js/china');
 require('echarts-gl');
+require.context('echarts/map/js/province', false, /\.js$/).keys().forEach(fileName => {
+  require('echarts/map/js/province'+fileName.substring(1));
+});
 
 export default {
   name: 'echarts',
@@ -26,6 +29,9 @@ export default {
   mounted() {
     window.addEventListener('resize', this.drawResize, 20);
     this.drawInit();
+    this.echartsModel.on('click', params => {
+      this.$emit('chartclick', params);
+    });
   },
   methods: {
     drawInit() {
