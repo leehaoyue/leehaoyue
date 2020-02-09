@@ -79,7 +79,6 @@ export default {
           count: this.countPart
         });
 
-        console.log(arr);
         this.updateTime = this.$globalmethod.timeFilter(res.data.timestamp, 'yyyy-mm-dd/hh:mm');
         this.$set(this, 'countData', arr.list);
         this.$set(this, 'countTotal', arr.total);
