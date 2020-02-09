@@ -46,7 +46,7 @@ export default {
     },
     geo: {
       show: true,
-      roam: true,
+      roam: false,
       scaleLimit: {
         min: 1,
         max: 2
