@@ -2,10 +2,8 @@ export default {
   option: {
     background: 'none',
     tooltip: {
-      triggerOn: 'click',
-      formatter: e => {
-        return e.value === 0.5 ? `${e.name}：有疑似病例` : `${e.seriesName}<br />${e.name}：${e.value}`;
-      }
+      trigger: 'item',
+      formatter: '{a} <br/>{b} : {c} ({d}%)'
     },
     visualMap: {
       min: 0,
@@ -44,41 +42,20 @@ export default {
       }],
       show: true
     },
-    geo: {
-      show: true,
-      roam: false,
-      scaleLimit: {
-        min: 1,
-        max: 2
-      },
-      zoom: 1.15,
-      top: 25,
-      label: {
-        normal: {
-          show: true,
-          fontSize: '10',
-          color: 'rgba(0,0,0,0.7)'
-        }
-      },
-      itemStyle: {
-        normal: {
-          shadowBlur: 50,
-          shadowColor: 'rgba(0, 0, 0, 0.2)',
-          borderColor: 'rgba(0, 0, 0, 0.2)'
-        },
-        emphasis: {
-          areaColor: '#f2d5ad',
-          shadowOffsetX: 0,
-          shadowOffsetY: 0,
-          borderWidth: 0
-        }
-      }
-    },
     series: [{
       name: '确诊病例',
-      type: 'map',
-      geoIndex: 0,
-      data: {}
+      type: 'funnel',
+      left: '10%',
+      top: 0,
+      bottom: 0,
+      width: '70%',
+      min: 0,
+      max: 1000,
+      minSize: '0%',
+      maxSize: '100%',
+      sort: 'descending',
+      gap: 2,
+      data: ''
     }]
   }
 };

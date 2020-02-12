@@ -34,6 +34,14 @@ module.exports = {
         pathRewrite: {
           '^/wyVirusCount': ''
         }
+      },
+      '/wjwVirusCount': {
+        target: 'https://ncov.html5.qq.com',
+        ws: true,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/wjwVirusCount': ''
+        }
       }
     }
   },

@@ -1,27 +1,45 @@
 import virusMap from './map/index.vue';
+import virusFunnel from './funnel/index.vue';
+import virusLocal from './local/index.vue';
 
 export default {
   name: 'virus',
   data() {
     return {
-      name: 'virusEcharts',
-      chartStyle: {
-        width: '100%',
-        height: '50vh'
+      chartInfo: { // 图表配置
+        virusMap: { // 地图
+          name: 'virusEchartsMap',
+          width: '100%',
+          height: '50vh'
+        },
+        virusFunnel: { // 漏斗图
+          name: 'virusEchartsFunnel',
+          width: '80vw',
+          height: '100vh'
+        }
       },
-      updateTime: '',
-      countData: [],
-      countTotal: {},
-      countProps: {
+      activePart: 'table', // 选中选项卡
+      partList: [{
+        label: '数据表统计',
+        name: 'table'
+      }, {
+        label: '天梯图统计',
+        name: 'funnel'
+      }], // 选项卡
+      updateTime: '', // 数据更新时间
+      countData: [], // 图表数据
+      countTotal: {}, // 总计数据
+      countProps: { // 树形图配置
         children: 'children',
         label: 'name'
       },
-      countPart: ['confirm', 'suspect', 'dead', 'heal'],
-      newsList: [],
-      newsdrawer: false,
-      newsDetialShow: false,
-      newsTitle: '',
-      newsLink: ''
+      countPart: ['confirm', 'suspect', 'dead', 'heal'], // 确诊、疑似、死亡、治愈（字段名）
+      newsList: [], // 新闻列表
+      newsdrawer: false, // 显示新闻列表
+      newsDetialShow: false, // 显示新闻详情
+      newsTitle: '', // 新闻标题
+      newsLink: '', // 新闻链接
+      localShow: true // 是否显示附近小区
     };
   },
   mounted() {
@@ -58,6 +76,10 @@ export default {
       this.newsTitle = info.title;
       this.newsLink = info.link;
       this.newsDetialShow = true;
+    },
+    // 打开附近详情
+    openLocalMap() {
+      this.localShow = true;
     },
     // 获取详细数据
     getCountData() {
@@ -125,6 +147,8 @@ export default {
     }
   },
   components: {
-    virusMap
+    virusMap,
+    virusFunnel,
+    virusLocal
   }
 };

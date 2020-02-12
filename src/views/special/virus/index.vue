@@ -5,20 +5,22 @@
     <el-button class="refresh" icon="el-icon-refresh-left" type="primary" circle @click="refresh"></el-button>
     <!-- 打开新闻列表 -->
     <el-button class="newsList" icon="el-icon-message" type="primary" circle @click="openNewsList"></el-button>
+    <!-- 打开附近疫情 -->
+    <el-button class="localMap" icon="el-icon-location" type="primary" circle @click="openLocalMap"></el-button>
     <!-- 数据更新时间 -->
     <el-col :span="22" :offset="1" class="update-info">
       <el-tag>上次刷新时间：{{ updateTime }}</el-tag>
-      <el-tag type="warning">数据来源：网易新闻</el-tag>
+      <el-tag type="warning">数据来源：卫健委、网易新闻等机构企业</el-tag>
     </el-col>
     <!-- 疫情热力图 -->
     <el-col :span="22" :offset="1" class="map-info">
       <el-divider content-position="left"><h3><i class="el-icon-map-location"/>各地疫情实时分布热力图</h3></el-divider>
-      <virusMap :chartName="name"
-        :chartStyle="chartStyle"
+      <virusMap :chartName="chartInfo.virusMap.name"
+        :chartStyle="chartInfo.virusMap"
         :countData="countData"
         :countPart="countPart" />
     </el-col>
-    <!-- 疫情数据表 -->
+    <!-- 疫情数据表、漏斗图 -->
     <el-col :span="22" :offset="1" class="conut-info">
       <el-divider content-position="left"><h3><i class="el-icon-s-order"/>各地疫情实时统计</h3></el-divider>
       <div class="conut-legend">
@@ -27,22 +29,38 @@
         <el-button type="info" size="mini">死亡&nbsp;-&nbsp;{{ countTotal.dead }}</el-button>
         <el-button type="success" size="mini">治愈&nbsp;-&nbsp;{{ countTotal.heal }}</el-button>
       </div>
-      <el-tree :data="countData" :props="countProps">
-        <span class="custom-tree-node" slot-scope="{ node, data }">
-        <span class="btn-lb">{{ node.label }}</span>
-        <span class="btn-gp">
-          <el-button type="danger" plain>{{ data.confirm || 0 }}</el-button>
-          <el-divider direction="vertical"></el-divider>
-          <!-- <el-button type="warning" plain>{{ data.suspect || 0 }}</el-button>
-          <el-divider direction="vertical"></el-divider> -->
-          <el-button type="info" plain>{{ data.dead || 0 }}</el-button>
-          <el-divider direction="vertical"></el-divider>
-          <el-button type="success" plain>{{ data.heal || 0 }}</el-button>
-        </span>
-      </span>
-      </el-tree>
+      <el-tabs v-model="activePart">
+        <el-tab-pane :key="index"
+          :label="item.label"
+          :name="item.name"
+          v-for="(item, index) in partList">
+          <!-- 漏斗图 -->
+          <virusFunnel v-show="index===1"
+            :chartName="chartInfo.virusFunnel.name"
+            :chartStyle="chartInfo.virusFunnel"
+            :countData="countData"
+            :countPart="countPart" />
+          <!-- 树形图 -->
+          <el-tree v-show="index===0"
+            :data="countData"
+            :props="countProps">
+            <span class="custom-tree-node" slot-scope="{ node, data }">
+              <span class="btn-lb">{{ node.label }}</span>
+              <span class="btn-gp">
+                <el-button type="danger" plain>{{ data.confirm || 0 }}</el-button>
+                <el-divider direction="vertical"></el-divider>
+                <!-- <el-button type="warning" plain>{{ data.suspect || 0 }}</el-button>
+                <el-divider direction="vertical"></el-divider> -->
+                <el-button type="info" plain>{{ data.dead || 0 }}</el-button>
+                <el-divider direction="vertical"></el-divider>
+                <el-button type="success" plain>{{ data.heal || 0 }}</el-button>
+              </span>
+            </span>
+          </el-tree>
+        </el-tab-pane>
+      </el-tabs>
     </el-col>
-    <!-- z作者信息 -->
+    <!-- 作者信息 -->
     <el-col :span="22" :offset="1" class="author-info">
       <el-tag type="success">Powered by LeeHaoYue</el-tag>
       <el-tag type="info">持续更新中。。。</el-tag>
@@ -73,13 +91,20 @@
       </el-row>
     </el-drawer>
     <!-- 新闻详情 -->
-    <el-dialog  class="newsView"
+    <el-dialog class="newsView"
       top="0"
       width="100%"
       :title="newsTitle"
       :modal="false"
       :visible.sync="newsDetialShow">
       <iframe :src="newsLink" id="newsDetial" />
+    </el-dialog>
+    <!-- 附近疫情 -->
+    <el-dialog class="localView"
+      title="附近疫情"
+      :fullscreen="true"
+      :visible.sync="localShow">
+      <virusLocal />
     </el-dialog>
     <!-- 返回整体页面顶部 -->
     <el-backtop target=".virus"></el-backtop>

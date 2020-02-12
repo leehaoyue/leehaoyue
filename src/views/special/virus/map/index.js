@@ -1,4 +1,5 @@
 import chartdata from './data.js';
+import virusPie from '../pie/index.vue';
 
 export default {
   name: 'virus-map',
@@ -10,6 +11,11 @@ export default {
   },
   data() {
     return {
+      virusPie: { // 饼图配置
+        name: 'virusEchartsPie',
+        width: '85vw',
+        height: '40vh'
+      },
       mapDetial: {
         name: '',
         mapType: '',
@@ -32,7 +38,30 @@ export default {
       }, {
         prop: this.countPart[3],
         label: '治愈'
-      }]
+      }],
+      activePart: 'table',
+      partList: [{
+        label: '数据表统计',
+        name: 'table'
+      }, {
+        label: '饼图占比统计',
+        name: 'pie'
+      }],
+      swiperOption: {
+        loop: false,
+        effect: 'coverflow',
+        fadeEffect: {
+          slideShadows: true,
+          shadow: true
+        },
+        autoplay: true,
+        observer: true,
+        observeParents: true,
+        autoplayDisableOnInteraction: true,
+        pagination: {
+          el: '.swiper-pagination'
+        }
+      }
     };
   },
   watch: {
@@ -53,6 +82,34 @@ export default {
       obj.option.series[0].data = this.mapDetial.data;
       return obj.option;
     },
+    pieData() {
+      let arr = this.mapDetial.data,
+        arr_c = [],
+        arr_d = [],
+        arr_h = [],
+        param = {};
+
+      if (!this.$globalmethod.isEmpty(arr)) {
+        arr.forEach(item => {
+          arr_c.push({
+            name: item.name,
+            value: item.value
+          });
+          arr_d.push({
+            name: item.name,
+            value: item.value_d
+          });
+          arr_h.push({
+            name: item.name,
+            value: item.value_h
+          });
+        });
+      }
+      param[this.countPart[0]] = arr_c;
+      param[this.countPart[2]] = arr_d;
+      param[this.countPart[3]] = arr_h;
+      return param;
+    },
     datadetail() {
       return this.options;
     }
@@ -60,6 +117,7 @@ export default {
   mounted() {},
   methods: {
     reback(n) { // 返回全国
+      this.activePart = 'table';
       this.country = {
         name: '全国',
         data: []
@@ -71,7 +129,9 @@ export default {
         n.forEach(item => {
           arr.push({
             name: item.name,
-            value: item[this.countPart[0]]
+            value: item[this.countPart[0]] || 0,
+            value_d: item[this.countPart[2]] || 0,
+            value_h: item[this.countPart[3]] || 0
           });
         });
         this.$set(this, 'mapDetial', {
@@ -97,8 +157,10 @@ export default {
         };
         obj.children.forEach(item => {
           arr.push({
-            name: end.find(data => item.name.indexOf(data)>=0) ? item.name : city.find(data => param.name.indexOf(data)>=0) ? item.name+'区' : item.name+'市',
-            value: item[this.countPart[0]]
+            name: end.find(data => item.name.indexOf(data)>=0) ? item.name : city.find(data => param.name.indexOf(data)>=0) ? item.name==='浦东' ? item.name+'新区' : item.name+'区' : item.name+'市',
+            value: item[this.countPart[0]] || 0,
+            value_d: item[this.countPart[2]] || 0,
+            value_h: item[this.countPart[3]] || 0
           });
         });
         this.$set(this, 'mapDetial', {
@@ -108,5 +170,8 @@ export default {
         });
       }
     }
+  },
+  components: {
+    virusPie
   }
 };
