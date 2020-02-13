@@ -15,6 +15,7 @@
     <!-- 疫情热力图 -->
     <el-col :span="22" :offset="1" class="map-info">
       <el-divider content-position="left"><h3><i class="el-icon-map-location"/>各地疫情实时分布热力图</h3></el-divider>
+      <el-tag type="info" size="mini" effect="plain">地图可下钻</el-tag>
       <virusMap :chartName="chartInfo.virusMap.name"
         :chartStyle="chartInfo.virusMap"
         :countData="countData"

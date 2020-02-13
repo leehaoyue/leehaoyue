@@ -35,6 +35,18 @@
     z-index: 1000;
     border-radius: 50%;
   }
+  .localView {
+    background: @primary-color;
+    .el-dialog, .el-dialog__body {
+      background: none;
+    }
+    .el-dialog__body {
+      padding: 10px 0;
+    }
+    .el-dialog__header {
+      background: @grayScale-color_8;
+    }
+  }
   .update-info, .author-info {
     .boxStyle;
     padding: 10px;
@@ -57,6 +69,9 @@
     background: #fff;
     margin-bottom: 10px;
     min-height: calc(50vh + 70px);
+    .el-tag {
+      margin-bottom: 0.5rem;
+    }
     h3 {
       letter-spacing: 0.2rem;
       i {
