@@ -63,7 +63,7 @@ export default {
   weShare({appId, timestamp, noncestr, signature, appMessage, timeLine}) {
     console.log(appId, timestamp, noncestr, signature, appMessage, timeLine);
     wx.config({
-      debug: true, // 开启调试模式
+      debug: false, // 开启调试模式
       appId: appId, // 必填，公众号的唯一标识
       timestamp: timestamp, // 必填，生成签名的时间戳
       nonceStr: noncestr, // 必填，生成签名的随机串
