@@ -7,11 +7,17 @@
         :zoom="map.zoom"
         :center="map.position"
         :scroll-wheel-zoom="true"
+        :double-click-zoom="true"
+        v-if="showMap && showMapCheck"
         ak="pxoraYzj7L89lC7mup893eekkBZew9jq">
-        <bm-marker :key="index"
-          v-for="(item, index) in marker"
-          :position="item"></bm-marker>
-        <bm-scale anchor="BMAP_ANCHOR_TOP_RIGHT"></bm-scale>
+        <bm-marker :position="position"
+          @click="positionDetail"
+          animation="BMAP_ANIMATION_BOUNCE"></bm-marker>
+        <bm-point-collection color="red"
+          :points="marker"
+          size="BMAP_POINT_SIZE_BIGGER"
+          shape="BMAP_POINT_SHAPE_CIRCLE"
+          @click="pointDetail"></bm-point-collection>
         <bm-city-list anchor="BMAP_ANCHOR_TOP_LEFT"></bm-city-list>
         <bm-navigation anchor="BMAP_ANCHOR_TOP_RIGHT"></bm-navigation>
         <bm-map-type :map-types="['BMAP_NORMAL_MAP', 'BMAP_HYBRID_MAP']" anchor="BMAP_ANCHOR_TOP_LEFT"></bm-map-type>
@@ -52,6 +58,8 @@
         </el-option>
       </el-select>
     </el-col>
+    <!-- 显示地图选项 -->
+    <el-checkbox class="showMapCheck" v-model="showMapCheck">显示地图（地图加载耗时较长）</el-checkbox>
     <!-- 当前位置 -->
     <h4 class="position" v-show="!$globalmethod.isEmpty(address)">
       <i class="fa fa-map-marker" aria-hidden="true"></i>当前位置：{{address}}

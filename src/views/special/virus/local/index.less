@@ -30,6 +30,22 @@
       }
     }
   }
+  .showMapCheck {
+    line-height: 2;
+    text-indent: 0.5em;
+    letter-spacing: 0.2rem;
+    .el-checkbox__inner {
+      border: none;
+      box-shadow: none;
+      transform: scale(1.2);
+    }
+    .is-checked .el-checkbox__inner {
+      background: @success-color;
+    }
+    .el-checkbox__label {
+      color: @grayScale-color_8;
+    }
+  }
   .pageNoData {
     .textStyle;
     font-size: 2em;
@@ -145,4 +161,22 @@
     width: 100%;
     height: 500px;
   }
+  .anchorBL {
+    display: none;
+  }
+}
+
+.pointDetail {
+  width: 90vw;
+  .el-message-box__title {
+    span {
+      width: 80%;
+      display: inline-block;
+    }
+  }
+}
+
+.messageDetail {
+  width: 40vw;
+  min-width: 0;
 }

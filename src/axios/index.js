@@ -60,7 +60,7 @@ axios.jsonp = ({url, name, callback}) => {
 
 
 export default {
-  getData({url, method, params, baseURL, responseType}) {
+  getData({url, method, params, baseURL, responseType, headers}) {
     return new Promise((resolve, reject) => {
       if ($server[url] && $server[url].isMock) {
         let res = {
@@ -82,6 +82,7 @@ export default {
         params: params
       };
       axios({...obj,
+        headers,
         baseURL: baseURL || process.env.API,
         responseType: responseType || 'json',
         method: methods,

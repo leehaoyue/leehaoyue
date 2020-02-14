@@ -2,6 +2,7 @@ import lodash from 'lodash'; // 实用工具库
 import pinyinMatch from 'pinyin-match'; // 汉字转拼音
 import lrz from 'lrz'; // 图片压缩
 import CryptoJS from 'crypto-js'; // HMAC加密
+import wx from 'weixin-js-sdk'; // 微信jssdk
 
 export default {
   // 默认console
@@ -45,6 +46,45 @@ export default {
     if (navigator.userAgent.indexOf('Safari') !== -1){
       return 'Safari';
     }
+  },
+  // 生成随机字符串
+  randomString(len) {
+    len = len || 32;
+    let $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678',
+      maxPos = $chars.length,
+      pwd = '';
+
+    for (i = 0; i < len; i++) {
+      pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+    }
+    return pwd;
+  },
+  // 微信分享
+  weShare({appId, timestamp, noncestr, signature, appMessage, timeLine}) {
+    console.log(appId, timestamp, noncestr, signature, appMessage, timeLine);
+    wx.config({
+      debug: true, // 开启调试模式
+      appId: appId, // 必填，公众号的唯一标识
+      timestamp: timestamp, // 必填，生成签名的时间戳
+      nonceStr: noncestr, // 必填，生成签名的随机串
+      signature: signature, // 必填，签名
+      jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData'] // 必填，需要使用的JS接口列表
+    });
+    wx.ready(() => {
+      wx.updateAppMessageShareData({...appMessage,
+        success: function () {
+          // 设置成功
+        }
+      });
+      wx.updateTimelineShareData({...timeLine,
+        success: function () {
+          // 设置成功
+        }
+      });
+    });
+    wx.error(err => {
+      console.log(err);
+    });
   },
   // 判断android、ios
   iSAndroid() {

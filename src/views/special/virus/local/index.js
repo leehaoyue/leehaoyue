@@ -1,6 +1,4 @@
-import BaiduMap from 'vue-baidu-map/components/map/Map.vue';
-import BmView from 'vue-baidu-map/components/map/MapView.vue';
-import BmLocalSearch from 'vue-baidu-map/components/search/LocalSearch.vue';
+import { BaiduMap, BmMarker, BmMapType, BmCityList, BmNavigation, BmPointCollection } from 'vue-baidu-map';
 
 export default {
   name: 'virus-local',
@@ -19,13 +17,18 @@ export default {
         lat: 39.9,
         lng: 116.3
       },
+      showMap: false, // 是否显示地图
+      showMapCheck: false, // 是否显示地图确认
+      bMap: '', // 地图实例
+      oMap: '', // 地图对象
       map: { // 地图配置
         position: {
           lat: 39.9,
           lng: 116.3
         },
-        zoom: 15
+        zoom: 12
       },
+      mapData: '', // 地图点位
       marker: [], // 覆盖点位
       address: '', // 当前位置
       tableData: [{ // 表格配置
@@ -133,17 +136,6 @@ export default {
       return this.$globalmethod.isEmpty(this.cityList_c[index]) ? [] : this.cityList_c[index].children;
     },
     location() { // 选中的地点
-      this.marker = [];
-      let arr = [], obj = this.cityList_t;
-
-      for (let i=0; obj.length ;i++) {
-        arr.push({
-          lng: obj[i].lng,
-          lat: obj[i].lat
-        });
-      }
-      arr.push(this.position);
-      this.$set(this, 'marker', arr);
       return {
         province: this.value_p,
         city: this.value_c,
@@ -203,7 +195,7 @@ export default {
     initMap() {
       this.$set(this, 'map', {
         position: this.position,
-        zoom: 15
+        zoom: 12
       });
     },
     // 获取城市列表
@@ -242,6 +234,7 @@ export default {
     },
     // 获取地区详情
     getAreaData() {
+      this.showMap = false;
       this.$axios.getData({
         baseURL: process.env.VUE_APP_WJWVIRUSCOUNT,
         url: '/api/getCommunity',
@@ -249,7 +242,68 @@ export default {
         params: this.location
       }).then(res => {
         this.$set(this, 'areaData', res.data.community);
+        this.marker = [];
+        this.$set(this, 'map', {
+          position: this.position,
+          zoom: 12
+        });
+        this.$set(this, 'marker', this.mapDeal(this.areaData));
+        this.showMap = true;
       });
+    },
+    // 地图标点处理
+    mapDeal(res) {
+      let arr = [];
+
+      if (Array.isArray(res)) {
+        arr = arr.concat(res);
+      } else {
+        for (let i in res) {
+          arr = arr.concat(this.mapDeal(res[i]));
+        }
+      }
+      return arr;
+    },
+    // 当前位置
+    positionDetail() {
+      this.$message({
+        customClass: 'messageDetail',
+        type: 'info',
+        message: '当前位置'
+      });
+    },
+    // 标点详情
+    pointDetail(e) {
+      let point = this.marker.find(item => {
+          return String(item.lng) === String(e.point.lng) && String(item.lat) === String(e.point.lat);
+        }),
+        h = this.$createElement;
+
+      if (!this.$globalmethod.isEmpty(point)) {
+        this.$msgbox({
+          customClass: 'pointDetail',
+          title: point.full_address,
+          message: h('p', null, [
+            h('p', null, `与我距离(公里)${this.tableData[2].fun('', point, this.position)}`),
+            h('p', null, `累计确诊：${this.tableData[3].fun(point.cnt_sum_certain)}`),
+            h('p', null, `累计疑似：${this.tableData[4].fun(point.cnt_sum_uncertain)}`),
+            h('p', null, `累计死亡：${this.tableData[5].fun(point.cnt_sum_die)}`),
+            h('p', null, `累计治愈：${this.tableData[6].fun(point.cnt_sum_recure)}`),
+            h('p', null, `新增确诊：${this.tableData[7].fun(point.cnt_inc_certain)}`),
+            h('p', null, `新增疑似：${this.tableData[8].fun(point.cnt_inc_uncertain)}`),
+            h('p', null, `新增死亡：${this.tableData[9].fun(point.cnt_inc_die)}`),
+            h('p', null, `新增治愈：${this.tableData[10].fun(point.cnt_inc_recure)}`)
+          ]),
+          showCancelButton: false,
+          showConfirmButton: false
+        });
+      } else {
+        this.$message({
+          customClass: 'messageDetail',
+          type: 'info',
+          message: '怎无该地点详情'
+        });
+      }
     },
     // 表格行详情
     detailRow(info) {
@@ -264,7 +318,10 @@ export default {
   },
   components: {
     BaiduMap,
-    BmView,
-    BmLocalSearch
+    BmMarker,
+    BmMapType,
+    BmCityList,
+    BmNavigation,
+    BmPointCollection
   }
 };

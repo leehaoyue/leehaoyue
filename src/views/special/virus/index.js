@@ -39,13 +39,45 @@ export default {
       newsDetialShow: false, // 显示新闻详情
       newsTitle: '', // 新闻标题
       newsLink: '', // 新闻链接
-      localShow: true // 是否显示附近小区
+      localShow: false // 是否显示附近小区
     };
+  },
+  created() {
+    this.weShare();
   },
   mounted() {
     this.refresh();
   },
   methods: {
+    // 微信分享
+    weShare() {
+      this.$axios.getData({
+        baseURL: process.env.VUE_APP_CROSSDOMAIN,
+        url: '/wxconfig',
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        params: {
+          url: window.location.protocol+'//'+window.location.host
+        }
+      }).then(res => {
+        this.$globalmethod.weShare({...res.data,
+          appId: this.$store.state.weappid,
+          appMessage: {
+            title: '疫情数据统计',
+            desc: 'Author | 今遇良猿(LeeHaoyue)',
+            link: window.location.href,
+            imgUrl: 'http://leehaoyue.com/home/img/logo.png'
+          },
+          timeLine: {
+            title: '疫情数据统计',
+            link: window.location.href,
+            imgUrl: 'http://leehaoyue.com/home/img/logo.png' // 分享图标
+          }
+        });
+      });
+    },
     // 数据刷新
     refresh() {
       this.getCountData();

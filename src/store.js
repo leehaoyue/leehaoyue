@@ -6,7 +6,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     routerInfo: {},
-    sureIE: false
+    sureIE: false,
+    weappid: 'wx1cb01d8e53e54960'
   },
   mutations: {
     routerInfo (state, obj) {

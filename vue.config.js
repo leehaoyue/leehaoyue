@@ -12,7 +12,7 @@ module.exports = {
     },
     proxy: {
       '/crossDomain': {
-        target: '<url>',
+        target: 'http://111.229.218.238:8081',
         ws: true,
         changeOrigin: true,
         pathRewrite: {
