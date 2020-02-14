@@ -68,12 +68,26 @@ export default {
             title: '疫情数据统计',
             desc: 'Author | 今遇良猿(LeeHaoyue)',
             link: window.location.href,
-            imgUrl: 'http://leehaoyue.com/home/img/logo.png'
+            imgUrl: 'http://leehaoyue.com/home/img/logo.png',
+            type: 'link',
+            dataUrl: ''
           },
           timeLine: {
             title: '疫情数据统计',
             link: window.location.href,
-            imgUrl: 'http://leehaoyue.com/home/img/logo.png' // 分享图标
+            imgUrl: 'http://leehaoyue.com/home/img/logo.png'
+          },
+          shareQQ: {
+            title: '疫情数据统计',
+            desc: 'Author | 今遇良猿(LeeHaoyue)',
+            link: window.location.href,
+            imgUrl: 'http://leehaoyue.com/home/img/logo.png'
+          },
+          shareWeibo: {
+            title: '疫情数据统计',
+            desc: 'Author | 今遇良猿(LeeHaoyue)',
+            link: window.location.href,
+            imgUrl: 'http://leehaoyue.com/home/img/logo.png'
           }
         });
       });

@@ -60,25 +60,37 @@ export default {
     return pwd;
   },
   // 微信分享
-  weShare({appId, timestamp, noncestr, signature, appMessage, timeLine}) {
-    console.log(appId, timestamp, noncestr, signature, appMessage, timeLine);
+  weShare({appId, timestamp, noncestr, signature, appMessage, timeLine, shareQQ, shareWeibo}) {
     wx.config({
       debug: false, // 开启调试模式
       appId: appId, // 必填，公众号的唯一标识
       timestamp: timestamp, // 必填，生成签名的时间戳
       nonceStr: noncestr, // 必填，生成签名的随机串
       signature: signature, // 必填，签名
-      jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData'] // 必填，需要使用的JS接口列表
+      jsApiList: ['onMenuShareAppMessage', 'onMenuShareTimeline', 'onMenuShareQQ', 'onMenuShareWeibo'] // 必填，需要使用的JS接口列表
     });
-    wx.ready(() => {
-      wx.updateAppMessageShareData({...appMessage,
+    wx.ready(function() {
+      wx.onMenuShareAppMessage({...appMessage,
         success: function () {
           // 设置成功
         }
       });
-      wx.updateTimelineShareData({...timeLine,
+      wx.onMenuShareTimeline({...timeLine,
         success: function () {
           // 设置成功
+        }
+      });
+      wx.onMenuShareTimeline({...shareQQ,
+        success: function () {
+          // 设置成功
+        }
+      });
+      wx.onMenuShareWeibo({...shareWeibo,
+        success: function () {
+        // 用户确认分享后执行的回调函数
+        },
+        cancel: function () {
+        // 用户取消分享后执行的回调函数
         }
       });
     });
