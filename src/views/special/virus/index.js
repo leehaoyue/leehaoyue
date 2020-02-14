@@ -59,7 +59,7 @@ export default {
           'Content-Type': 'application/json'
         },
         params: {
-          url: window.location.protocol+'//'+window.location.host
+          url: encodeURIComponent(window.location.href.split('#')[0])
         }
       }).then(res => {
         this.$globalmethod.weShare({...res.data,
