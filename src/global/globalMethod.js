@@ -80,7 +80,7 @@ export default {
           // 设置成功
         }
       });
-      wx.onMenuShareTimeline({...shareQQ,
+      wx.onMenuShareQQ({...shareQQ,
         success: function () {
           // 设置成功
         }
