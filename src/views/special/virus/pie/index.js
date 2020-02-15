@@ -15,6 +15,11 @@ export default {
         pieces_c: ['#FFE4E1', '#8B0000'],
         pieces_d: ['#D3D3D3', '#000000'],
         pieces_h: ['#7FFFAA', '#006400']
+      },
+      piecesName: {
+        pieces_c: '确诊病例',
+        pieces_d: '死亡病例',
+        pieces_h: '治愈病例'
       }
     };
   },
@@ -38,6 +43,7 @@ export default {
           color: this.piecesColor[this.pieces]
         }
       };
+      obj.option.series[0].name = this.piecesName[this.pieces];
       obj.option.series[0].data = this.countData;
       return obj.option;
     },
