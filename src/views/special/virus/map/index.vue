@@ -21,18 +21,19 @@
           :name="item.name"
           v-for="(item, index) in partList">
           <el-table v-show="index===0" border
-            height="250"
+            max-height="250"
             style="width: 100%"
             :data="country.data">
             <el-table-column
-              :prop="item.prop"
-              :label="item.label"
-              :key="index"
-              v-for="(item, index) in tablelabel">
-                <template slot-scope="scope">
-                  <span :class="item.prop">{{scope.row[item.prop] || 0}}</span>
-                </template>
-              </el-table-column>
+              :prop="data.prop"
+              :label="data.label"
+              :key="num"
+              :fixed="num===0"
+              v-for="(data, num) in tablelabel">
+              <template slot-scope="scope">
+                <span :class="data.prop">{{scope.row[data.prop]}}</span>
+              </template>
+            </el-table-column>
           </el-table>
           <swiper v-show="index===1" class="pieSwiper" :options="swiperOption">
             <swiper-slide class="swiper-slide">

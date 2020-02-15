@@ -42,6 +42,14 @@ module.exports = {
         pathRewrite: {
           '^/wjwVirusCount': ''
         }
+      },
+      '/kkVirusCount': {
+        target: 'https://api.m.sm.cn',
+        ws: true,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/kkVirusCount': ''
+        }
       }
     }
   },

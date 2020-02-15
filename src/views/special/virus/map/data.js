@@ -75,7 +75,7 @@ export default {
       }
     },
     series: [{
-      name: '确诊病例',
+      name: '现存确诊病例',
       type: 'map',
       geoIndex: 0,
       data: {}

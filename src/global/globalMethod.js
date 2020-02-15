@@ -47,6 +47,13 @@ export default {
       return 'Safari';
     }
   },
+  // 判断是否在微信
+  isWeiXin() {
+    if(window.navigator.userAgent.toLowerCase().match(/MicroMessenger/i) === 'micromessenger'){
+      return true;
+    }
+    return false;
+  },
   // 生成随机字符串
   randomString(len) {
     len = len || 32;
@@ -60,42 +67,55 @@ export default {
     return pwd;
   },
   // 微信分享
-  weShare({appId, timestamp, noncestr, signature, appMessage, timeLine, shareQQ, shareWeibo}) {
-    wx.config({
-      debug: false, // 开启调试模式
-      appId: appId, // 必填，公众号的唯一标识
-      timestamp: timestamp, // 必填，生成签名的时间戳
-      nonceStr: noncestr, // 必填，生成签名的随机串
-      signature: signature, // 必填，签名
-      jsApiList: ['onMenuShareAppMessage', 'onMenuShareTimeline', 'onMenuShareQQ', 'onMenuShareWeibo'] // 必填，需要使用的JS接口列表
-    });
-    wx.ready(function() {
-      wx.onMenuShareAppMessage({...appMessage,
-        success: function () {
-          // 设置成功
-        }
+  weShare({appId, timestamp, noncestr, signature, appMessage, timeLine, shareWeibo}) {
+    return new Promise((resolve, reject) => {
+      wx.config({
+        debug: false, // 开启调试模式
+        appId: appId, // 必填，公众号的唯一标识
+        timestamp: timestamp, // 必填，生成签名的时间戳
+        nonceStr: noncestr, // 必填，生成签名的随机串
+        signature: signature, // 必填，签名
+        jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData', 'onMenuShareWeibo', 'getLocation'] // 必填，需要使用的JS接口列表
       });
-      wx.onMenuShareTimeline({...timeLine,
-        success: function () {
-          // 设置成功
-        }
+      wx.ready(function() {
+        // 分享朋友、QQ
+        wx.updateAppMessageShareData({...appMessage,
+          success: function () {
+          },
+          cancel: function (res) {
+            reject(res);
+          }
+        });
+        // 分享朋友圈、QQ空间
+        wx.updateTimelineShareData({...timeLine,
+          success: function () {
+          },
+          cancel: function (res) {
+            reject(res);
+          }
+        });
+        // 分享腾讯微博
+        wx.onMenuShareWeibo({...shareWeibo,
+          success: function () {
+          },
+          cancel: function (res) {
+            reject(res);
+          }
+        });
+        // 获取地理位置
+        wx.getLocation({
+          type: 'wgs84',
+          success: function (res) {
+            reject(res);
+          },
+          cancel: function (res) {
+            reject(res);
+          }
+        });
       });
-      wx.onMenuShareQQ({...shareQQ,
-        success: function () {
-          // 设置成功
-        }
+      wx.error(err => {
+        reject(err);
       });
-      wx.onMenuShareWeibo({...shareWeibo,
-        success: function () {
-        // 用户确认分享后执行的回调函数
-        },
-        cancel: function () {
-        // 用户取消分享后执行的回调函数
-        }
-      });
-    });
-    wx.error(err => {
-      console.log(err);
     });
   },
   // 判断android、ios

@@ -33,6 +33,9 @@ export default {
         prop: this.countPart[0],
         label: '确诊'
       }, {
+        prop: this.countPart[1],
+        label: '疑似'
+      }, {
         prop: this.countPart[2],
         label: '死亡'
       }, {
@@ -54,7 +57,8 @@ export default {
           slideShadows: true,
           shadow: true
         },
-        autoplay: true,
+        initialSlide: 0,
+        autoplay: false,
         observer: true,
         observeParents: true,
         autoplayDisableOnInteraction: true,
@@ -129,9 +133,9 @@ export default {
         n.forEach(item => {
           arr.push({
             name: item.name,
-            value: item[this.countPart[0]] || 0,
-            value_d: item[this.countPart[2]] || 0,
-            value_h: item[this.countPart[3]] || 0
+            value: item[this.countPart[0]] - item[this.countPart[3]],
+            value_d: item[this.countPart[2]],
+            value_h: item[this.countPart[3]]
           });
         });
         this.$set(this, 'mapDetial', {
@@ -158,9 +162,9 @@ export default {
         obj.children.forEach(item => {
           arr.push({
             name: end.find(data => item.name.indexOf(data)>=0) ? item.name : city.find(data => param.name.indexOf(data)>=0) ? item.name==='浦东' ? item.name+'新区' : item.name+'区' : item.name+'市',
-            value: item[this.countPart[0]] || 0,
-            value_d: item[this.countPart[2]] || 0,
-            value_h: item[this.countPart[3]] || 0
+            value: item[this.countPart[0]] - item[this.countPart[3]],
+            value_d: item[this.countPart[2]],
+            value_h: item[this.countPart[3]]
           });
         });
         this.$set(this, 'mapDetial', {

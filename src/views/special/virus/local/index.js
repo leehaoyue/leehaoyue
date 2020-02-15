@@ -2,6 +2,9 @@ import { BaiduMap, BmMarker, BmMapType, BmCityList, BmNavigation, BmPointCollect
 
 export default {
   name: 'virus-local',
+  props: {
+    wxposition: ''
+  },
   data() {
     return {
       cityList: [], // 省市区列表
@@ -166,12 +169,17 @@ export default {
     getLocation() {
       let that = this;
 
-      window.addEventListener('message', event => {
-        if (!that.$globalmethod.isEmpty(event.data) && event.data.lat && event.data.lng) {
-          that.position.lat = event.data.lat;
-          that.position.lng = event.data.lng;
-        }
-      }, false);
+      if (!that.$globalmethod.isWeiXin() && !that.$globalmethod.isEmpty(that.wxposition)) {
+        that.position.lat = that.wxposition.latitude;
+        that.position.lng = that.wxposition.longitude;
+      } else {
+        window.addEventListener('message', event => {
+          if (!that.$globalmethod.isEmpty(event.data) && event.data.lat && event.data.lng) {
+            that.position.lat = event.data.lat;
+            that.position.lng = event.data.lng;
+          }
+        }, false);
+      }
     },
     // 获取地理位置(省市区)
     getAddress(params) {

@@ -3,13 +3,16 @@
   <el-row class="virus-local" ref="virus-local">
     <el-col :span="24">
       <baidu-map class="bmView"
+        v-loading="true"
         @ready="initMap"
         :zoom="map.zoom"
         :center="map.position"
         :scroll-wheel-zoom="true"
         :double-click-zoom="true"
         v-if="showMap && showMapCheck"
-        ak="pxoraYzj7L89lC7mup893eekkBZew9jq">
+        ak="pxoraYzj7L89lC7mup893eekkBZew9jq"
+        element-loading-spinner="el-icon-loading"
+        element-loading-text="拼命加载中，若长时间无响应，请尝试刷新！">
         <bm-marker :position="position"
           @click="positionDetail"
           animation="BMAP_ANIMATION_BOUNCE"></bm-marker>
@@ -127,7 +130,9 @@
       <iframe :src="newsInfo.url"></iframe>
     </el-dialog>
     <!-- 经纬度获取 -->
-    <iframe style="display:none;" src="https://apis.map.qq.com/tools/geolocation?key=TKUBZ-D24AF-GJ4JY-JDVM2-IBYKK-KEBCU&referer=myapp"></iframe>
+    <iframe v-if="!$globalmethod.isWeiXin() || !$globalmethod.isEmpty(that.wxposition)"
+      style="display:none;"
+      src="https://apis.map.qq.com/tools/geolocation?key=TKUBZ-D24AF-GJ4JY-JDVM2-IBYKK-KEBCU&referer=myapp"></iframe>
     <!-- 返回整体页面顶部 -->
     <el-backtop target=".virus-local"></el-backtop>
   </el-row>

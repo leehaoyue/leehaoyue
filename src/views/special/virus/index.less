@@ -27,11 +27,19 @@
     z-index: 1000;
     border-radius: 50%;
   }
+  .hospitalList {
+    .boxStyle;
+    position: fixed;
+    right: 10px;
+    top: 60px;
+    z-index: 1000;
+    border-radius: 50%;
+  }
   .localMap {
     .boxStyle;
     position: fixed;
     right: 10px;
-    top: 70px;
+    top: 110px;
     z-index: 1000;
     border-radius: 50%;
   }
@@ -68,7 +76,6 @@
     padding: 10px;
     background: #fff;
     margin-bottom: 10px;
-    min-height: calc(50vh + 70px);
     .el-tag {
       margin-bottom: 0.5rem;
     }
@@ -81,6 +88,21 @@
         vertical-align: bottom;
       }
     }
+  }
+  .trend-info {
+    .boxStyle;
+    padding: 10px;
+    background: #fff;
+    h3 {
+      letter-spacing: 0.2rem;
+      i {
+        font-size: 1.2em;
+        margin-right: 0.2rem;
+        color: @primary-color;
+        vertical-align: bottom;
+      }
+    }
+    margin-bottom: 10px;
   }
   .conut-info {
     .boxStyle;
@@ -98,12 +120,13 @@
     .conut-legend {
       display: flex;
       padding: 5px 0;
-      margin-bottom: 10px;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      justify-content: space-around;
       .el-button--mini {
         .boxStyle;
-        flex: 0.33;
+        flex: 0 0 45%;
         border-radius: 0;
+        margin: 0 0 1rem 0;
       }
     }
   }
@@ -127,7 +150,7 @@
     }
     .btn-lb {
       display: inline-block;
-      width: calc(40% - 24px);
+      width: calc(35% - 24px);
     }
     .btn-gp {
       display: inline-block;
@@ -136,8 +159,8 @@
     .el-button {
       margin: 0;
       padding: 0;
+      width: 18%;
       border: none;
-      width: 33%;
       background: none;
       &:hover, &:focus  {
         border: none;
@@ -145,22 +168,25 @@
         color: @grayScale-color_1;
       }
     }
+    .el-divider--vertical {
+      margin: 0 6px;
+    }
   }
-  .news-list {
+  .newsHospital-list {
     border: none;
     .el-drawer__close-btn, .el-drawer__header span {
       outline: none;
       user-select: none;
       font-size: 1.2em;
     }
-    .news-list-inner {
+    .newsHospital-list-inner {
       width: 95%;
       margin: auto;
       overflow: auto;
       height: calc(100vh - 100px);
     }
   }
-  .newsView {
+  .newsHospitalView {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -176,7 +202,7 @@
       position: relative;
       height: calc(100vh - 54px);
     }
-    #newsDetial {
+    #newsHospitalDetial {
       position: absolute;
       top: -60px;
       width: 100%;

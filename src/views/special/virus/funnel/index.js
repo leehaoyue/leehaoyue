@@ -9,7 +9,9 @@ export default {
     countPart: ''
   },
   data() {
-    return {};
+    return {
+      label: ['确诊病例', '疑似病例', '死亡病例', '治愈病例']
+    };
   },
   computed: {
     funnelData() {
@@ -21,7 +23,9 @@ export default {
           value: item[this.countPart[0]]
         });
       });
+      obj.option.visualMap = obj.visualMap[this.countPart[0]];
       obj.option.series[0].data = arr;
+      obj.option.series[0].name = this.label[this.countPart[1]];
       return obj.option;
     },
     datadetail() {
