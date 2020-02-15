@@ -160,7 +160,13 @@
   .bmView {
     width: 100%;
     height: 500px;
-    background: @grayScale-color_8;
+    background: rgba(0, 0, 0, 0.4);
+    div:nth-child(1) {
+      z-index: 1 !important;
+    }
+    .el-loading-mask {
+      z-index: 0;
+    }
   }
   .anchorBL {
     display: none;

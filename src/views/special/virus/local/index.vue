@@ -29,7 +29,6 @@
     <!-- 位置选择 -->
     <el-col :span="24" class="selectCity">
       <el-select v-model="value_p"
-        filterable
         placeholder="请选择省"
         @change="value_c = ''">
         <el-option
@@ -40,7 +39,6 @@
         </el-option>
       </el-select>
       <el-select v-model="value_c"
-        filterable
         placeholder="请选择市"
         @change="value_t = ''">
         <el-option
@@ -51,7 +49,6 @@
         </el-option>
       </el-select>
       <el-select v-model="value_t"
-        filterable
         placeholder="请选择区">
         <el-option
           v-for="(item, index) in cityList_t"

@@ -203,14 +203,13 @@ const Mock = require('mockjs'),
         period: '童言稚语',
         children: [{
           img: Mock.Random.dataImage('200x80', ''),
-          'icon|1': fontawesome,
+          icon: 'fa fa-line-chart',
           iconColor: Mock.Random.color(),
-          title: '鸟择良木',
+          title: '疫情数据可视化',
           content: `
-              <h5>只争朝夕，不负韶华</h5>
-              <h5>未完待续~</h5>
+              <h5>所用技术：Vue/vue-cli3/Vuex、nodejs、axios、Element、Echarts、Less等</h5>
             `,
-          qrcode: '',
+          qrcode: '/img/blog/virus.png',
           link: ''
         }]
       }, {
