@@ -40,11 +40,25 @@
           v-for="(item, index) in partList">
           <!-- 树形图(国内) -->
           <div class="conut-legend" v-show="index===0">
-            <el-button type="primary" size="mini">现存确诊&nbsp;-&nbsp;{{ countTotal.confirm - countTotal.heal }}</el-button>
-            <el-button type="danger" size="mini">确诊&nbsp;-&nbsp;{{ countTotal.confirm }}</el-button>
-            <el-button type="warning" size="mini">疑似&nbsp;-&nbsp;{{ countTotal.suspect }}</el-button>
-            <el-button type="info" size="mini">死亡&nbsp;-&nbsp;{{ countTotal.dead }}</el-button>
-            <el-button type="success" size="mini">治愈&nbsp;-&nbsp;{{ countTotal.heal }}</el-button>
+            <el-button type="primary" size="mini">
+              现存确诊：{{ countTotal.confirm - countTotal.heal }}
+            </el-button>
+            <el-button type="danger" size="mini">
+              确诊：{{ countTotal.confirm }}<br/>
+              较昨日：<span v-if="ystdata.ystconfirm">+</span>{{ ystdata.ystconfirm }}
+            </el-button>
+            <el-button type="warning" size="mini">
+              疑似：{{ countTotal.suspect }}<br/>
+              较昨日：<span v-if="ystdata.ystsuspect">+</span>{{ ystdata.ystsuspect }}
+            </el-button>
+            <el-button type="info" size="mini">
+              死亡：{{ countTotal.dead }}<br/>
+              较昨日：<span v-if="ystdata.ystdead">+</span>{{ ystdata.ystdead }}
+            </el-button>
+            <el-button type="success" size="mini">
+              治愈：{{ countTotal.heal }}<br/>
+              较昨日：<span v-if="ystdata.ystheal">+</span>{{ ystdata.ystheal }}
+            </el-button>
           </div>
           <el-tree v-show="index===0"
             :data="countData"

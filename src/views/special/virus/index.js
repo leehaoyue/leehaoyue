@@ -25,6 +25,7 @@ export default {
         }
       },
       wxposition: '', // 当前位置
+      ystdata: {}, // 昨日数据
       trendData: [], // 趋势数据
       activePart: 'table', // 选中选项卡
       partList: [{
@@ -126,7 +127,7 @@ export default {
     // 数据刷新
     refresh() {
       // this.getCountData();
-      this.getNewsData();
+      this.getNewsHospitalData();
       this.getTableDat();
       if (this.$refs.virus) {
         this.$refs.virus.$el.scrollTop = 0;
@@ -177,6 +178,12 @@ export default {
             heal: res.data.foreign.info.cure_cnt
           },
           list: arrForeign.list
+        });
+        this.$set(this, 'ystdata', {
+          ystconfirm: res.data.yst_sure_cnt,
+          ystsuspect: res.data.yst_like_cnt,
+          ystdead: res.data.yst_die_cnt,
+          ystheal: res.data.yst_cure_cnt
         });
         this.$set(this, 'trendData', res.data.trend);
         this.$message.closeAll();
@@ -233,7 +240,7 @@ export default {
       this.newsHospitalDrawer = true;
     },
     // 获取新闻医院数据
-    getNewsData() {
+    getNewsHospitalData() {
       this.$axios.jsonp({
         url: 'https://news.163.com/special/00018IRU/virus_report_data.js',
         name: 'callback',
