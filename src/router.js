@@ -10,10 +10,6 @@ const travel = () => import(
   /* webpackPrefetch: true */
   /* webpackChunkName: 'travel' */
   '@/views/travel/index.vue'),
-  virus = () => import(
-    /* webpackPrefetch: true */
-    /* webpackChunkName: 'virus' */
-    '@/views/special/virus/index.vue'),
   container = () => import(
     /* webpackPrefetch: true */
     /* webpackChunkName: 'container' */
@@ -26,10 +22,6 @@ const travel = () => import(
       path: '/travel',
       name: 'travel',
       component: travel
-    }, {
-      path: '/virus',
-      name: 'virus',
-      component: virus
     }, {
       path: '/container',
       name: 'container',
