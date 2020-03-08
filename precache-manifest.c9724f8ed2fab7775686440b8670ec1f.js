@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "b49fc636b53dcd4e0f8c",
+    "revision": "14bff89af9b0817fd4f7",
     "url": "css/app.56532d29.css"
   },
   {
-    "revision": "b49fc636b53dcd4e0f8c",
-    "url": "js/app.01937f09.js"
+    "revision": "14bff89af9b0817fd4f7",
+    "url": "js/app.b280c051.js"
   },
   {
-    "revision": "4dd4f1c7335da08bda02",
+    "revision": "0e8415173dfad1c1f8ec",
     "url": "css/blog.cefe4e8d.css"
   },
   {
-    "revision": "4dd4f1c7335da08bda02",
-    "url": "js/blog.c2bf5cc8.js"
+    "revision": "0e8415173dfad1c1f8ec",
+    "url": "js/blog.bf7e4f30.js"
   },
   {
     "revision": "c5801552f43be71e7f96",
@@ -188,52 +188,44 @@ self.__precacheManifest = [
     "url": "js/chunk-vendors.88674a5d.js"
   },
   {
-    "revision": "d8a64561a04a893a4568",
+    "revision": "3fc3dfc1db4c31e4594e",
     "url": "css/container.c6752c86.css"
   },
   {
-    "revision": "d8a64561a04a893a4568",
-    "url": "js/container.9be006dc.js"
+    "revision": "3fc3dfc1db4c31e4594e",
+    "url": "js/container.a4efc05a.js"
   },
   {
-    "revision": "65ed0c758c11f264b57e",
+    "revision": "818b622373bf2dbbe9ac",
     "url": "css/foreword.e0c564be.css"
   },
   {
-    "revision": "65ed0c758c11f264b57e",
-    "url": "js/foreword.f968d46d.js"
+    "revision": "818b622373bf2dbbe9ac",
+    "url": "js/foreword.fe863740.js"
   },
   {
-    "revision": "1d841ead277635fef49e",
+    "revision": "996c964f0b257d29eb1c",
     "url": "css/notes.7df0442d.css"
   },
   {
-    "revision": "1d841ead277635fef49e",
-    "url": "js/notes.ff18b1f5.js"
+    "revision": "996c964f0b257d29eb1c",
+    "url": "js/notes.9c965e06.js"
   },
   {
-    "revision": "9ee282846c40bc14c1dd",
+    "revision": "7e100e45582dcdd63ba7",
     "url": "css/project.2b2a1c32.css"
   },
   {
-    "revision": "9ee282846c40bc14c1dd",
-    "url": "js/project.d4ed6548.js"
+    "revision": "7e100e45582dcdd63ba7",
+    "url": "js/project.bdefe027.js"
   },
   {
-    "revision": "5b85b1627fb5b2ae6a3e",
+    "revision": "3368f96574155d0ac9f6",
     "url": "css/travel.db6e15d0.css"
   },
   {
-    "revision": "5b85b1627fb5b2ae6a3e",
-    "url": "js/travel.45c2d1d2.js"
-  },
-  {
-    "revision": "4a63753047bb1e1ae8d3",
-    "url": "css/virus.c2e8dbf9.css"
-  },
-  {
-    "revision": "4a63753047bb1e1ae8d3",
-    "url": "js/virus.43f40956.js"
+    "revision": "3368f96574155d0ac9f6",
+    "url": "js/travel.d6297b03.js"
   },
   {
     "revision": "535877f50039c0cb49a6196a5b7517cd",
@@ -248,16 +240,16 @@ self.__precacheManifest = [
     "url": "img/foreword_1.311dbf66.png"
   },
   {
+    "revision": "fee66e712a8a08eef5805a46892932ad",
+    "url": "fonts/fontawesome-webfont.fee66e71.woff"
+  },
+  {
     "revision": "af7ae505a9eed503f8b8e6982036873e",
     "url": "fonts/fontawesome-webfont.af7ae505.woff2"
   },
   {
     "revision": "674f50d287a8c48dc19ba404d20fe713",
     "url": "fonts/fontawesome-webfont.674f50d2.eot"
-  },
-  {
-    "revision": "fee66e712a8a08eef5805a46892932ad",
-    "url": "fonts/fontawesome-webfont.fee66e71.woff"
   },
   {
     "revision": "b06871f281fee6b241d60582ae9369b9",
@@ -268,7 +260,7 @@ self.__precacheManifest = [
     "url": "img/fontawesome-webfont.912ec66d.svg"
   },
   {
-    "revision": "1d0d8b42dc1be44b105b6369762cd55e",
+    "revision": "d776762a387430870231e478704e3526",
     "url": "index.html"
   },
   {
@@ -280,12 +272,12 @@ self.__precacheManifest = [
     "url": "img/blog/bugapp.png"
   },
   {
-    "revision": "f0b23b6fb3e17e47fec53a1223bdbf62",
-    "url": "img/blog/github.jpg"
-  },
-  {
     "revision": "06a0da4f1baeac3558b3535489e3c629",
     "url": "img/blog/myhome.png"
+  },
+  {
+    "revision": "f0b23b6fb3e17e47fec53a1223bdbf62",
+    "url": "img/blog/github.jpg"
   },
   {
     "revision": "7a9d9f5be513b5bb5781d9a3b4af4a61",
@@ -296,12 +288,12 @@ self.__precacheManifest = [
     "url": "img/blog/pianogame.png"
   },
   {
-    "revision": "9bacc71da78520345712339e8cfada94",
-    "url": "img/blog/react+antd.png"
-  },
-  {
     "revision": "842f8a8a7f2257b4e9cdfd0121e3db9a",
     "url": "img/blog/virus.png"
+  },
+  {
+    "revision": "9bacc71da78520345712339e8cfada94",
+    "url": "img/blog/react+antd.png"
   },
   {
     "revision": "b4fe0344447c0dc287fb9b01ca2439e7",
@@ -328,20 +320,20 @@ self.__precacheManifest = [
     "url": "img/project/c3screen.png"
   },
   {
-    "revision": "1ec8fc8ff714cc8afc982768bf0e4bd3",
-    "url": "img/project/deer-banner.png"
+    "revision": "b7a92dff46fb2eb5e55b1736b7d4a280",
+    "url": "img/project/hnts-banner.png"
   },
   {
     "revision": "2e8f7c223c9a37f043b466980d1f605d",
     "url": "img/project/deer.png"
   },
   {
-    "revision": "b7a92dff46fb2eb5e55b1736b7d4a280",
-    "url": "img/project/hnts-banner.png"
-  },
-  {
     "revision": "0b8f8a5b3fd80927ab94d7104019c686",
     "url": "img/project/hnts.png"
+  },
+  {
+    "revision": "1ec8fc8ff714cc8afc982768bf0e4bd3",
+    "url": "img/project/deer-banner.png"
   },
   {
     "revision": "128a815c26107173f98a529d87fea682",
@@ -352,10 +344,6 @@ self.__precacheManifest = [
     "url": "img/project/metro-banner.jpg"
   },
   {
-    "revision": "10810b3305f4d436c0af717de18d7cdd",
-    "url": "img/project/tbs-onestop-banner.jpg"
-  },
-  {
     "revision": "64ea7f26cb0e9fa9a0fb48fe23b39bac",
     "url": "img/project/tbs-onestop.png"
   },
@@ -364,20 +352,24 @@ self.__precacheManifest = [
     "url": "img/project/train-travel.png"
   },
   {
-    "revision": "fa0e0a5e3ce9ff3142c292153c4bb88d",
-    "url": "img/project/traintravel-banner.png"
-  },
-  {
-    "revision": "6009a0363e10b83ea42df91e72831c18",
-    "url": "img/travel/train.png"
+    "revision": "10810b3305f4d436c0af717de18d7cdd",
+    "url": "img/project/tbs-onestop-banner.jpg"
   },
   {
     "revision": "1d2f1fd552054112e97e9c3b1da20968",
     "url": "img/travel/plane.png"
   },
   {
+    "revision": "fa0e0a5e3ce9ff3142c292153c4bb88d",
+    "url": "img/project/traintravel-banner.png"
+  },
+  {
     "revision": "735ab4f94fbcd57074377afca324c813",
     "url": "robots.txt"
+  },
+  {
+    "revision": "6009a0363e10b83ea42df91e72831c18",
+    "url": "img/travel/train.png"
   },
   {
     "revision": "481c1f6ac0543a2a28e6f933b79394bd",
