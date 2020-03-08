@@ -1,7 +1,9 @@
 import fontawesome from './fontawesome.js';
 
 const Mock = require('mockjs'),
+  domain = window.location.origin+window.location.pathname,
   data = (info) => {
+    console.log(domain);
     return Mock.mock({
       '/foreword/tabPage': [{
         title: '坚持不懈-全靠鸡汤',
@@ -223,7 +225,7 @@ const Mock = require('mockjs'),
               <h5>所用技术：React/create-react-app/React-Redux、antd、axios、Mockjs、Less、Highcharts等</h5>
             `,
           qrcode: '/img/blog/vue+threejs.png',
-          link: 'https://leehaoyue.github.io/leehaoyue/EMP/react-antd/'
+          link: domain + 'EMP/react-antd/'
         }, {
           img: Mock.Random.dataImage('200x80', ''),
           icon: 'fa fa-slideshare',
@@ -233,7 +235,7 @@ const Mock = require('mockjs'),
               <h5>所用技术：Vue/vue-cli3/Vuex、Element、Threejs、Mockjs、Less等</h5>
             `,
           qrcode: '/img/blog/vue+threejs.png',
-          link: 'https://leehaoyue.github.io/leehaoyue/EMP/react-antd/'
+          link: domain + 'EMP/vue-threejs/'
         }]
       }, {
         period: '咿呀学语',
@@ -288,7 +290,7 @@ const Mock = require('mockjs'),
               <h5>所用技术：jQuery、Bootstrap等</h5>
             `,
           qrcode: '/img/blog/pianogame.png',
-          link: 'https://draculablood.gitee.io/leehaoyue/myhome/project/game/html/game.html'
+          link: domain + 'leehaoyue/myhome/project/game/html/game.html'
         }, {
           img: Mock.Random.dataImage('200x80', ''),
           icon: 'fa fa-pencil',
@@ -300,7 +302,7 @@ const Mock = require('mockjs'),
               <h5>所用技术：jQuery、Bootstrap、ajax等</h5>
             `,
           qrcode: '/img/blog/myhome.png',
-          link: 'https://draculablood.gitee.io/leehaoyue/myhome/Lee/html/Lee.html'
+          link: domain + 'leehaoyue/myhome/Lee/html/Lee.html'
         }]
       }]
     })[info];
