@@ -3,7 +3,6 @@ import fontawesome from './fontawesome.js';
 const Mock = require('mockjs'),
   domain = window.location.origin+window.location.pathname,
   data = (info) => {
-    console.log(domain);
     return Mock.mock({
       '/foreword/tabPage': [{
         title: '坚持不懈-全靠鸡汤',
