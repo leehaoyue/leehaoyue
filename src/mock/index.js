@@ -90,14 +90,14 @@ const Mock = require('mockjs'),
             <h5>备注：企业内部项目，无展示地址</h5>
           `,
           qrcode: '/img/project/c3screen.png',
-          link: '',
-          introduce: {
-            video: ['/img/project/c3screen.mp4'],
-            article: `
-              <p><strong>备注：</strong>本视频已在朋友圈及公司公众号中传开</p>
-              <p><a href="https://mp.weixin.qq.com/s/tKN4OHPSOPlZEiNnqGJ-MQ" target="_blank"><strong>点击查看公众号原文</strong><a></p>
-            `
-          }
+          link: 'https://mp.weixin.qq.com/s/tKN4OHPSOPlZEiNnqGJ-MQ'
+          // introduce: {
+          //   video: ['/img/project/c3screen.mp4'],
+          //   article: `
+          //     <p><strong>备注：</strong>本视频已在朋友圈及公司公众号中传开</p>
+          //     <p><a href="https://mp.weixin.qq.com/s/tKN4OHPSOPlZEiNnqGJ-MQ" target="_blank"><strong>点击查看公众号原文</strong><a></p>
+          //   `
+          // }
         }, {
           banner: '/img/project/metro-banner.jpg',
           title: '上海地铁钉钉微应用—任务协作（一期）',
